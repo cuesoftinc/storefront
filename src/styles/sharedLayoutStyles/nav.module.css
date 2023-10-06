@@ -1,0 +1,10 @@
+.nav {
+  border: 2px solid gray;
+  margin: 20px;
+  width: fit-content;
+}
+
+.nav a {
+  margin-inline: 20px;
+  font-size: var(--medium);
+}
