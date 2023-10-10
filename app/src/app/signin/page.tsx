@@ -71,9 +71,7 @@ export default function Signin() {
             </div>
            
         </div>
-        <div>
-            base area
-        </div>
+        
       
     </section>
   );
