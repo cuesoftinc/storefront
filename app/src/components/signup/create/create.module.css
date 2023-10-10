@@ -36,9 +36,6 @@
   cursor: pointer;
 }
 
-.signup__inputs__side input {
-}
-
 .signUpBtn {
   background-color: var(--solidFadedBlue);
   border: none;
