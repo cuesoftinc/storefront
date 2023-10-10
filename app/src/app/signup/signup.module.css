@@ -12,8 +12,11 @@
 }
 
 .reg__logo {
+  /* border: 2px solid red; */
+  width: 100%;
   position: fixed;
-  top: 20px;
+  top: 0px;
+  padding-top: 20px;
   background-color: var(--white);
   z-index: 20;
 }
