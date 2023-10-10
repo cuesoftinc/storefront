@@ -1,0 +1,56 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Colors */
+  --black: #000000;
+  --blackRed: #420f0f;
+  --white: #ffffff;
+  --creamWhite: #fffefc;
+  --bloodRed: #800020;
+  --fadedRed: #aa6969;
+  --neonBlue: #002fad;
+  --solidFadedBlue: #2f8ac7;
+  --fadedBlue: #ebf5fb;
+
+  /* transitions */
+  --transition: all 0.4s cubic-bezier(0.3, 0.3, 0.3, 0.3);
+  --quickTransition: all 0.2s cubic-bezier(0.3, 0.3, 0.3, 0.3);
+
+  /* Font family */
+  --Montserrat: "Montserrat", sans-serif;
+  --RadioCanada: "Radio Canada", sans-serif;
+  --Mulish: "Mulish", sans-serif;
+  --RobotoFlex: "Roboto Flex", sans-serif;
+
+  /* Font sizes */
+  --large: 50px;
+  --xlarge: 85px;
+  --xxlarge: 100px;
+  --small: 15px;
+  --xsmall: 12px;
+  --xxsmall: 10px;
+  --medium: 20px;
+
+  /* Opacity */
+  --hoverOpacity: 0.8;
+
+  /* Screen sizes */
+  --xlargeScreen: 1440;
+  --largeScreen: 1300;
+  --pad: 1024;
+  --mediumpc: 912;
+  --ipadAir: 820;
+  --tablet: 768;
+  --surfaceDuo: 540;
+  --iPhone: 420;
+  --smallPhone: 330;
+  --galaxyFold: 280;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+}

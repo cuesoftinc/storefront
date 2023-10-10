@@ -1,0 +1,67 @@
+.signup__inputs__side {
+  /* border: 2px solid red; */
+  width: 35%;
+  text-align: center;
+}
+@media screen and (max-width: 1024px) {
+  .signup__inputs__side {
+    width: 380px;
+  }
+}
+@media screen and (max-width: 912px) {
+  .signup__inputs__side {
+    width: 350px;
+  }
+}
+@media screen and (max-width: 820px) {
+  .signup__inputs__side {
+    /* border: 2px solid red; */
+    margin-top: 12rem;
+  }
+}
+@media screen and (max-width: 420px) {
+  .signup__inputs__side {
+    width: 100%;
+  }
+}
+
+.signup__inputs__side > div:nth-child(2) {
+  /* border: 2px solid red; */
+  margin-block: 2rem;
+}
+.signup__inputs__side > div:nth-child(2) img {
+  margin-inline: 5px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.signup__inputs__side input {
+}
+
+.signUpBtn {
+  background-color: var(--solidFadedBlue);
+  border: none;
+  border-radius: 10px;
+  color: var(--white);
+  width: 50%;
+  padding-block: 15px;
+  margin-block: 2rem 1rem;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.signUpBtn:hover {
+  opacity: var(--hoverOpacity);
+}
+.signUpBtn:active {
+  transform: scale(0.8);
+}
+
+.signup__inputs__side > p:last-child a {
+  color: var(--solidFadedBlue);
+  font-weight: 600;
+}
+.signup__inputs__side > p:last-child a:hover {
+  opacity: var(--hoverOpacity);
+}
