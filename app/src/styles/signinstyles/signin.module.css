@@ -1,0 +1,139 @@
+.signinsection{
+    width: 100%;
+    overflow: hidden;
+    padding:5px 40px;
+
+
+}
+.formContainer{
+    display: flex;
+    /* justify-content: center; */
+    padding: 20px;
+    
+align-items: flex-start;
+gap: 150px;
+}
+.signinHeaders{
+    color:  #2D2D2D;
+font-family: Open Sans;
+font-size: 30px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+}
+.welcometext{
+    color:  #5A5A5A;
+font-family: Open Sans;
+font-size: 20px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+}
+.leftWelcomediv{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    align-items: flex-start;
+    gap: 16px;
+}
+.leftsvg{
+    width: 470px;
+height: 374.428px;
+}
+
+.rightWelcomediv{
+    display: flex;
+flex-direction: column;
+align-items:center;
+padding-bottom: 20px;
+justify-content: right;
+position: relative;
+right: 0;
+gap: 25px;
+width: 40%;
+
+
+}
+.signindiv{
+        display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+.signinsocials{
+    display: flex;
+align-items: flex-start;
+gap: 20px;
+}
+.signintext{
+    color:  #5A5A5A;
+font-family: Open Sans;
+font-size: 15px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+}
+.signinformcontainer{
+    display: flex;
+flex-direction: column;
+align-items: flex-start;
+gap: 16px;
+width: 100%;
+}
+.input{
+    display: flex;
+width: 100%;
+padding: 15px 20px;
+align-items: center;
+gap: 16px;
+border-radius: 8px;
+background: #EBF5FB;
+text-align: left;
+}
+.btndiv{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.button{
+    display: flex;
+width: 171px;
+padding: 10px;
+justify-content: center;
+align-items: center;
+gap: 10px;
+color:  #FFF;
+font-family: Open Sans;
+font-size: 24px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+border-radius: 8px;
+background:  #2F8AC7;
+border: none;
+}
+.inputdiv{
+    width: 100%;
+    margin-bottom: 10px;
+    display: flex;
+    border-radius: 8px;
+    flex-direction: row;
+    padding: 20px;
+    gap: 20px;
+    background-color: #EBF5FB;
+}
+.inputicon {
+    height: 1em;
+    width: 1em;
+    fill: gray;
+   }
+   
+   .inputfield {
+    background: none;
+    border: none;
+    outline: none;
+    width: 100%;
+    color: tan;
+   }
