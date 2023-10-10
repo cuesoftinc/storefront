@@ -1,7 +1,14 @@
 .signinsection{
-    width: 100%;
+    /* width: 100%; */
     overflow: hidden;
-    padding:5px 40px;
+    /* padding:5px 40px; */
+    display: flex;
+max-width: 1285px;
+max-height: 687px;
+padding: 40px 0px 86px 0px;
+flex-direction: column;
+justify-content: flex-end;
+align-items: center;
 
 
 }
@@ -11,7 +18,7 @@
     padding: 20px;
     
 align-items: flex-start;
-gap: 150px;
+gap: 250px;
 }
 .signinHeaders{
     color:  #2D2D2D;
@@ -32,12 +39,12 @@ line-height: normal;
 .leftWelcomediv{
     display: flex;
     flex-direction: column;
-    width: 60%;
+    width: 40%;
     align-items: flex-start;
     gap: 16px;
 }
 .leftsvg{
-    width: 470px;
+    width: 400px;
 height: 374.428px;
 }
 
@@ -50,7 +57,7 @@ justify-content: right;
 position: relative;
 right: 0;
 gap: 25px;
-width: 40%;
+width: 60%;
 
 
 }

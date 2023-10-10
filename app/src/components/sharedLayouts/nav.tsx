@@ -5,10 +5,8 @@ import styles from "../../styles/sharedLayoutStyles/nav.module.css";
 const Nav = () => {
   return (
     <nav className={styles.nav}>
-      <Link href="/">Home</Link>
-      <Link href="cart">Cart</Link>
-      <Link href="about">About Us</Link>
-      <Link href="signin">Sign in</Link>
+      <Link href="/">Storefront</Link>
+     
     </nav>
   );
 };

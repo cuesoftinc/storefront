@@ -1,10 +1,19 @@
 .nav {
-  border: 2px solid gray;
   margin: 20px;
   width: fit-content;
+
+border: none;
+text-decoration: none;
 }
 
 .nav a {
-  margin-inline: 20px;
-  font-size: var(--medium);
+  border: none;
+  text-decoration: none;
+  font-family: Open Sans;
+font-size: 24px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+color:  #2F8AC7;
+
 }
