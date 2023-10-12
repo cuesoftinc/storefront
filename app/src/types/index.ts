@@ -27,3 +27,4 @@ export interface BtnProps {
   btnContent: string;
   btnStyle: string;
 }
+

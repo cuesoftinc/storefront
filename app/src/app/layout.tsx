@@ -1,3 +1,4 @@
+import React from "react";
 import "../styles/globals.css";
 import { CartProvider, HomeProvider } from "@/context";
 import type { Metadata } from "next";
