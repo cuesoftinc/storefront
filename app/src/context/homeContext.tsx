@@ -1,7 +1,7 @@
 "use client";
 
 import { createContext, ReactNode, useState, useContext } from "react";
-import { HomeContextProps } from "@/typesrafce";
+import { HomeContextProps } from "@/types";
 
 const HomeContext = createContext<HomeContextProps | undefined>(undefined);
 

@@ -1,0 +1,33 @@
+.input__box {
+  /* border: 2px solid red; */
+  position: relative;
+  margin-top: 2.5vh;
+}
+
+.input__box input {
+  height: var(--large);
+  width: 100%;
+  padding-left: 3rem;
+  background-color: var(--fadedBlue);
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.input__box input::placeholder {
+}
+
+.input__box input:focus {
+  outline: 2px solid #2e88c7;
+}
+
+.input__box img {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  bottom: 50%;
+  transform: translateY(-50%);
+  /* width: auto;
+  height: auto; */
+  width: 20px;
+}

@@ -16,3 +16,15 @@ export interface UserProps {
   id: number;
   username: string;
 }
+
+export interface InputProps {
+  type: string;
+  holder: string;
+  icons: string;
+}
+
+export interface BtnProps {
+  btnContent: string;
+  btnStyle: string;
+}
+

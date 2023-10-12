@@ -1,4 +1,5 @@
-import Nav from "./nav";
-import Footer from "./footer";
+import Nav from "./nav/nav";
+import Footer from "./footer/footer";
+import ShowNav from "./showNav";
 
-export { Nav, Footer };
+export { Nav, Footer, ShowNav };

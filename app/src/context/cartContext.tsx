@@ -1,7 +1,7 @@
 "use client";
 
 import { createContext, useState, useContext, ReactNode } from "react";
-import { CartContextProps, UserProps } from "@/typesrafce";
+import { CartContextProps, UserProps } from "@/types";
 
 const CartContext = createContext<CartContextProps | undefined>(undefined);
 

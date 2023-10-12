@@ -12,9 +12,9 @@
   --creamWhite: #fffefc;
   --bloodRed: #800020;
   --fadedRed: #aa6969;
-  --solidBlue: #2844a0;
   --neonBlue: #002fad;
-  --fadedBlue: #9eadd5;
+  --solidFadedBlue: #2f8ac7;
+  --fadedBlue: #ebf5fb;
 
   /* transitions */
   --transition: all 0.4s cubic-bezier(0.3, 0.3, 0.3, 0.3);
@@ -35,6 +35,9 @@
   --xxsmall: 10px;
   --medium: 20px;
 
+  /* Opacity */
+  --hoverOpacity: 0.8;
+
   /* Screen sizes */
   --xlargeScreen: 1440;
   --largeScreen: 1300;
@@ -47,5 +50,8 @@
   --smallPhone: 330;
   --galaxyFold: 280;
 }
-  body {
-    font-family: "Montserrat", sans-serif;  }
+
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
