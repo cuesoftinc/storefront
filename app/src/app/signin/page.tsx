@@ -1,6 +1,6 @@
 "use client";
 import Facebooksvg from "@/assets/icons/facebook";
-import styles from "../../styles/signinstyles/signin.module.css";
+import styles from "./signin.module.css";
 import Twittersvg from "@/assets/icons/twitter";
 
 
