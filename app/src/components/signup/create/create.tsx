@@ -28,7 +28,7 @@ const CreateAccount = () => {
       <Button btnContent="Sign Up" btnStyle={styles.signUpBtn} />
 
       <p>
-        Already have an account? <Link href="">Sign In</Link>
+        Already have an account? <Link href="signin">Sign In</Link>
       </p>
     </form>
   );
