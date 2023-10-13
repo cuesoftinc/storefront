@@ -1,0 +1,149 @@
+.popularcontainer{
+    display: flex;
+flex-direction: column;
+align-items: flex-start;
+gap: 40px;
+max-width: 1312px ;
+
+}
+.popularheadercontainer{
+    display: flex;
+width: 100%;
+
+justify-content: space-between;
+align-items: center;
+}
+.popularheader{
+    color: var(--foundation-black-black-600, #2D2D2D);
+text-align: center;
+font-feature-settings: 'cv04' on, 'cv03' on, 'cv01' on;
+font-family: Open Sans;
+font-size: 28px;
+font-style: normal;
+font-weight: 600;
+line-height: 120%; /* 33.6px */
+letter-spacing: -0.56px;
+}
+.popularlink{
+    display: flex;
+padding: 8px 12px 8px 16px;
+flex-direction: row;
+justify-content: center;
+align-items: flex-start;
+gap: 10px;
+border:1px solid gray;
+text-decoration: none;
+border-radius: 30px;
+color: gray;
+}
+.popularimgcontainer{
+    width: 100%;
+    /* max-height: 500px; */
+    display: flex;
+    align-items: flex-start;
+    gap: 23px;
+    justify-content: center;
+    /* background-color: #2D2D2D; */
+ 
+ }
+ .popularimg{
+    width: 287px;
+    height: 260px;
+flex-shrink: 0;
+align-self: stretch;
+ }
+ .imgtextcontainer{
+    display: flex;
+width: 286px;
+flex-direction: column;
+align-items: flex-start;
+gap: 16px;
+flex: 1 0 0;
+ }
+ .imgtext{
+    display: flex;
+flex-direction: row;
+align-items: flex-start;
+gap: 4px;
+align-self: stretch;
+flex-wrap: wrap;
+ }
+ .imgp{
+    color: var(--foundation-black-black-600, #2D2D2D);
+font-feature-settings: 'cv04' on, 'cv03' on, 'cv01' on;
+font-family: Open Sans;
+font-size: 16px;
+font-style: normal;
+flex-wrap: wrap;
+font-weight: 600;
+flex: 0.85 0 0;
+line-height: 24px; /* 150% */
+ }
+ .imgp2{
+    color: var(--foundation-black-black-600, #2D2D2D);
+    font-feature-settings: 'cv01' on, 'cv04' on, 'cv03' on;
+    font-family: Open Sans;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px; /* 133.333% */
+ }
+ .ratecontainer{
+    display: flex;
+align-items: flex-start;
+gap: 12px;
+align-self: stretch;
+flex-direction: row;
+ }
+ .rate{
+display: flex;
+
+
+ }
+ .svgcontainer{
+    margin: 0;
+    padding: 0;
+ }
+ .svgimg{
+    width: 16px;
+    height: 16px;
+    color: #F56630;
+
+ }
+ .ratenumber{
+   
+display: -webkit-box;
+width: 25px;
+-webkit-box-orient: vertical;
+-webkit-line-clamp: 1;
+align-self: stretch;
+
+ }
+ .btncontainer{
+    display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: start;
+padding: 8px 12px;
+border-radius: 16px;
+gap: 10px;
+
+border: 1.5px solid var(--grey-300, #D0D5DD);
+background: var(--shade-white, #FFF);
+
+ }
+ .btn{
+display: flex;
+align-self: center;
+justify-content: center;
+
+
+ }
+ .svgimgcart{
+    width: 15px;
+height: 15px;
+color: #475367;
+display: flex;
+align-self: center;
+justify-content: center;
+ }

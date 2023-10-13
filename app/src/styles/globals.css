@@ -15,6 +15,7 @@
   --neonBlue: #002fad;
   --solidFadedBlue: #2f8ac7;
   --fadedBlue: #ebf5fb;
+  
 
   /* transitions */
   --transition: all 0.4s cubic-bezier(0.3, 0.3, 0.3, 0.3);

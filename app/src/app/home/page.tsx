@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import React from "react";
-import { Hero } from "../../components/homesections";
+import { Brands, Categories, Hero, Popular } from "../../components/homesections";
 import  Styles  from "./home.module.css";
 
 
@@ -12,6 +12,9 @@ const Homepage = () => {
   return (
     <main className={Styles.main} >
       <Hero/>
+      <Brands/>
+      <Categories/>
+      <Popular/>
     </main>
   );
 };
