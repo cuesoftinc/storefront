@@ -1,0 +1,8 @@
+.main{
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    /* align-items: center; */
+}

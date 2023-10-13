@@ -1,9 +1,19 @@
-import React from 'react'
+import { Metadata } from "next";
+import React from "react";
+import { Hero } from "../../components/homesections";
+import  Styles  from "./home.module.css";
 
-function Page() {
+
+export const metadata: Metadata = {
+  title: "Home page",
+};
+
+const Homepage = () => {
   return (
-    <div>page</div>
-  )
-}
+    <main className={Styles.main} >
+      <Hero/>
+    </main>
+  );
+};
 
-export default Page
+export default Homepage;

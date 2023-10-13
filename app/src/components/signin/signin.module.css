@@ -1,11 +1,10 @@
 .signinsection{
     /* width: 100%; */
     overflow: hidden;
-    /* padding:5px 40px; */
     display: flex;
 max-width: 1285px;
-/* max-height: 687px; */
-padding: 40px 0px 86px 0px;
+
+padding-inline: var(--small);
 flex-direction: column;
 justify-content: flex-end;
 align-items: center;

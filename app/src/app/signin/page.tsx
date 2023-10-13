@@ -1,7 +1,7 @@
 import styles from "./signin.module.css";
 import { Metadata } from "next";
 import React from "react";
-import Signinpage from "@/components/signin/page";
+import Signinpage from "@/components/signin/signin";
 
 
 export const metadata: Metadata = {
