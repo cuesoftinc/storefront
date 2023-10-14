@@ -20,18 +20,23 @@
   /* border: 2px solid yellow; */
   width: 45%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
 }
-
-.second__nav__item button {
-  cursor: pointer;
-  border: none;
-  background-color: inherit;
+.nav ul:first-child {
+  width: 25%;
+}
+.nav ul:last-child {
+  width: 65%;
 }
 
-.second__nav__item button span {
-  margin-left: 5px;
+.second__nav__item li div {
+  margin-block: auto;
+}
+
+.second__nav__item li a img {
+  width: 15px;
+  height: 15px;
 }
 
 .nav ul li {
@@ -41,4 +46,11 @@
 .nav a {
   text-decoration: none;
   color: var(--black);
+  font-weight: 700;
+  display: block;
+  text-align: center;
+}
+
+.nav__icon {
+  /* color: var(--white); */
 }

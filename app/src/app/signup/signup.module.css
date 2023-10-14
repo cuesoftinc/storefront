@@ -10,6 +10,12 @@
     margin-top: 12vh;
   }
 }
+@media screen and (max-height: 650px) {
+  .registration {
+    /* border: 2px solid red; */
+    margin-top: 5rem;
+  }
+}
 
 .reg__logo {
   /* border: 2px solid red; */
