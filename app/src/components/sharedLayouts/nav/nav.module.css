@@ -1,0 +1,44 @@
+.header {
+  /* border: 2px solid red; */
+  max-width: 1285px;
+  margin: var(--small) auto;
+  padding-inline: var(--small);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav {
+  /* border: 2px solid gray; */
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav ul {
+  /* border: 2px solid yellow; */
+  width: 45%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.second__nav__item button {
+  cursor: pointer;
+  border: none;
+  background-color: inherit;
+}
+
+.second__nav__item button span {
+  margin-left: 5px;
+}
+
+.nav ul li {
+  list-style-type: none;
+}
+
+.nav a {
+  text-decoration: none;
+  color: var(--black);
+}
