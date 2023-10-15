@@ -17,7 +17,7 @@ align-items: center;
     color: var(--foundation-black-black-600, #2D2D2D);
 text-align: center;
 font-feature-settings: 'cv04' on, 'cv03' on, 'cv01' on;
-font-family: Open Sans;
+font-family: "Montserrat", sans-serif;
 font-size: 28px;
 font-style: normal;
 font-weight: 600;
@@ -71,7 +71,7 @@ flex-wrap: wrap;
  .imgp{
     color: var(--foundation-black-black-600, #2D2D2D);
 font-feature-settings: 'cv04' on, 'cv03' on, 'cv01' on;
-font-family: Open Sans;
+font-family: "Montserrat", sans-serif;
 font-size: 16px;
 font-style: normal;
 flex-wrap: wrap;
@@ -82,7 +82,7 @@ line-height: 24px; /* 150% */
  .imgp2{
     color: var(--foundation-black-black-600, #2D2D2D);
     font-feature-settings: 'cv01' on, 'cv04' on, 'cv03' on;
-    font-family: Open Sans;
+    font-family: "Montserrat", sans-serif;
     font-size: 18px;
     font-style: normal;
     font-weight: 600;

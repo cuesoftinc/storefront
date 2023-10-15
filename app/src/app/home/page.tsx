@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import React from "react";
-import { Brands, Categories, Hero, Popular } from "../../components/homesections";
+import { Adsection, Brands, Categories, Hero, Popular, Services, Summer } from "../../components/homesections";
 import  Styles  from "./home.module.css";
 
 
@@ -15,6 +15,9 @@ const Homepage = () => {
       <Brands/>
       <Categories/>
       <Popular/>
+      <Summer/>
+      <Services/>
+      <Adsection/>
     </main>
   );
 };

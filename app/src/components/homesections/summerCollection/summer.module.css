@@ -1,0 +1,198 @@
+.summercontainer{
+    display: flex;
+flex-direction: column;
+align-items: flex-start;
+gap: 40px;
+max-width: 1312px ;
+margin: 50px 0;
+
+}
+.summerheadercontainer{
+    display: flex;
+width: 100%;
+justify-content: space-between;
+align-items: center;
+}
+.summerheader{
+    color: var(--foundation-black-black-600, #2D2D2D);
+text-align: center;
+font-feature-settings: 'cv04' on, 'cv03' on, 'cv01' on;
+font-family: "Montserrat", sans-serif;
+font-size: 28px;
+font-style: normal;
+font-weight: 600;
+line-height: 120%; /* 33.6px */
+letter-spacing: -0.56px;
+}
+.link{
+    display: flex;
+padding: 8px 12px 8px 16px;
+flex-direction: row;
+justify-content: center;
+align-items: flex-start;
+gap: 10px;
+text-decoration: none;
+border-radius: 30px;
+color: var(--solidFadedBlue);
+}
+.summerimgcontainer{
+   width: 100%;
+   max-height: 500px;
+   display: flex;
+   gap: 26px;
+   justify-content: center;
+   /* background-color: #2D2D2D; */
+
+}
+.summerimgcontainer2{
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+
+}
+.summerimg{
+    width: 600px;
+    height: 100%;
+    border-radius: 8px;
+    filter: brightness(70%);
+
+   
+}
+.summerimgleft{
+    width: 596px;
+height: 230px;
+flex-shrink: 0;
+border-radius: 10px;
+}
+.summerimg1{
+    position: relative;
+}
+/* top text */
+.toptext{
+    display: flex;
+   padding: 4px 12px;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   gap: 8px;
+   position: absolute;
+   top: 16px;
+   left: 20px;
+   border-radius: 12px;
+   background: var(--foundation-primary-color-primary-color-600, #2F8AC7);  color: var(--white);
+ text-align: center;
+ font-feature-settings: 'cv04' on, 'cv01' on, 'cv03' on;
+ /* font-family: Open Sans; */
+ font-size: 14px;
+ font-style: normal;
+ font-weight: 600;
+ line-height: 145%; /* 20.3px */
+ }
+ /* buttom text */
+.buttomtext{
+    position: absolute;
+    bottom: 50px;
+    left: 22px;
+    display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 24px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 92%;
+  
+  }
+  .buttomheader > h2{
+    font-feature-settings: 'cv04' on, 'cv03' on, 'cv01' on;
+  /* font-family: Open Sans; */
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 600;
+  width: 300px;
+  line-height: 120%; /* 43.2px */
+  letter-spacing: -1.44px;
+  }
+
+  .buttomheader{
+    display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  color: white;
+  }
+  .buttomtext > a{
+    display: flex;
+  padding: 10px;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 10px;
+  border-radius: 8px;
+  background:  #2F8AC7;
+  color: var(--shade-white, #FFF);
+  text-align: center;
+  font-feature-settings: 'cv04' on, 'cv03' on, 'cv01' on;
+  /* font-family: Open Sans; */
+  font-size: 16px;
+  font-style: normal;
+  text-decoration: none;
+  font-weight: 600;
+  /* line-height: 145%; 23.2px */
+  }
+  .toprighttext {
+    position: absolute;
+    top: 10px;
+    right: 16px;
+   
+  }
+  .summersvg{
+    width: 56.647px;
+    height: 56.647px;
+    flex-shrink: 0;
+    opacity: 0.6;
+  }
+
+   /* Centered text */
+   .centered {
+    position: absolute;
+    top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 25px;
+    left: 20px;
+    color: #FFF;
+    width: 300px;
+
+    /* transform: translate(-50%, -50%); */
+  }
+  .centered > h2{
+    color: var(--shade-white, #FFF);
+font-feature-settings: 'cv04' on, 'cv03' on, 'cv01' on;
+/* font-family: Open Sans; */
+font-size: 32px;
+font-style: normal;
+font-weight: 600;
+line-height: 120%; /* 39.431px */
+letter-spacing: -0.657px;
+  }
+  .text{
+    border-radius: 12px;
+    background: var(--foundation-primary-color-primary-color-600, #2F8AC7);  color: var(--white);
+  text-align: center;
+  display: flex;
+/* padding: 4px 14px; */
+flex-direction: column;
+justify-content: center;
+align-items: center;
+width: 131px;
+padding: 4px 12px;
+
+gap: 8px;
+text-align: center;
+font-feature-settings: 'cv04' on, 'cv01' on, 'cv03' on;
+font-size: 14px;
+font-style: normal;
+font-weight: 600;
+line-height: 145%; /* 20.3px */
+  }
