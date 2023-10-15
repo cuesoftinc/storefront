@@ -29,6 +29,17 @@
 .nav ul:last-child {
   width: 65%;
 }
+@media screen and (max-width: 1024px) {
+  .nav ul:first-child {
+    width: 25%;
+  }
+  .nav ul:last-child {
+    width: 70%;
+  }
+}
+@media screen and (max-width: 768px) {
+  /* The next break point */
+}
 
 .second__nav__item li div {
   margin-block: auto;

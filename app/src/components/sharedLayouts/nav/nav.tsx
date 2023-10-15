@@ -18,10 +18,10 @@ const Nav = () => {
       <nav className={styles.nav}>
         <ul className={styles.first__nav__item}>
           <li>
-            <Link href="">Electronics</Link>
+            <Link href="products/electronics">Electronics</Link>
           </li>
           <li>
-            <Link href="">Fashion</Link>
+            <Link href="products/fashion">Fashion</Link>
           </li>
         </ul>
 

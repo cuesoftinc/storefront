@@ -1,0 +1,13 @@
+.single__electronics__product {
+  /* border: 2px solid red; */
+}
+
+.single__electronics__product > img {
+  width: 100%;
+  height: 200px;
+}
+
+.short__desc {
+  display: flex;
+  justify-content: space-between;
+}
