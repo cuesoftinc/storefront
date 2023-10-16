@@ -6,5 +6,6 @@
     align-items: center;
     padding: 20px;
     gap: 30px;
+    max-width: 1440px;
     /* align-items: center; */
 }
