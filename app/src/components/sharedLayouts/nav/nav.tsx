@@ -6,8 +6,12 @@ import { FaSearch, FaHeart, FaShoppingCart, FaUser } from "react-icons/fa";
 import InputBox from "@/components/general/input/input";
 import { cartIcon, favIcon, profileIcon, searchIcon } from "@/assets/icons";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 const Nav = () => {
+  const pathname = usePathname();
+  // console.log(pathname);
+
   const handleProductSearch = () => {
     //
   };
@@ -18,10 +22,26 @@ const Nav = () => {
       <nav className={styles.nav}>
         <ul className={styles.first__nav__item}>
           <li>
-            <Link href="products/electronics">Electronics</Link>
+            <Link
+              href={`${
+                pathname.includes("products")
+                  ? "/products/electronics"
+                  : "/products/electronics"
+              }`}
+            >
+              Electronics
+            </Link>
           </li>
           <li>
-            <Link href="products/fashion">Fashion</Link>
+            <Link
+              href={`${
+                pathname.includes("products")
+                  ? "/products/fashion"
+                  : "/products/fashion"
+              }`}
+            >
+              Fashion
+            </Link>
           </li>
         </ul>
 
