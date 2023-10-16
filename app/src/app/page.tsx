@@ -1,5 +1,9 @@
-import Signin from "./signin/page";
+import Homepage from "./home/page";
 
 export default function Home() {
-  return <main>{/* <Signin/> */}</main>;
+  return (
+    <main>
+      <Homepage />
+    </main>
+  );
 }
