@@ -36,7 +36,7 @@ export default function Summer() {
                     <div className={styles.centered}>
                     <div className={styles.text}> UP TO 80% OFF</div>
 
-                        <h2>Children Summer Play set</h2>
+                        <h2 className={styles.secondh2}>Children Summer Play set</h2>
 
                     </div>
                     </div>

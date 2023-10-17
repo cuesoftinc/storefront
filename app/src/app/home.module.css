@@ -1,0 +1,29 @@
+.main{
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    gap: 30px;
+    /* align-items: center; */
+}
+ /* Media query for tablets */
+ @media (min-width: 768px) and (max-width: 1024px) {
+   .main{
+    justify-content: space-between;
+   }
+  }
+  /* Media query for galaxyfold screens */
+@media (max-width: 280px) {
+    .large-screen-element {
+      /* Styles for large screens */
+    }
+  }
+  
+  /* Media query for medium phones */
+  @media (min-width: 330px) and (max-width: 765px) {
+    .main{
+
+    }
+  }

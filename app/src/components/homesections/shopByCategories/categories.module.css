@@ -152,4 +152,292 @@ font-weight: 600;
 height: 24px;
 }
 
+@media (max-width: 280px) {
+  .categoriescontainer{
+    width: 100vw !important;
+    height: 100svh;
+    padding: 0 10px;
+  }
+  .categoriesheadercontainer{
+    width: 97%;
+  }
+  .categoriesheader{
+    font-size: 15px;
+  }
+  .categoriesimgcontainer{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  .containerimg{
+    width: 100%;
+    padding: 0 10px;
+    display: flex;
+    justify-content: center;
+  }
+  .categoriesimg{
+    width: 100%;
+    position: relative;
+    /* height: 40px; */
+    }
+    .categoriesimgleft{
+      width: 100%;
  
+  }
+   /* top text */
+.toptext{
+  font-size: 10px;
+ 
+ }
+ /* buttom text */
+ .buttomtext{
+  position: absolute;
+  bottom: 8px;
+  
+ gap: 10px;
+ flex-wrap: wrap;
+ width: 200px;
+ 
+ }
+ .buttomheader > h2{
+  font-feature-settings: 'cv04' on, 'cv03' on, 'cv01' on;
+ /* font-family: Open Sans; */
+ font-size: 15px;
+ font-style: normal;
+ font-weight: 600;
+ line-height: 120%; /* 43.2px */
+ letter-spacing: -1.44px;
+ }
+ .buttomheader > sub{
+ /* font-family: Open Sans; */
+ font-size: 10px;
+ font-style: normal;
+
+ }
+ 
+ 
+ .buttomtext > a{
+  font-size: 10px;
+  padding: 5px;
+  align-items: center;
+
+ 
+ }
+}
+
+ 
+/* media quary for medium size mobile devices */
+@media (min-width: 330px) and (max-width: 765px) {
+  .categoriescontainer{
+    width: 100vw !important;
+    height: 100svh;
+    padding: 0 10px;
+  }
+  .categoriesheadercontainer{
+    width: 97%;
+  }
+  .categoriesheader{
+    font-size: var(--subhead);
+  }
+  .categoriesimgcontainer{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  .containerimg{
+    width: 100%;
+    padding: 0 10px;
+    display: flex;
+    justify-content: center;
+  }
+  .categoriesimg{
+    width: 100%;
+    position: relative;
+    /* height: 40px; */
+    }
+    .categoriesimgleft{
+      width: 100%;
+ 
+  }
+    /* top text */
+.toptext{
+ font-size: 10px;
+
+}
+/* buttom text */
+.buttomtext{
+ position: absolute;
+ bottom: 28px;
+ 
+gap: 24px;
+flex-wrap: wrap;
+width: 342px;
+
+}
+.buttomheader > h2{
+ font-feature-settings: 'cv04' on, 'cv03' on, 'cv01' on;
+/* font-family: Open Sans; */
+font-size: 25px;
+font-style: normal;
+font-weight: 600;
+line-height: 120%; /* 43.2px */
+letter-spacing: -1.44px;
+}
+
+
+.buttomtext > a{
+ font-size: 16px;
+
+}
+.buttontextsvg{
+ width: 24px;
+height: 24px;
+}
+
+    
+    
+}
+/* Media query for large screens */
+@media (min-width: 1024px) {
+  .categoriescontainer{
+    width: 100vw !important;
+    height: 100svh !important;
+    padding: 0 10px;
+    margin-bottom: 100px ;
+  }
+  .categoriesheadercontainer{
+    width: 100%;
+  }
+  .categoriesheader{
+    font-size: var(--subhead);
+  }
+  .categoriesimgcontainer{
+    display: flex;
+    gap: 10px;
+    /* flex-wrap: wrap; */
+    width: 97vw;
+  }
+  .containerimg{
+    width: 100%;
+    padding: 0 10px;
+    display: flex;
+    justify-content: center;
+  }
+  .categoriesimg{
+    width: 100%;
+    position: relative;
+    /* height: 40px; */
+    }
+    .categoriesimgleft{
+      width: 100% !important;
+      background-color: #2D2D2D;
+    }
+  } 
+  
+ /* Media query for tablets */
+ @media (min-width: 767px) and (max-width: 1023px) {
+  .categoriescontainer{
+    width: 100vw !important;
+    height: 100svh !important;
+    padding: 0 10px;
+    margin-bottom: 100px ;
+  }
+  .categoriesheadercontainer{
+    width: 97%;
+  }
+  .categoriesheader{
+    font-size: var(--subhead);
+  }
+  .categoriesimgcontainer{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100svh !important;
+
+  }
+  .containerimg{
+    width: 100%;
+    padding: 0 10px;
+    display: flex;
+    justify-content: center;
+  }
+  .categoriesimg{
+    width: 100%;
+    position: relative;
+    /* height: 40px; */
+    }
+    .categoriesimgleft{
+      width: 95vw !important;
+    }
+ }
+ @media screen and (width: 540px) {
+  .categoriescontainer{
+    width: 100vw !important;
+    height: 130vh ;
+    padding: 0 10px;
+  }
+
+  .categoriesimgcontainer{
+    display: block;
+    gap: 20px;
+  
+    width: 100%;
+  }
+  .categoriesimgcontainer2{
+    margin-top: 25px;
+  }
+  .categoriesimg1{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .categoriesimg{
+    width: 100%;
+    position: relative;
+    /* height: 40px; */
+    }
+    .categoriesimgleft{
+      width: 100%;
+ 
+  }
+    /* top text */
+.toptext{
+ font-size: 15px;
+
+}
+/* buttom text */
+.buttomtext{
+ position: absolute;
+ bottom: 28px;
+ 
+gap: 24px;
+flex-wrap: wrap;
+width: 342px;
+
+}
+.buttomheader > h2{
+ font-feature-settings: 'cv04' on, 'cv03' on, 'cv01' on;
+/* font-family: Open Sans; */
+font-size: 25px;
+font-style: normal;
+font-weight: 600;
+line-height: 120%; /* 43.2px */
+letter-spacing: -1.44px;
+}
+.secondh2{
+  font-feature-settings: 'cv04' on, 'cv03' on, 'cv01' on;
+  /* font-family: Open Sans; */
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%; /* 43.2px */
+  letter-spacing: -1.44px;
+}
+
+.buttomtext > a{
+ font-size: 16px;
+
+}
+
+ }
+
