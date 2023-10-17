@@ -59,17 +59,22 @@ export default function Summer() {
           </div>
         </div>
       </div>
-                        <h2 className={styles.secondh2}>Children Summer Play set</h2>
-
-                    </div>
-                    </div>
-                <Image src={shoe} alt="Register Image"className={styles.summerimgleft} />
+      {/* <div>
+      <div>
+            <h2 className={styles.secondh2}>Children Summer Play set</h2>
 
 
-                </div>
-                
-            </div>
-        </div>
+      </div>
+
+      <div>
+       <Image src={shoe} alt="Register Image"className={styles.summerimgleft} />
+
+
+        </div> */}
+
+      {/* </div> */}
+            
+           
     </section>
   );
 }
