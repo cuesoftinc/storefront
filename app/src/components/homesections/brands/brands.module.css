@@ -1,0 +1,20 @@
+.brandcontainer{
+    display: flex;
+    width: 1312px;
+    flex-direction: column;
+    justify-content: center;
+    gap: 46px;
+    padding: 0 50px;
+}
+.brandimgcontainer{
+    display: flex;
+    max-width: 1312px;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+.brandimg{
+    width: 150px;
+    height: 77.622px;
+    flex-shrink: 0;
+}

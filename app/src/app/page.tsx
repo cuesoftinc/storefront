@@ -1,9 +1,29 @@
-import Signin from "./signin/page";
+import { Metadata } from "next";
+import Styles from "./home.module.css";
+import {
+  Adsection,
+  Brands,
+  Categories,
+  Hero,
+  Popular,
+  Services,
+  Summer,
+} from "@/components/homesections";
+
+export const metadata: Metadata = {
+  title: "Home",
+};
 
 export default function Home() {
   return (
-    <main>
-      <Signin/>
+    <main className={Styles.main}>
+      <Hero />
+      <Brands />
+      <Categories />
+      <Popular />
+      <Summer />
+      <Services />
+      <Adsection />
     </main>
   );
 }

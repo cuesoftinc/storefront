@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction } from "react";
+import { ChangeEvent, Dispatch, SetStateAction } from "react";
 
 // Context Types
 export interface HomeContextProps {
@@ -19,12 +19,15 @@ export interface UserProps {
 
 export interface InputProps {
   type: string;
+  name: string;
   holder: string;
   icons: string;
+  value: string;
+  handleChange: (e: ChangeEvent<HTMLInputElement>) => void;
 }
 
 export interface BtnProps {
   btnContent: string;
   btnStyle: string;
+  handleRegClick: (e: React.FormEvent) => void;
 }
-

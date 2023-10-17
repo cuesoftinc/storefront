@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from "../../styles/signinstyles/signin.module.css";
+import styles from "../../components/signin/signin.module.css";
 
 
 function Twittersvg() {

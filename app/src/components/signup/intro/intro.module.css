@@ -19,8 +19,9 @@
   }
 }
 
-.intro__side h2 {
+.intro__side h1 {
   margin-bottom: var(--small);
+  font-size: var(--header);
 }
 
 .intro__side p {
@@ -35,7 +36,7 @@
   margin-block: 4rem;
 }
 @media screen and (max-width: 820px) {
-  .intro__side h2 {
+  .intro__side h1 {
     text-align: center;
   }
 
