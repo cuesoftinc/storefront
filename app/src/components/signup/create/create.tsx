@@ -1,6 +1,6 @@
 "use client";
 
-import React, { ChangeEvent, useState, useEffect } from "react";
+import React, { ChangeEvent, useState } from "react";
 import styles from "./create.module.css";
 import Image from "next/image";
 import {
@@ -15,22 +15,39 @@ import Button from "@/components/general/button/button";
 import Link from "next/link";
 import { fetchSignUpUser } from "../../../api/users";
 
-const CreateAccount = () => {
-  const [user, setUser] = useState({
-    name: "",
-    email: "",
-    password: "",
-  });
+interface UserData {
+  isLoading: boolean;
+  isError: boolean;
+  user: {
+    name: string;
+    email: string;
+    password: string;
+  };
+}
 
-  const { name, email, password } = user;
+const CreateAccount = () => {
+  const userData: UserData = {
+    isLoading: false,
+    isError: false,
+    user: {
+      name: "",
+      email: "",
+      password: "",
+    },
+  };
+
+  const [userDetails, setUserDetails] = useState(userData);
+
+  const { user } = userDetails;
+  const { name, email, password } = userDetails.user;
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     let name = e.target.name;
     let value = e.target.value;
-    setUser({
-      ...user,
-      [name]: value,
-    });
+    // setUserDetails({
+    //   ...user,
+    //   [name]: value,
+    // });
   };
 
   const handleRegClick = async (e: React.FormEvent<Element>) => {
@@ -40,7 +57,7 @@ const CreateAccount = () => {
       console.log("I canoot be empty");
     } else {
       // fetchSignUpUser(user);
-      console.log(await fetchSignUpUser(user));
+      console.log(await fetchSignUpUser(userDetails.user));
     }
   };
 
