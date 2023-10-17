@@ -1,0 +1,12 @@
+.all__electronics__products {
+  /* border: 2px solid green; */
+  width: 100%;
+  margin-left: 3rem;
+}
+
+.all__elect__products__display {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  /* justify-items: center; */
+}

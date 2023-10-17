@@ -1,0 +1,5 @@
+.product__path {
+  max-width: 1312px;
+  margin: 4rem auto 3rem;
+  padding-inline: var(--small);
+}

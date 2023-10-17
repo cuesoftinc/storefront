@@ -1,0 +1,25 @@
+.side__bar {
+  /* border: 2px solid red; */
+  width: 300px;
+}
+
+.side__bar__nav__items {
+  margin-top: 20px;
+}
+
+.side__bar__nav__items ul li {
+  list-style-type: none;
+  padding-block: 20px;
+  border-bottom: 1px solid #000;
+  transition: ease 0.5s all;
+}
+.side__bar__nav__items ul li:hover {
+  box-shadow: 0px 4px 56px 7px rgba(0, 0, 0, 0.1);
+  padding-left: 10px;
+}
+
+.side__bar__nav__items ul li a {
+  text-decoration: none;
+  color: #000;
+  font-weight: 600;
+}

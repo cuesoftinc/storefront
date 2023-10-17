@@ -1,0 +1,7 @@
+.electronics__category {
+  /* border: 2px solid red; */
+  max-width: 1312px;
+  margin-inline: auto;
+  padding-inline: var(--small);
+  display: flex;
+}

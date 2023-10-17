@@ -6,7 +6,7 @@ import Image from "next/image";
 const SignIntro = () => {
   return (
     <summary className={styles.intro__side}>
-      <h2>Hello, Friend!</h2>
+      <h1>Hello, Friend!</h1>
       <p>Enter your details and start your journey with us.</p>
       <Image src={regImage} alt="Register Image" />
     </summary>
