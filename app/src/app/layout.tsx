@@ -1,9 +1,9 @@
 import React from "react";
 import "../styles/globals.css";
-import { CartProvider, HomeProvider } from "@/context";
 import type { Metadata } from "next";
 import Footer from "../components/sharedLayouts/footer/footer";
 import { ShowNav } from "@/components/sharedLayouts";
+import { AuthProvider } from "@/context/userContext";
 
 export const metadata: Metadata = {
   title: "Home",
@@ -18,13 +18,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <HomeProvider>
-          <CartProvider>
-            <ShowNav />
-            {children}
-            <Footer />
-          </CartProvider>
-        </HomeProvider>
+        <AuthProvider>
+          <ShowNav />
+          {children}
+          <Footer />
+        </AuthProvider>
       </body>
     </html>
   );
