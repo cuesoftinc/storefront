@@ -14,12 +14,4 @@
     justify-content: space-between;
    }
   }
-  /* Media query for galaxyfold screens */
-@media (max-width: 280px) {
-   
-  }
-  
-  /* Media query for medium phones */
-  @media (min-width: 330px) and (max-width: 765px) {
-   
-  }
+
