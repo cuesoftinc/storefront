@@ -3,27 +3,21 @@
   overflow: hidden;
   display: flex;
   max-width: 1285px;
-
+  /* padding-top: 50px; */
   padding-inline: var(--small);
   flex-direction: column;
   justify-content: flex-end;
-  align-items: center;
-
+  display: flex;
+  min-height: 80vh;
   align-items: flex-start;
   gap: 250px;
 }
+
 .signinHeaders {
   color: #2d2d2d;
   font-family: "Montserrat", sans-serif;
-  font-size: 30px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: normal;
-}
-.signinHeaders {
-  color: #2d2d2d;
-  font-family: "Montserrat", sans-serif;
-  font-size: 36px;
+  margin-bottom: var(--small);
+  font-size: var(--subhead) !important;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
@@ -31,14 +25,14 @@
 .welcometext {
   color: #5a5a5a;
   font-family: "Montserrat", sans-serif;
-  font-size: 28px;
-  font-style: normal;
+  width: 250px;
   font-weight: 600;
   line-height: normal;
 }
 .leftsvg {
-  width: 400px;
-  height: 374.428px;
+  width: 100%;
+  height: auto;
+  margin-block: 4rem;
 }
 
 .rightWelcomediv {
@@ -49,14 +43,16 @@
   justify-content: right;
   position: relative;
   right: 0;
-  gap: 25px;
-  width: 65%;
-}
+  gap: 20px !important;
+  width: 45% !important;
+  background-color: aqua;
+  text-align: center;}
+
 .signindiv {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
+  gap: 25px;
 }
 .signinsocials {
   display: flex;
@@ -89,10 +85,10 @@
 }
 .signinformcontainer {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: flex-start;
-  gap: 16px;
-  width: 100%;
+  gap: 10px;
+  width: 100% !important;
 }
 .input {
   display: flex;
@@ -128,6 +124,10 @@
   background: #2f8ac7;
   border: none;
 }
+.button:active{
+  transform: scale(0.8);
+
+}
 .inputdiv {
   width: 100%;
   margin-bottom: 10px;
@@ -151,10 +151,21 @@
   width: 100%;
   color: tan;
 }
-@media screen and (max-width: 1024px) {
+@media screen and (min-width: 1024px) {
   .formContainer {
-    gap: 150px;
+    gap: 100px;
+    display: flex;
+    flex-direction: row !important;
   }
+  .leftWelcomediv{
+    width: 45% !important;
+  }
+  .signinHeaders{
+    margin-bottom: var(--small);
+    font-size: var(--subhead) !important;
+  }
+  
+
 }
 @media screen and (max-width: 412px) {
   .formContainer {
@@ -390,32 +401,41 @@
     font-size: 20px !important;
   }
 }
+.formContainer{
+  max-width: 1285px;
+  width: 100%;
+  margin-inline: auto;
+}
 .leftWelcomediv,
 .rightWelcomediv {
   width: 100%;
   padding: 0 20px;
   justify-content: center;
   text-align: center;
-  height: 77svh;
+  align-items: center;
+
+  /* height: 90svh; */
 }
 .leftsvg {
-  width: 700px;
+  width: 100%;
   /* background-color: #2D2D2D; */
 }
 .leftWelcomediv {
-  /* margin-top: 50px; */
-  gap: 70px;
+  gap: 10px;
+  padding-top: 20px;
+  height: auto;
+  background-color: #2f8ac7;
 }
 .rightWelcomediv {
-  gap: 70px;
+  gap: 20px;
 }
 .signintext {
-  font-size: 30px;
+  font-size: var(--small);
 }
 .signinHeaders {
   text-align: center !important;
   width: 100%;
-  font-size: 70px !important;
+  font-size: 36px !important;
 }
 .welcometext {
   text-align: center !important;
@@ -425,7 +445,7 @@
 .signinformcontainer {
   display: grid;
   place-items: center;
-  gap: 16px;
+  gap: 6px;
   width: 100% !important;
   margin: 0 !important;
   padding: 0 10px;
