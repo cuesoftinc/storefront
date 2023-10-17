@@ -9,6 +9,25 @@ import Servicetwo from "./servicetwo";
 import Servicethree from "./servicethree";
 import Servicefour from "./servicefour";
 import mailIcon from "./mail.png";
+import searchIcon from "./search.png";
+import favIcon from "./fav.png";
+import cartIcon from "./cart.png";
 import Summerarrow from "./summerarrow";
 
-export {Summerarrow,Cartsvg,Serviceone,Servicetwo,Servicethree,Servicefour, Ratesvg,facebook, twitter, profileIcon, lockIcon, mailIcon };
+export {
+  facebook,
+  twitter,
+  profileIcon,
+  lockIcon,
+  mailIcon,
+  searchIcon,
+  favIcon,
+  cartIcon,
+  Summerarrow,
+  Cartsvg,
+  Serviceone,
+  Servicetwo,
+  Servicethree,
+  Servicefour,
+  Ratesvg,
+};

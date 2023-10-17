@@ -3,6 +3,10 @@
   width: 35%;
   text-align: center;
 }
+
+.signup__inputs__side h1 {
+  font-size: var(--header);
+}
 @media screen and (max-width: 1024px) {
   .signup__inputs__side {
     width: 380px;
