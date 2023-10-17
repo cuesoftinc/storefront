@@ -80,4 +80,113 @@ line-height: 145%; /* 20.3px */
 }
 
 
+@media (min-width: 1024px) {
+    .servicecontainer{
+        max-width: 100vw !important ;
+        padding:  20px;
+
+    }
+    .serviceheadercontainer{
+        display: flex;
+    align-items: start;
+    gap: 66px;
+    width: 100%;
+    margin-top: 20px;
+    
+    }
+    .servicesprovidedcontainer{
+        display: flex;
+        flex-wrap: wrap;
+    width: 100%;
+    gap: 50px;
+    align-items: center;
+    justify-content: center;
+    }
+}
+@media (max-width: 280px) {
+    .servicecontainer{
+        max-width: 100vw !important ;
+        padding:  20px;
+
+    }
+    .serviceheadercontainer{
+        display: flex;
+    align-items: start;
+    gap: 66px;
+    width: 100%;
+    margin-top: 110px;
+    
+    }
+    .serviceheader{
+              
+    font-size: 15px;
+    line-height: 20px;
+
+    }
+    .servicesprovidedcontainer{
+        display: flex;
+        flex-wrap: wrap;
+    width: 100%;
+    gap: 50px;
+    align-items: center;
+    justify-content: center;
+    }
+    .content{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        text-align: center;
+        align-items: center;
+        padding: 15px 0;
+        gap: 20px;
+        border: 1px solid gray;
+        /* width: 100px; */
+    
+    }
+  
+}
+ /* media quary for medium size mobile devices */
+ @media (min-width: 330px) and (max-width: 912px) {
+    .servicecontainer{
+        max-width: 100vw !important ;
+        padding:  20px;
+
+    }
+    .serviceheadercontainer{
+        display: flex;
+    align-items: start;
+    gap: 66px;
+    width: 100%;
+    margin-top: 20px;
+    
+    }
+    .serviceheader{
+              
+    font-size: var(--subhead);
+
+    }
+    .servicesprovidedcontainer{
+        display: flex;
+        flex-wrap: wrap;
+    width: 100%;
+    gap: 50px;
+    align-items: center;
+    justify-content: center;
+    }
+    .content{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        text-align: center;
+        align-items: center;
+        padding: 15px 0;
+        gap: 20px;
+        border: 1px solid gray;
+        /* width: 100px; */
+    
+    }
+  
+ }
+
+
 
