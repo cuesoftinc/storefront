@@ -12,13 +12,13 @@ export default function Signinpage() {
     <section className={styles.signinsection}>
         <div className={styles.formContainer}>
             <div className={styles.leftWelcomediv}>
-                <h3 className={styles.signinHeaders}>Welcome Back !</h3>
+                <h1 className={styles.signinHeaders}>Welcome Back !</h1>
                 <p className={styles.welcometext}>Enter your details to continue your journey with us</p>
                 <img className={styles.leftsvg} src="/welcomesvg.svg" alt="" />
             </div>
             <div className={styles.rightWelcomediv}>
                 <div className={styles.signindiv}>
-                    <h3 className={styles.signinHeaders}>Sign in to Storefront</h3>
+                    <h1 className={styles.signinHeaders}>Sign in to Storefront</h1>
                     <div className={styles.signinsocials}>
                    <a href="" className={styles.svg}>
                     <Facebooksvg/>
