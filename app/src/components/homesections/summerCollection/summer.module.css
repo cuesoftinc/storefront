@@ -196,3 +196,254 @@ font-style: normal;
 font-weight: 600;
 line-height: 145%; /* 20.3px */
   }
+
+  @media screen and (width: 540px) {
+    .summercontainer{
+      margin-bottom: 200px;
+    }
+  }
+
+  /* media quary for medium size mobile devices */
+@media (min-width: 330px) and (max-width: 765px) {
+  .summercontainer{
+    width: 98vw !important;
+    height: 100svh;
+    padding: 0 10px;
+  }
+
+  .summerimgcontainer{
+    display: flex;
+    gap: 20px;
+    /* flex-direction: column; */
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  .summerimg1{
+    width: 100%;
+    /* padding: 0 10px; */
+    display: flex;
+    justify-content: center;
+  }
+  .summerimg{
+    width: 100%;
+    position: relative;
+    /* height: 40px; */
+    }
+    .summerimgleft{
+      width: 100%;
+ 
+  }
+    /* top text */
+.toptext{
+ font-size: 15px;
+
+}
+/* buttom text */
+.buttomtext{
+ position: absolute;
+ bottom: 28px;
+ 
+gap: 24px;
+flex-wrap: wrap;
+width: 342px;
+
+}
+.buttomheader > h2{
+ font-feature-settings: 'cv04' on, 'cv03' on, 'cv01' on;
+/* font-family: Open Sans; */
+font-size: 25px;
+font-style: normal;
+font-weight: 600;
+line-height: 120%; /* 43.2px */
+letter-spacing: -1.44px;
+}
+.secondh2{
+  font-feature-settings: 'cv04' on, 'cv03' on, 'cv01' on;
+  /* font-family: Open Sans; */
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%; /* 43.2px */
+  letter-spacing: -1.44px;
+}
+
+.buttomtext > a{
+ font-size: 16px;
+
+}
+.buttontextsvg{
+ width: 24px;
+height: 24px;
+}
+
+    
+    
+}
+@media (min-width: 1024px) {
+  .summercontainer{
+    width: 100vw !important;
+    height: 100svh !important;
+    padding: 0 10px;
+    margin-bottom: 100px ;
+  }
+  .summerheadercontainer{
+    width: 100%;
+  }
+  /* .summerheader{
+    font-size: var(--subhead);
+  } */
+  .summerimgcontainer{
+    display: flex;
+    gap: 20px;
+    /* flex-wrap: wrap; */
+    width: 97vw;
+  }
+  .containerimg{
+    width: 100%;
+    padding: 0 10px;
+    display: flex;
+    justify-content: center;;
+  }
+  .summerimg{
+    width: 100%;
+    position: relative;
+    /* height: 40px; */
+    }
+    .summerimg1{
+      width: 100% !important;
+      /* padding: 0 10px; */
+      display: flex;
+      justify-content: center;
+    }
+   
+    .summerimgleft{
+      width: 100% !important;
+      background-color: #2D2D2D;}
+}
+ /* Media query for tablets */
+ @media (min-width: 767px) and (max-width: 1023px) {
+  .summercontainer{
+    width: 100vw !important;
+    height: 100svh;
+    padding: 0 10px;
+    margin-bottom: 100px ;
+  }
+  .summerheadercontainer{
+    width: 97%;
+  }
+  .summerheader{
+    font-size: var(--subhead);
+  }
+  .summerimgcontainer{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  .containerimg{
+    width: 100%;
+    padding: 0 10px;
+    display: flex;
+    justify-content: center;
+  }
+  .summerimg{
+    width: 97%;
+    position: relative;
+    /* height: 40px; */
+    }
+    .summerimg1{
+      width: 96vw !important;
+      /* padding: 0 10px; */
+      display: flex;
+      justify-content: center;
+    }
+   
+    .summerimgleft{
+      width: 95vw !important;
+      background-color: #2D2D2D;
+    }
+ }
+
+ @media (max-width: 280px) {
+  .summercontainer{
+      width: 100vw !important ;
+      padding: 0 10px;
+      
+      }
+     
+        /* top text */
+.toptext , .text {
+  font-size: 10px;
+ 
+ }
+ /* buttom text */
+ .buttomtext{
+  position: absolute;
+  bottom: 8px;
+  
+ gap: 10px;
+ flex-wrap: wrap;
+ width: 200px;
+ 
+ }
+ .buttomtext > a{
+  font-size: 10px;
+  padding: 5px;
+  align-items: center;
+ 
+ }
+
+ .buttomheader > h2 {
+  font-feature-settings: 'cv04' on, 'cv03' on, 'cv01' on;
+ /* font-family: Open Sans; */
+ font-size: 20px;
+ font-style: normal;
+ display: flex;
+  flex-wrap: wrap;
+  width: 200px;
+ font-weight: 600;
+ line-height: 120%; /* 43.2px */
+ letter-spacing: -1.44px;
+ }
+ .centered > h2{
+  font-size: 20px;
+
+ }
+ .centered{
+  display: flex;
+  width: 200px;
+  flex-wrap: wrap;
+ }
+ .summerimgcontainer{
+          padding: 10px !important;
+          width: 100% !important;
+          /* max-height: 500px; */
+          display: flex;
+          align-items: center;
+          gap: 30px;
+          justify-content: center;
+          flex-wrap: wrap;
+         
+       
+       }
+        .summerimg{
+          width: 100% !important;
+          display: flex;
+          justify-content: center;
+          height: 160px;
+      flex-shrink: 0;
+      align-self: stretch;
+  
+       
+        }
+       .summerimg1{
+        width: 100% !important;
+        /* padding: 0 10px; */
+        display: flex;
+        justify-content: center;
+      }
+     
+      .summerimgleft{
+        width: 100% !important;
+        background-color: #2D2D2D;
+      }
+}

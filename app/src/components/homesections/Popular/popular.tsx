@@ -16,7 +16,7 @@ export default function Popular() {
                 <a href="#" className={styles.popularlink}> sort by <span>v</span></a>
          </div>
          <div className={styles.popularimgcontainer}>
-                <div >
+                <div className={styles.productcol} >
                 <Image src={Tv} alt="popular  Image"className={styles.popularimg} />
                     <div className={styles.imgtextcontainer}>
                         <div className={styles.imgtext}>
@@ -44,7 +44,7 @@ export default function Popular() {
                     </div>
 
                 </div>
-                <div >
+                <div className={styles.productcol}>
                 <Image src={Tv} alt="popular  Image"className={styles.popularimg} />
                     <div className={styles.imgtextcontainer}>
                         <div className={styles.imgtext}>
@@ -72,7 +72,7 @@ export default function Popular() {
                     </div>
 
                 </div>
-                <div >
+                <div className={styles.productcol} >
                 <Image src={Tv} alt="popular  Image"className={styles.popularimg} />
                     <div className={styles.imgtextcontainer}>
                         <div className={styles.imgtext}>
@@ -100,7 +100,7 @@ export default function Popular() {
                     </div>
 
                 </div>
-                <div >
+                <div className={styles.productcol} >
                 <Image src={Tv} alt="popular  Image"className={styles.popularimg} />
                     <div className={styles.imgtextcontainer}>
                         <div className={styles.imgtext}>
