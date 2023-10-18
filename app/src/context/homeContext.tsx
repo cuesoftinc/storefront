@@ -1,24 +1,24 @@
-"use client";
+// "use client";
 
-import { createContext, ReactNode, useState, useContext } from "react";
-import { HomeContextProps } from "@/types";
+// import { createContext, ReactNode, useState, useContext } from "react";
+// import { HomeContextProps } from "@/types";
 
-const HomeContext = createContext<HomeContextProps | undefined>(undefined);
+// const HomeContext = createContext<HomeContextProps | undefined>(undefined);
 
-export const HomeProvider = ({ children }: { children: ReactNode }) => {
-  const [homeState, setHomeState] = useState<number>(1);
+// export const HomeProvider = ({ children }: { children: ReactNode }) => {
+//   const [homeState, setHomeState] = useState<number>(1);
 
-  return (
-    <HomeContext.Provider value={{ homeState, setHomeState }}>
-      {children}
-    </HomeContext.Provider>
-  );
-};
+//   return (
+//     <HomeContext.Provider value={{ homeState, setHomeState }}>
+//       {children}
+//     </HomeContext.Provider>
+//   );
+// };
 
-export const useHomeContext = () => {
-  const context = useContext(HomeContext);
-  if (!context) {
-    throw new Error("useHomeContext must be used within a AppProvider");
-  }
-  return context;
-};
+// export const useHomeContext = () => {
+//   const context = useContext(HomeContext);
+//   if (!context) {
+//     throw new Error("useHomeContext must be used within a AppProvider");
+//   }
+//   return context;
+// };
