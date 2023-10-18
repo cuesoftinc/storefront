@@ -3,12 +3,10 @@
     height: 500px;
     flex-shrink: 0;
     border-radius: 10.745px;
-    /* background: var(--white); */
     background-image: url(../../../assets/images/herobanner.png);
     /* width: 100vw;  */
    /* height: 720px;  */
    background-blend-mode: color-burn;
-   /* width: 100vw; */
    background-size: cover;
    background-repeat: no-repeat;
    background-position: center center;
@@ -74,6 +72,7 @@ border: #2F8AC7;
 display: flex;
 padding: 13px;
 gap: 10px;
+text-decoration: none;
 flex-direction: row;
 justify-content: center;
 align-items: center;

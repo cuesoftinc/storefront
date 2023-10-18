@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from './hero.module.css'
 import { Shopnow } from '..';
+import Link from 'next/link';
 
 function Hero() {
   return (
@@ -16,9 +17,9 @@ function Hero() {
                 </p>
               </div>
               <div>
-                <button className={styles.herobtn}>
+                <Link href="/products" className={styles.herobtn}>
                   Shop now <span><Shopnow/></span>
-                </button>
+                </Link>
               </div>
 
             </div>
