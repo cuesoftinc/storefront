@@ -7,7 +7,7 @@ import (
 	"github.com/CuesoftCloud/storefront/routes"
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
-	"os"
+	// "os"
 )
 
 // main is the entry point for the server

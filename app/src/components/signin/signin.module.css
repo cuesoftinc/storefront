@@ -158,8 +158,15 @@ border: none;
   border: none;
   outline: none;
   width: 100%;
-  color: tan;
+  color: black;
+    font-weight: bold;
+    font-size: medium;
  }
+ .inputfield::placeholder {
+    color: black;
+    font-weight: bold;
+    font-size: medium;
+}
  @media screen and (max-width: 1024px){
   .formContainer{
       gap: 150px;

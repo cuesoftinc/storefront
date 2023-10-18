@@ -2,11 +2,32 @@
 import Facebooksvg from "@/assets/icons/facebook";
 import styles from "./signin.module.css";
 import Twittersvg from "@/assets/icons/twitter";
-
-
+import Link from "next/link";
+import { useState } from 'react';
+import { fetchSigninUser } from "../../api/login";
+// import { useRouter } from 'next/router';
+import { useRouter } from "next/navigation";
 
 
 export default function Signinpage() {
+  const router = useRouter();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+ 
+  const handleSubmit = async (e: React.FormEvent<Element>) => {
+    e.preventDefault();
+
+    if (!email || !password) {
+      console.log("Please fill all fields ");
+    } else {
+      await fetchSigninUser(email,password,router)
+     
+      // Redirect to the homepage
+    // router.push('/');
+      
+      // console.log(await fetchSigninUser(email,password,router));
+    }
+  };
 
   return (
     <section className={styles.signinsection}>
@@ -32,27 +53,41 @@ export default function Signinpage() {
                    
                    <p className={styles.signintext}>Or use your email</p>
                 </div>
-                <form action="" className={styles.signinformcontainer}>
+                <form onSubmit={handleSubmit} className={styles.signinformcontainer}>
                 <div className={styles.inputdiv}>
                     <img src="/mail.png" className={styles.inputicon} alt="" />
-                  <input autoComplete="off" id="logemail" placeholder="Email" className={styles.inputfield} name="logemail" type="email"/>
+                  <input
+                   autoComplete="off"
+                    id="logemail" 
+                    placeholder="Email" 
+                    className={styles.inputfield}
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)} 
+                    type="email"/>
                 </div>
 
 
                 <div className={styles.inputdiv} >
                     <img src="/lock.png" className={styles.inputicon} alt="" />
                            
-                      <input autoComplete="off" id="logpass" placeholder="Password" className={styles.inputfield} name="logpass" type="password"/>
+                      <input
+                       autoComplete="off"
+                        id="logpass" 
+                        placeholder="Password" 
+                        className={styles.inputfield}
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        type="password"/>
                     
                 </div>
 
 
                     <p className={styles.signintext}>Forgot your password ?</p>
                     <div className={styles.btndiv}>
-                        <button className={styles.button}>Sign in</button>
+                        <button type="submit" onClick={handleSubmit} className={styles.button}>Sign in</button>
                     </div>
                 </form>
-                <p className={styles.signintext}>Don't have an account ? <a href="" className={styles.signuplink}>Sign up</a></p>
+                <p className={styles.signintext}>Don't have an account ? <Link href="/signup" className={styles.signuplink}>Sign up</Link></p>
             </div>
            
         </div>
