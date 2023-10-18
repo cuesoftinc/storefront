@@ -10,7 +10,6 @@ import { usePathname } from "next/navigation";
 
 const Nav = () => {
   const pathname = usePathname();
-  // console.log(pathname);
 
   const handleProductSearch = () => {
     //
@@ -21,27 +20,21 @@ const Nav = () => {
       <Logo />
       <nav className={styles.nav}>
         <ul className={styles.first__nav__item}>
-          <li>
-            <Link
-              href={`${
-                pathname.includes("products")
-                  ? "/products/electronics"
-                  : "/products/electronics"
-              }`}
-            >
-              Electronics
-            </Link>
+          <li
+            className={`${
+              pathname === "/electronics"
+                ? styles.add__active__page__border
+                : ""
+            }`}
+          >
+            <Link href="electronics">Electronics</Link>
           </li>
-          <li>
-            <Link
-              href={`${
-                pathname.includes("products")
-                  ? "/products/fashion"
-                  : "/products/fashion"
-              }`}
-            >
-              Fashion
-            </Link>
+          <li
+            className={`${
+              pathname === "/fashion" ? styles.add__active__page__border : ""
+            }`}
+          >
+            <Link href="fashion">Fashion</Link>
           </li>
         </ul>
 

@@ -40,6 +40,30 @@
   cursor: pointer;
 }
 
+.hide__sign__response {
+  margin-block: 5px;
+  color: #fff;
+  padding-block: 10px;
+  font-weight: 600;
+  /* transform: scale(0); */
+  opacity: 0;
+  transition: ease 1s all;
+}
+.show__sign__response {
+  /* transform: scale(1); */
+  opacity: 1;
+}
+.error__sign__response {
+  background-color: #aa0707;
+  /* transform: scale(1); */
+  opacity: 1;
+}
+.success__sign__response {
+  background-color: #056f05;
+  /* transform: scale(1); */
+  opacity: 1;
+}
+
 .signUpBtn {
   background-color: var(--solidFadedBlue);
   border: none;
@@ -47,8 +71,9 @@
   color: var(--white);
   width: 50%;
   padding-block: 15px;
-  margin-block: 2rem 1rem;
+  margin-bottom: 1rem;
   font-size: 16px;
+  font-weight: 600;
   cursor: pointer;
 }
 

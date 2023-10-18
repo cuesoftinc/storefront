@@ -1,6 +1,6 @@
 "use client";
 
-import React, { ChangeEvent, useState, useEffect } from "react";
+import React, { ChangeEvent, useState } from "react";
 import styles from "./create.module.css";
 import Image from "next/image";
 import {
@@ -14,22 +14,37 @@ import InputBox from "@/components/general/input/input";
 import Button from "@/components/general/button/button";
 import Link from "next/link";
 import { fetchSignUpUser } from "../../../api/users";
+import { useAuthContext } from "@/context/userContext";
+import { handleIsLoading } from "@/utils/btnHandler";
+import { handleResponseMsg } from "@/utils/response";
 
 const CreateAccount = () => {
-  const [user, setUser] = useState({
-    name: "",
-    email: "",
-    password: "",
-  });
+  const {
+    signupUser,
+    setSignupUser,
+    isSuccess,
+    setIsSuccess,
+    isSuccessBg,
+    setIsSuccessBg,
+  } = useAuthContext();
+
+  const { isLoading, isError, user } = signupUser;
 
   const { name, email, password } = user;
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    // Remove response message when a user starts typing
+    setIsSuccess(false);
+    setIsSuccessBg("");
+
     let name = e.target.name;
     let value = e.target.value;
-    setUser({
-      ...user,
-      [name]: value,
+    setSignupUser({
+      ...signupUser,
+      user: {
+        ...signupUser.user,
+        [name]: value,
+      },
     });
   };
 
@@ -37,10 +52,56 @@ const CreateAccount = () => {
     e.preventDefault();
 
     if (!name || !email || !password) {
-      console.log("I canoot be empty");
+      setIsSuccess(true); // Display response
+      // Display response error if any input field is empty
+      handleResponseMsg(
+        setSignupUser,
+        signupUser,
+        "Field cannot be empty",
+        setIsSuccessBg,
+        styles.error__sign__response
+      );
     } else {
-      // fetchSignUpUser(user);
-      console.log(await fetchSignUpUser(user));
+      setIsSuccess(true); // Display response
+      handleIsLoading(setSignupUser, signupUser, true); // Display loading state
+
+      if (password.length < 6) {
+        // Display response error if password is less than 6 characters
+        handleResponseMsg(
+          setSignupUser,
+          signupUser,
+          "Password cannot be less than 6 characters",
+          setIsSuccessBg,
+          styles.error__sign__response
+        );
+        return;
+      }
+      // post request should be carried out
+      const data = await fetchSignUpUser(
+        signupUser.user,
+        setSignupUser,
+        signupUser
+      );
+
+      if (data?.status === 201) {
+        // Display response success if registration is successful
+        handleResponseMsg(
+          setSignupUser,
+          signupUser,
+          "Registration successful",
+          setIsSuccessBg,
+          styles.success__sign__response
+        );
+        return;
+      }
+      // Display response error if registration fails
+      handleResponseMsg(
+        setSignupUser,
+        signupUser,
+        "Email already exists",
+        setIsSuccessBg,
+        styles.error__sign__response
+      );
     }
   };
 
@@ -77,9 +138,19 @@ const CreateAccount = () => {
         value={password}
         handleChange={handleChange}
       />
+
+      <p
+        className={`${styles.hide__sign__response} ${isSuccessBg} ${
+          isSuccess ? styles.show__sign__response : styles.hide__sign__response
+        }`}
+      >
+        {isError}
+      </p>
+
       <Button
         btnContent="Sign Up"
         btnStyle={styles.signUpBtn}
+        disable={isLoading}
         handleRegClick={handleRegClick}
       />
 

@@ -6,7 +6,7 @@ import CreateAccount from "@/components/signup/create/create";
 import Logo from "@/components/general/logo/logo";
 
 export const metadata: Metadata = {
-  title: "signup",
+  title: "Sign Up",
 };
 
 const Signup = () => {
