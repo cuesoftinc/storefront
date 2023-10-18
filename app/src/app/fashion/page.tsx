@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: "Fashion",
 };
 
-const ElectronicsPage = () => {
+const FashionPage = () => {
   return (
     <>
       <ProductPath />
@@ -21,4 +21,4 @@ const ElectronicsPage = () => {
   );
 };
 
-export default ElectronicsPage;
+export default FashionPage;
