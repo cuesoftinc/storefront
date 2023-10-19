@@ -19,6 +19,10 @@ export default function Summer() {
               alt="Register Image"
               className={styles.summerimg}
             />
+             <div className={styles.toptext}> UP TO 80% OFF</div>
+            <a href="#" className={styles.toprighttext}>
+              <Summerarrow />
+            </a>
             <div className={styles.buttomtext}>
               <div className={styles.buttomheader}>
                 <h2>Kiddies Korean Summer Collection</h2>
@@ -27,13 +31,11 @@ export default function Summer() {
                 {" "}
                 Shop now <Shopnow />
               </Link>
+                </div>
+               
+                
             </div>
-            <div className={styles.toptext}> UP TO 80% OFF</div>
-            <a href="#" className={styles.toprighttext}>
-              <Summerarrow />
-            </a>
-          </div>
-          <div className={styles.summerimgcontainer2}>
+            <div className={styles.summerimgcontainer2}>
             <div className={styles.summerimg1}>
               <Image
                 src={swim}
@@ -52,7 +54,9 @@ export default function Summer() {
               className={styles.summerimgleft}
             />
           </div>
+           
         </div>
+         
       </div>
      
 

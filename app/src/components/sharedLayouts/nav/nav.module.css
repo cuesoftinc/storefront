@@ -65,3 +65,8 @@
 .nav__icon {
   /* color: var(--white); */
 }
+
+.add__active__page__border {
+  border-bottom: 3px solid var(--solidFadedBlue);
+  padding-bottom: 3px;
+}

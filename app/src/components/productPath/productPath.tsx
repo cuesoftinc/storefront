@@ -23,7 +23,7 @@ const ProductPath = () => {
   return (
     <div className={styles.product__path}>
       <p>
-        <Link href="/">Home</Link>/ <Link href="/products">Products</Link> /
+        <Link href="/">Home</Link> /{" "}
         <Link href="">{concatUpperWithOthers}</Link>
       </p>
     </div>

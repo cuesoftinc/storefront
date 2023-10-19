@@ -6,6 +6,7 @@
     align-items: center;
     padding: 20px;
     gap: 30px;
+    max-width: 1440px;
     /* align-items: center; */
 }
  /* Media query for tablets */
@@ -16,7 +17,4 @@
   }
  
   
-  /* Media query for medium phones */
-  @media (min-width: 330px) and (max-width: 765px) {
-   
-  }
+  
