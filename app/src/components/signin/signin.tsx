@@ -90,9 +90,9 @@ export default function Signinpage() {
                 <p className={styles.signintext}>Don't have an account ? <Link href="/signup" className={styles.signuplink}>Sign up</Link></p>
             </div>
            
-        </div>
-        
-      
+
+
+      </div>
     </section>
   );
 }
