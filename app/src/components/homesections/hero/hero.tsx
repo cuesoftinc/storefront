@@ -17,8 +17,8 @@ function Hero() {
                 </p>
               </div>
               <div>
-                <Link href="/products" className={styles.herobtn}>
-                  Shop now <span><Shopnow/></span>
+                <Link href="/signup" className={styles.herobtn}>
+                  Join us <span><Shopnow/></span>
                 </Link>
               </div>
 

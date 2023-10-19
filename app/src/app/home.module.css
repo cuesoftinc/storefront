@@ -12,9 +12,6 @@
  /* Media query for tablets */
  @media (min-width: 768px) and (max-width: 1024px) {
    .main{
-    justify-content: space-between;
+    /* justify-content: space-between; */
    }
   }
- 
-  
-  
