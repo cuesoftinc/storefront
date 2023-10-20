@@ -42,6 +42,7 @@ const Nav = () => {
         </div>
         <ul className={styles.first__nav__item}>
           <li
+            onClick={handleCloseNavClick}
             className={`${
               pathname === "/electronics"
                 ? styles.add__active__page__border
@@ -51,6 +52,7 @@ const Nav = () => {
             <Link href="electronics">Electronics</Link>
           </li>
           <li
+            onClick={handleCloseNavClick}
             className={`${
               pathname === "/fashion" ? styles.add__active__page__border : ""
             }`}
@@ -70,19 +72,19 @@ const Nav = () => {
               handleChange={handleProductSearch}
             />
           </li>
-          <li>
+          <li onClick={handleCloseNavClick}>
             <Link href="">
               <Image src={favIcon} alt="Fav" />
               <p>Favourite</p>
             </Link>
           </li>
-          <li>
+          <li onClick={handleCloseNavClick}>
             <Link href="">
               <Image src={cartIcon} alt="Cart" />
               <p>Cart</p>
             </Link>
           </li>
-          <li>
+          <li onClick={handleCloseNavClick}>
             <Link href="">
               <Image src={profileIcon} alt="profile" />
               <p>Profile</p>
