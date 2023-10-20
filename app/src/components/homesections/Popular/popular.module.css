@@ -4,6 +4,8 @@ flex-direction: column;
 align-items: flex-start;
 gap: 40px;
 max-width: 1312px ;
+margin-bottom: 40px;
+
 
 }
 .popularheadercontainer{
