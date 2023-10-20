@@ -50,6 +50,9 @@ const CreateAccount = () => {
 
   const handleRegClick = async (e: React.FormEvent<Element>) => {
     e.preventDefault();
+    // Remove response message when a user clicks the sign up btn
+    setIsSuccess(false);
+    setIsSuccessBg("");
 
     if (!name || !email || !password) {
       setIsSuccess(true); // Display response
@@ -82,13 +85,15 @@ const CreateAccount = () => {
         setSignupUser,
         signupUser
       );
+      console.log(data);
+      const serverResult = data.data.message;
 
       if (data?.status === 201) {
         // Display response success if registration is successful
         handleResponseMsg(
           setSignupUser,
           signupUser,
-          "Registration successful",
+          serverResult,
           setIsSuccessBg,
           styles.success__sign__response
         );
@@ -98,7 +103,7 @@ const CreateAccount = () => {
       handleResponseMsg(
         setSignupUser,
         signupUser,
-        "Email already exists",
+        serverResult,
         setIsSuccessBg,
         styles.error__sign__response
       );

@@ -15,13 +15,14 @@ export const fetchSignUpUser = async (
       user
     );
     console.log(data);
-    // Set the button loading state back to false when request is successful
+    // Set the button loading and disable state back to false when request is successful
     handleIsLoading(setState, signin, false);
 
     return data;
   } catch (error: any) {
     console.log(error);
-    // Set the button loading state back to false when request fails
+    // Set the button loading and disable state back to false when request fails
     handleIsLoading(setState, signin, false);
+    return error.response;
   }
 };
