@@ -27,7 +27,7 @@ export default function Summer() {
               <div className={styles.buttomheader}>
                 <h2>Kiddies Korean Summer Collection</h2>
               </div>
-              <Link href="products/fashion">
+              <Link href="fashion">
                 {" "}
                 Shop now <Shopnow />
               </Link>

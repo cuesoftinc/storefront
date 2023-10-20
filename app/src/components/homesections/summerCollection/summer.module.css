@@ -1,20 +1,23 @@
 .summercontainer{
-    display: flex;
-flex-direction: column;
-align-items: flex-start;
-gap: 40px;
-max-width: 1312px ;
-width: 100vw;
-height: fit-content;
-margin: 30px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0 10px;
+  max-width: 1312px;
+  justify-content: center;
+  gap: 46px;
+  padding: 0 20px !important;
+  
 /* background-color: #2D2D2D; */
 
 }
 .summerheadercontainer{
-    display: flex;
-width: 100%;
-justify-content: space-between;
-align-items: center;
+  display: flex;
+  width: 100%;
+  
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
 }
 .summerheader{
     color: var(--foundation-black-black-600, #2D2D2D);
@@ -39,24 +42,21 @@ border-radius: 30px;
 color: var(--solidFadedBlue);
 }
 .summerimgcontainer{
-   width: 100%;
-   max-height: 500px;
-   /* display: flex;
-   gap: 26px;
-   justify-content: center; */
-
-   display: grid;
-   
-  grid-template-rows: repeat(auto-fit, minmax(100%, 1fr));
-  grid-gap: 1rem;
-   /* justify-content: center; */
-   /* background-color: #2D2D2D; */
+  width: 100% !important;
+  max-height: 550px;
+  /* height: 100svh ; */
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  justify-content: center;  
 
 }
 .summerimgcontainer2{
-    display: flex;
-    flex-direction: column;
-    gap: 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100% !important;
+  height: auto;
 
 }
 .summerimg{
@@ -68,10 +68,12 @@ color: var(--solidFadedBlue);
    
 }
 .summerimgleft{
-    width: 596px;
 height: 230px;
 flex-shrink: 0;
 border-radius: 10px;
+
+width: 100%;
+
 }
 .summerimg1{
     position: relative;

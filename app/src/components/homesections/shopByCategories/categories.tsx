@@ -25,7 +25,7 @@ export default function Categories() {
                     <h2>Free Delivery on all devices ordered until November 30</h2>
                     <sub>All the sleekest devices for your tech activites</sub>
                     </div>
-                    <Link href="products/electronics"> Shop now  <Shopnow/></Link>
+                    <Link href="electronics"> Shop now  <Shopnow/></Link>
                 </div>
                 <div className={styles.toptext}>30% discount</div>
                 

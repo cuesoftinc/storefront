@@ -4,15 +4,17 @@ import { bag } from '@/assets/images';
 import styles from './description.module.css'
 export default function Description() {
   return (
+    <section className={styles.section}>
+
     <div className={styles.descriptioncontainer}>
       <Suspense fallback={<p>Loading...</p>}>
       <div className={styles.descriptionimg} >
-      <Image className={styles.description_img} src={bag} alt="bag"  />
+      <Image className={styles.description_img} src={bag} alt="bag" width={450} height={535} />
       <div className={styles.descriptionimg_other}>
-      <Image className={styles.description_img1} src={bag} alt="bag" width={100} height={100} />
-      <Image className={styles.description_img1} src={bag} alt="bag" width={100} height={100} />
-      <Image className={styles.description_img1} src={bag} alt="bag" width={100} height={100} />
-      <Image className={styles.description_img1} src={bag} alt="bag" width={100} height={100} />
+      <Image className={styles.description_img1} src={bag} alt="bag" width={105} height={100} />
+      <Image className={styles.description_img1} src={bag} alt="bag" width={105} height={100} />
+      <Image className={styles.description_img1} src={bag} alt="bag" width={105} height={100} />
+      <Image className={styles.description_img1} src={bag} alt="bag" width={105} height={100} />
       
 
       </div>
@@ -45,32 +47,34 @@ export default function Description() {
           </div>
         </div>
         <div className={styles.descriptionamountdiv}>
-          <p>quality</p>
+          <p><strong>quality</strong></p>
           <div style={{display:"flex",alignItems:"flex-start",gap:"16px"}}>
             <div className={styles.descriptionbuttondiv}>
-              <button>+</button>
-              <span>1</span>
               <button>-</button>
+              <span>1</span>
+              <button>+</button>
             </div>
-            <p >Only 12 Items Left! Don’t miss it</p>
+            <p style={{width:"150px",display:"flex",alignItems:"center",fontSize: "14px"}} >Only 12 Items Left! Don’t miss it</p>
           </div>
         </div>
-        <div>
-          <div>
+        <div >
+          <div style={{display:"flex",justifyContent:"space-between",width:"404px"}} className={styles.buy_addtocart_btn}>
             <button>Buy now</button>
             <button>Add to cart</button>
           </div>
         </div>
-        <div>
+        <div className={styles.Deliverycontainer} style={{display:"flex",gap:"40px"}}>
           <div>img</div>
-          <div>
+          <div style={{width:"404px"}}>
             <p><strong>Free Delivery</strong></p>
-            <p>Enter your Postal Code for Delivery Availability</p>
+            <p className={styles.Deliverytext}>Enter your Postal Code for Delivery Availability</p>
           </div>
         </div>
       </div>
       </Suspense>
 
     </div>
+    </section>
+
   )
 }
