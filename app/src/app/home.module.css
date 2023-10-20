@@ -1,17 +1,23 @@
-.main{
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    gap: 30px;
-    max-width: 1440px;
-    /* align-items: center; */
+.main {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  gap: 30px;
+  max-width: 1440px;
+  /* align-items: center; */
 }
- /* Media query for tablets */
- @media (min-width: 768px) and (max-width: 1024px) {
-   .main{
+/* Media query for tablets */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .main {
     justify-content: space-between;
-   }
   }
+}
+
+@media screen and (max-width: 912px) {
+  .main {
+    margin-top: 6rem;
+  }
+}
