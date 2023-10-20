@@ -6,6 +6,7 @@ import (
 	"github.com/CuesoftCloud/storefront/utils"
 	"github.com/gin-gonic/gin"
 	"golang.org/x/crypto/bcrypt"
+	"log"
 	"net/http"
 	"strconv"
 )
@@ -17,6 +18,18 @@ type UserController interface {
 	UpdateUser(*gin.Context)
 	DeleteUser(*gin.Context)
 	ControllerLogin(*gin.Context)
+}
+
+type UserResponse struct {
+	Success bool        `json:"success"`
+	Message string      `json:"message"`
+	Data    interface{} `json:"data,omitempty"`
+}
+
+type LoginResponse struct {
+	Success bool   `json:"success"`
+	Message string `json:"message"`
+	Token   string `json:"token,omitempty"`
 }
 
 type userController struct {
@@ -47,18 +60,41 @@ func (u *userController) ControllerRegister(c *gin.Context) {
 	var user models.User
 
 	if err := c.ShouldBindJSON(&user); err != nil {
-		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		log.Println(err)
+		c.JSON(http.StatusBadRequest, UserResponse{
+			Success: false,
+			Message: "Invalid request body",
+		})
+		return
+	}
+
+	// Check if email already exists
+	_, err := u.repo.GetUserByEmail(user.Email)
+	if err == nil {
+		log.Println(err)
+		c.JSON(http.StatusBadRequest, UserResponse{
+			Success: false,
+			Message: "Email already exists",
+		})
 		return
 	}
 
 	hashPassword(&user.Password)
-	user, err := u.repo.AddUser(user)
+	user, err = u.repo.AddUser(user)
 	if err != nil {
-		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
+		log.Println(err)
+		c.JSON(http.StatusInternalServerError, UserResponse{
+			Success: false,
+			Message: "Error creating user",
+		})
 		return
 	}
 	user.Password = ""
-	c.JSON(http.StatusCreated, gin.H{"data": user})
+	c.JSON(http.StatusCreated, UserResponse{
+		Success: true,
+		Message: "User created successfully",
+		Data:    user,
+	})
 }
 
 func (u *userController) GetUser(c *gin.Context) {
@@ -66,40 +102,64 @@ func (u *userController) GetUser(c *gin.Context) {
 	intID, err := strconv.Atoi(id)
 
 	if err != nil {
-		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		log.Println(err)
+		c.JSON(http.StatusBadRequest, UserResponse{
+			Success: false,
+			Message: "Invalid user ID",
+		})
 		return
 	}
 
 	user, err := u.repo.GetUser(intID)
 
 	if err != nil {
-		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
+		log.Println(err)
+		c.JSON(http.StatusInternalServerError, UserResponse{
+			Success: false,
+			Message: "Error retrieving user",
+		})
 		return
 	}
 
 	user.Password = ""
-	c.JSON(http.StatusOK, gin.H{"data": user})
+	c.JSON(http.StatusOK, UserResponse{
+		Success: true,
+		Message: "User retrieved successfully",
+		Data:    user,
+	})
 }
 
 func (u *userController) GetUsers(c *gin.Context) {
 	users, err := u.repo.GetUsers()
 
 	if err != nil {
-		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
+		log.Println(err)
+		c.JSON(http.StatusInternalServerError, UserResponse{
+			Success: false,
+			Message: "Error retrieving all users",
+		})
 		return
 	}
 
 	for i := range users {
 		users[i].Password = ""
 	}
-	c.JSON(http.StatusOK, gin.H{"data": users})
+	c.JSON(http.StatusOK, UserResponse{
+		Success: true,
+		Message: "Users retrieved successfully",
+		Data:    users,
+	})
 }
 
 func (u *userController) UpdateUser(c *gin.Context) {
 	var user models.User
 
 	if err := c.ShouldBindJSON(&user); err != nil {
-		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		log.Println(err)
+		c.JSON(http.StatusBadRequest, UserResponse{
+			Success: false,
+			Message: "Invalid request body",
+		})
 		return
 	}
 
@@ -107,7 +167,11 @@ func (u *userController) UpdateUser(c *gin.Context) {
 	intID, err := strconv.Atoi(id)
 
 	if err != nil {
-		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		log.Println(err)
+		c.JSON(http.StatusBadRequest, UserResponse{
+			Success: false,
+			Message: "Invalid user ID",
+		})
 		return
 	}
 
@@ -115,19 +179,31 @@ func (u *userController) UpdateUser(c *gin.Context) {
 	user, err = u.repo.UpdateUser(user)
 
 	if err != nil {
-		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
+		log.Println(err)
+		c.JSON(http.StatusInternalServerError, UserResponse{
+			Success: false,
+			Message: "Error updating user",
+		})
 		return
 	}
 
 	user.Password = ""
-	c.JSON(http.StatusOK, gin.H{"data": user})
+	c.JSON(http.StatusOK, UserResponse{
+		Success: true,
+		Message: "User updated successfully",
+		Data:    user,
+	})
 }
 
 func (u *userController) DeleteUser(c *gin.Context) {
 	var user models.User
 
 	if err := c.ShouldBindJSON(&user); err != nil {
-		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		log.Println(err)
+		c.JSON(http.StatusBadRequest, UserResponse{
+			Success: false,
+			Message: "Invalid request body",
+		})
 		return
 	}
 
@@ -135,7 +211,11 @@ func (u *userController) DeleteUser(c *gin.Context) {
 	intID, err := strconv.Atoi(id)
 
 	if err != nil {
-		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		log.Println(err)
+		c.JSON(http.StatusBadRequest, UserResponse{
+			Success: false,
+			Message: "Invalid user ID",
+		})
 		return
 	}
 
@@ -143,12 +223,20 @@ func (u *userController) DeleteUser(c *gin.Context) {
 	user, err = u.repo.DeleteUser(user)
 
 	if err != nil {
-		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
+		log.Println(err)
+		c.JSON(http.StatusInternalServerError, UserResponse{
+			Success: false,
+			Message: "Error deleting user",
+		})
 		return
 	}
 
 	user.Password = ""
-	c.JSON(http.StatusOK, gin.H{"data": user})
+	c.JSON(http.StatusOK, UserResponse{
+		Success: true,
+		Message: "User deleted successfully",
+		Data:    user,
+	})
 }
 
 func (u *userController) ControllerLogin(c *gin.Context) {
@@ -156,16 +244,28 @@ func (u *userController) ControllerLogin(c *gin.Context) {
 	var dbUser models.User
 
 	if err := c.ShouldBindJSON(&user); err != nil {
-		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		log.Println(err)
+		c.JSON(http.StatusBadRequest, LoginResponse{
+			Success: false,
+			Message: "Invalid request body",
+		})
 		return
 	}
 	dbUser, err := u.repo.GetUserByEmail(user.Email)
 	if err != nil {
-		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
+		log.Println(err)
+		c.JSON(http.StatusInternalServerError, LoginResponse{
+			Success: false,
+			Message: "Error retrieving user",
+		})
+
 		return
 	}
 	if !comparePassword(dbUser.Password, user.Password) {
-		c.JSON(http.StatusUnauthorized, gin.H{"error": "Invalid Email or Password"})
+		c.JSON(http.StatusUnauthorized, LoginResponse{
+			Success: false,
+			Message: "Invalid login credentials",
+		})
 		return
 	}
 
@@ -173,10 +273,17 @@ func (u *userController) ControllerLogin(c *gin.Context) {
 
 	if isTrue {
 		token := utils.GenerateToken(dbUser.ID)
-		c.JSON(http.StatusOK, gin.H{"token": token})
+		c.JSON(http.StatusOK, LoginResponse{
+			Success: true,
+			Message: "Login successful",
+			Token:   token,
+		})
 		return
 	} else {
-		c.JSON(http.StatusUnauthorized, gin.H{"error": "Invalid Email or Password"})
+		c.JSON(http.StatusUnauthorized, LoginResponse{
+			Success: false,
+			Message: "Invalid Email or Password",
+		})
 		return
 	}
 }
