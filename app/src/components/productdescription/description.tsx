@@ -2,6 +2,7 @@ import Image from "next/image";
 import React, { Suspense } from "react";
 import { bag } from '@/assets/images';
 import styles from './description.module.css'
+import { Delivery, Ratesvg } from "@/assets/icons";
 export default function Description() {
   return (
     <section className={styles.section}>
@@ -25,7 +26,13 @@ export default function Description() {
           <h1>SmartSernse Pro 4K Ultra Hd smart TV</h1>
           <p>The SmartSense Pro 4K Ultra HD Smart TV is a cutting edge addition to any luxury 
               space. With its expansive 55 inch display, you’ll be immersed in stunning visuals</p>
-          <sub style={{display:"flex", width:"170px",alignItems:"flex-start",gap:"16px"}}> <div>rste</div><p>(17)</p> </sub>
+          <sub style={{display:"flex", width:"170px",alignItems:"flex-start",gap:"16px"}}> 
+          <div style={{display:"flex",alignItems:"center"}}>
+            <Ratesvg/>
+            <Ratesvg/>
+            <Ratesvg/>
+            <Ratesvg/>
+          </div><p>(17)</p> </sub>
         </div>
         <div className={styles.descriptionprize}>
           <p><strong>$ 190.20 or $129.99/month</strong></p>
@@ -64,7 +71,7 @@ export default function Description() {
           </div>
         </div>
         <div className={styles.Deliverycontainer} style={{display:"flex",gap:"40px"}}>
-          <div>img</div>
+          <div><Delivery/></div>
           <div style={{width:"404px"}}>
             <p><strong>Free Delivery</strong></p>
             <p className={styles.Deliverytext}>Enter your Postal Code for Delivery Availability</p>
