@@ -4,7 +4,7 @@ import React from "react";
 const SingleProductDesc = () => {
   return (
     <main>
-      <h1>Single Electronics Product Description</h1>
+      {/* <h1>Single Electronics Product Description</h1> */}
       <Description/>
     </main>
   );

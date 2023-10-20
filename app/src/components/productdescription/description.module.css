@@ -183,10 +183,14 @@ background: var(--grey-50, #F9FAFB);
 .descriptionbuttondiv > button :active{
     color: #3498DB !important;
 }
+.descriptionbuttondiv > button :hover{
+    color: #3498DB !important;
+}
 .descriptionbuttondiv > button{
 border: none;
 width: 100%;
 background-color: transparent;
+font-size: large;
 }
 .descriptionbuttondiv > span{
     color: #3498DB;
