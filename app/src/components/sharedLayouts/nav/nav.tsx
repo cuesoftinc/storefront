@@ -1,12 +1,13 @@
 import React from "react";
 import Link from "next/link";
 import styles from "./nav.module.css";
+import stylesTwo from "./navTwo.module.css";
 import Logo from "../../general/logo/logo";
-import { FaSearch, FaHeart, FaShoppingCart, FaUser } from "react-icons/fa";
 import InputBox from "@/components/general/input/input";
 import { cartIcon, favIcon, profileIcon, searchIcon } from "@/assets/icons";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import { CloseNav, OpenNav } from "@/assets/icons/navBarIcons";
 
 const Nav = () => {
   const pathname = usePathname();
@@ -18,7 +19,13 @@ const Nav = () => {
   return (
     <header className={styles.header}>
       <Logo />
+      <div className={styles.open__nav}>
+        <OpenNav />
+      </div>
       <nav className={styles.nav}>
+        <div className={styles.close__nav}>
+          <CloseNav />
+        </div>
         <ul className={styles.first__nav__item}>
           <li
             className={`${
