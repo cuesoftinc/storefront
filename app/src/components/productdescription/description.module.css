@@ -238,7 +238,7 @@ gap: 10px;
 }
 
 
-@media (min-width: 330px) and (max-width: 1030px) {
+@media (min-width: 280px) and (max-width: 1030px) {
     .descriptioncontainer{
         flex-direction: column;
         width: 100vw ;
