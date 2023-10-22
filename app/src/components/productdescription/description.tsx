@@ -10,7 +10,7 @@ export default function Description() {
     <div className={styles.descriptioncontainer}>
       <Suspense fallback={<p>Loading...</p>}>
       <div className={styles.descriptionimg} >
-      <Image className={styles.description_img} src={bag} alt="bag" width={450} height={535} />
+      <Image className={styles.description_img} src={bag} alt="bag"  />
       <div className={styles.descriptionimg_other}>
       <Image className={styles.description_img1} src={bag} alt="bag" width={105} height={100} />
       <Image className={styles.description_img1} src={bag} alt="bag" width={105} height={100} />
