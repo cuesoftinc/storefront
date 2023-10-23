@@ -1,4 +1,5 @@
 import { SignupUserProp } from "@/types";
+import { SigninUserProp } from "@/types";
 import { Dispatch, SetStateAction } from "react";
 
 export const handleResponseMsg = (
@@ -11,6 +12,19 @@ export const handleResponseMsg = (
   setSignupUser({
     ...signupUser,
     isError: isError,
+  });
+  setIsSuccessBg(styles);
+};
+export const handleResponsesigninMsg = (
+  setSigninUser: Dispatch<SetStateAction<SigninUserProp>>,
+  signinUser: SigninUserProp,
+  error: string,
+  setIsSuccessBg: Dispatch<SetStateAction<string>>,
+  styles: string
+) => {
+  setSigninUser({
+    ...signinUser,
+    error: error,
   });
   setIsSuccessBg(styles);
 };
