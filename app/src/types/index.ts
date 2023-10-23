@@ -18,6 +18,14 @@ export interface SignupContextProps {
   isSuccessBg: string;
   setIsSuccessBg: Dispatch<SetStateAction<string>>;
 }
+export interface SigninContextProps {
+  signinUser: SigninUserProp;
+  setSigninUser: Dispatch<SetStateAction<SigninUserProp>>;
+  isSuccess: boolean;
+  setIsSuccess: Dispatch<SetStateAction<boolean>>;
+  isSuccessBg: string;
+  setIsSuccessBg: Dispatch<SetStateAction<string>>;
+}
 
 /* ==================== */
 // Other Types
@@ -29,6 +37,17 @@ export interface SignupUserProp {
     email: string;
     password: string;
   };
+}
+export interface SigninUserProp {
+  isLoading: boolean;
+  error: string;
+  // email: string;
+  // password: string;
+  formData:{
+    email: string;
+    password: string;
+
+  }
 }
 
 export interface InputProps {
@@ -45,4 +64,8 @@ export interface BtnProps {
   btnStyle: string;
   disable: boolean;
   handleRegClick: (e: React.FormEvent) => void;
+}
+export interface SigninModule {
+  error__sign__response: string;
+  styles:string;
 }

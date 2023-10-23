@@ -1,3 +1,47 @@
+.show__sign__response {
+    /* transform: scale(1); */
+    /* opacity: 1; */
+    margin-block: 5px;
+    color: black;
+    /* padding-block: 10px; */
+    font-weight: 600;
+    padding: 15px;
+    width: 100% !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* transform: scale(0); */
+    /* opacity: 0; */
+    background-color: #aa0707;
+
+    transition: ease 1s all;
+  }
+  .error__sign__response {
+    background-color: #aa0707;
+    /* transform: scale(1); */
+    /* opacity: 1; */
+  }
+  .success__sign__response {
+    background-color: #056f05;
+    /* transform: scale(1); */
+    /* opacity: 1; */
+  }
+  .hide__sign__response {
+    margin-block: 5px;
+    color: #fff;
+    padding-block: 10px;
+    font-weight: 600;
+    /* transform: scale(0); */
+    opacity: 0;
+    transition: ease 1s all;
+  }
+
+
+
+
+
+
+
 .signinsection{
   /* width: 100%; */
   overflow: hidden;
