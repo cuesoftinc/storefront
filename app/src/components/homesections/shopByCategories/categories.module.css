@@ -1,12 +1,13 @@
 .categoriescontainer{
     display: flex;
 flex-direction: column;
-align-items: flex-start;
+align-items: center;
 padding: 0 10px;
 max-width: 1312px;
-justify-content: center;
+justify-content: flex-start;
 gap: 46px;
 padding: 0 20px !important;
+
 /* margin-bottom: 40px; */
 
 }
@@ -43,6 +44,7 @@ color: var(--solidFadedBlue);
 .categoriesimgcontainer{
    width: 100% !important;
    max-height: 550px;
+
    /* height: 100svh ; */
    display: flex;
    gap: 30px;
@@ -52,6 +54,7 @@ color: var(--solidFadedBlue);
 }
 .categoriesimgcontainer2{
     display: flex;
+    padding: 10px;
     flex-direction: column;
     gap: 20px;
     width: 100% !important;
@@ -315,9 +318,9 @@ height: 24px;
 @media (min-width: 1024px) {
   .categoriescontainer{
     width: 100vw !important;
-    height: 100svh !important;
+    /* height: 100svh !important; */
     padding: 0 10px;
-    margin-bottom: 100px ;
+    margin-bottom: 150px ;
   }
   .categoriesheadercontainer{
     width: 100%;
