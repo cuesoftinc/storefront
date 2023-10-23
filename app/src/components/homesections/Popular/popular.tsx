@@ -3,6 +3,7 @@ import styles from './popular.module.css'
 import { Tv } from "@/assets/images";
 import Image from "next/image";
 import { Cartsvg, Ratesvg } from '@/assets/icons';
+import Link from 'next/link';
 
 export default function Popular() {
   return (
@@ -16,7 +17,7 @@ export default function Popular() {
                 <a href="#" className={styles.popularlink}> sort by <span>v</span></a>
          </div>
          <div className={styles.popularimgcontainer}>
-                <div className={styles.productcol} >
+                <Link href="/electronics/electronicsId" className={styles.productcol} >
                 <Image src={Tv} alt="popular  Image"className={styles.popularimg} />
                     <div className={styles.imgtextcontainer}>
                         <div className={styles.imgtext}>
@@ -43,7 +44,7 @@ export default function Popular() {
 
                     </div>
 
-                </div>
+                </Link>
                 <div className={styles.productcol}>
                 <Image src={Tv} alt="popular  Image"className={styles.popularimg} />
                     <div className={styles.imgtextcontainer}>
