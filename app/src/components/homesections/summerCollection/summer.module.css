@@ -1,17 +1,23 @@
 .summercontainer{
-    display: flex;
-flex-direction: column;
-align-items: flex-start;
-gap: 40px;
-max-width: 1312px ;
-margin: 50px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0 10px;
+  max-width: 1312px;
+  justify-content: center;
+  gap: 46px;
+  padding: 0 20px !important;
+  
+/* background-color: #2D2D2D; */
 
 }
 .summerheadercontainer{
-    display: flex;
-width: 100%;
-justify-content: space-between;
-align-items: center;
+  display: flex;
+  width: 100%;
+  
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
 }
 .summerheader{
     color: var(--foundation-black-black-600, #2D2D2D);
@@ -36,18 +42,21 @@ border-radius: 30px;
 color: var(--solidFadedBlue);
 }
 .summerimgcontainer{
-   width: 100%;
-   max-height: 500px;
-   display: flex;
-   gap: 26px;
-   justify-content: center;
-   /* background-color: #2D2D2D; */
+  width: 100% !important;
+  max-height: 550px;
+  /* height: 100svh ; */
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  justify-content: center;  
 
 }
 .summerimgcontainer2{
-    display: flex;
-    flex-direction: column;
-    gap: 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100% !important;
+  height: auto;
 
 }
 .summerimg{
@@ -59,10 +68,12 @@ color: var(--solidFadedBlue);
    
 }
 .summerimgleft{
-    width: 596px;
 height: 230px;
 flex-shrink: 0;
 border-radius: 10px;
+
+width: 100%;
+
 }
 .summerimg1{
     position: relative;
@@ -217,6 +228,8 @@ line-height: 145%; /* 20.3px */
     /* flex-direction: column; */
     flex-wrap: wrap;
     width: 100%;
+    height: 100svh !important;
+
   }
   .summerimg1{
     width: 100%;
@@ -297,6 +310,8 @@ height: 24px;
     gap: 20px;
     /* flex-wrap: wrap; */
     width: 97vw;
+    height: 100svh !important;
+
   }
   .containerimg{
     width: 100%;
@@ -338,6 +353,8 @@ height: 24px;
     display: flex;
     flex-wrap: wrap;
     width: 100%;
+    height: 100svh !important;
+
   }
   .containerimg{
     width: 100%;
@@ -419,6 +436,8 @@ height: 24px;
           /* max-height: 500px; */
           display: flex;
           align-items: center;
+          height: 100svh !important;
+
           gap: 30px;
           justify-content: center;
           flex-wrap: wrap;

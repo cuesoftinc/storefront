@@ -28,55 +28,97 @@
   justify-content: space-between;
   align-items: center;
 }
-.nav ul:first-child {
+.nav .first__nav__item {
   width: 25%;
 }
-.nav ul:last-child {
+.nav .second__nav__item {
   width: 65%;
 }
 @media screen and (max-width: 1024px) {
-  .nav ul:first-child {
-    width: 25%;
-  }
-  .nav ul:last-child {
+  .nav .second__nav__item {
     width: 70%;
   }
 }
 @media screen and (max-width: 912px) {
   .header {
     /* border: 2px solid red; */
-    /* max-width: 1285px;
-  margin: var(--small) auto;
-  padding-inline: var(--small);
-  display: flex;
-  justify-content: space-between;
-  align-items: center; */
+    background-color: rgba(255, 255, 255, 0.7);
+    position: relative;
+    position: fixed;
+    top: -16px;
+    width: 100%;
+    height: 60px;
+    z-index: 9;
+  }
+
+  .nav__logo {
+    position: absolute;
+    top: 20px;
+  }
+
+  .open__nav,
+  .close__nav {
+    display: block;
+    right: 20px;
+    width: 40px;
+    cursor: pointer;
+  }
+
+  .open__nav {
+    position: absolute;
+    top: 10px;
+  }
+
+  .close__nav {
+    position: absolute;
+    top: 10px;
   }
 
   .nav {
     /* border: 2px solid gray; */
+    position: relative;
     width: 300px;
     flex-direction: column;
     justify-content: flex-start;
     background-color: var(--solidFadedBlue);
     position: fixed;
     top: 0px;
-    right: 0px;
+    right: -300px;
     min-height: 100vh;
+    transition: ease 0.5s all;
     z-index: 99;
+  }
+  .open__nav__control {
+    right: 0px;
   }
 
   .nav ul {
-    border: 2px solid red;
-    width: 100%;
+    /* border: 2px solid red; */
+    /* width: fit-content; */
     flex-direction: column;
   }
-  .nav ul:first-child {
-    margin-top: 6rem;
+  .nav .first__nav__item {
+    margin-top: 5rem;
     /* width: 25%; */
   }
-  .nav ul:last-child {
+  .nav .second__nav__item {
+    /* margin-top: 20px; */
     /* width: 65%; */
+  }
+
+  .first__nav__item li {
+    margin-top: 20px;
+    color: #fff;
+  }
+  .first__nav__item li a {
+    color: #fff;
+  }
+
+  .second__nav__item li {
+    margin-top: 20px;
+  }
+  .second__nav__item li a {
+    color: #fff;
   }
 }
 
