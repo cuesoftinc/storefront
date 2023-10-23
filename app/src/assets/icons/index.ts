@@ -13,6 +13,7 @@ import searchIcon from "./search.png";
 import favIcon from "./fav.png";
 import cartIcon from "./cart.png";
 import Summerarrow from "./summerarrow";
+import Delivery from "./delivery";
 
 export {
   facebook,
@@ -30,4 +31,5 @@ export {
   Servicethree,
   Servicefour,
   Ratesvg,
+  Delivery,
 };
