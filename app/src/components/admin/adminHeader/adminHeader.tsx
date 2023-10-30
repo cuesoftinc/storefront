@@ -15,7 +15,7 @@ const AdminHeader = () => {
   };
 
   return (
-    <div>
+    <div className={styles.header__elements}>
       <Logo uniqueStyle={styles.admin__logo} />
       <InputBox
         type="text"
@@ -24,10 +24,11 @@ const AdminHeader = () => {
         value=""
         handleChange={handleChange}
         icons={searchIcon.src}
+        inputStyle={styles.admin__nav__input}
       />
       <div className={styles.notification}>
-        <Image src={headerNotification} alt="notificatio" />
-        <Image src={headerProfileImg} alt="profile" />
+        <Image src={headerNotification} alt="Notification" />
+        <Image src={headerProfileImg} alt="Profile" />
       </div>
     </div>
   );

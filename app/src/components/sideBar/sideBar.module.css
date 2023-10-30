@@ -3,6 +3,10 @@
   width: 300px;
 }
 
+.side__bar__input {
+  margin-top: 2.5vh;
+}
+
 .side__bar__nav__items {
   margin-top: 20px;
 }

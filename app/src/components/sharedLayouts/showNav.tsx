@@ -10,7 +10,9 @@ const ShowNav = () => {
   return (
     <>
       {/* Conditionally render Nav */}
-      {pathname !== "/signup" && pathname !== "/signin" && <Nav />}{" "}
+      {pathname !== "/signup" &&
+        pathname !== "/signin" &&
+        !pathname.includes("admin") && <Nav />}
     </>
   );
   ``;

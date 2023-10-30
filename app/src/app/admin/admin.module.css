@@ -1,0 +1,24 @@
+.admin__header {
+  /* border: 2px solid red; */
+  max-width: 1440px;
+  margin-inline: auto;
+  padding: 20px;
+}
+
+.admin__page {
+  display: flex;
+  max-width: 1440px;
+  margin-inline: auto;
+  padding: 20px;
+}
+
+.children__styles {
+  /* margin-top: 5rem; */
+  background-color: #f9fafb;
+}
+
+.admin__logo {
+  /* width: 100%;
+  position: fixed;
+  top: 20px; */
+}

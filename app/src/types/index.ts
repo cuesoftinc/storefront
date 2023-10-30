@@ -1,15 +1,5 @@
 import { ChangeEvent, Dispatch, SetStateAction } from "react";
 
-// Context Types
-// export interface HomeContextProps {
-//   homeState: number;
-//   setHomeState: Dispatch<SetStateAction<number>>;
-// }
-
-// export interface CartContextProps {
-//   cartState: UserProps[];
-//   setCartState: Dispatch<SetStateAction<UserProps[]>>;
-// }
 export interface SignupContextProps {
   signupUser: SignupUserProp;
   setSignupUser: Dispatch<SetStateAction<SignupUserProp>>;
@@ -43,20 +33,20 @@ export interface SigninUserProp {
   error: string;
   // email: string;
   // password: string;
-  formData:{
+  formData: {
     email: string;
     password: string;
-
-  }
+  };
 }
 
 export interface InputProps {
   type: string;
   name: string;
   holder: string;
-  icons: string;
+  icons?: string;
   value: string;
   handleChange: (e: ChangeEvent<HTMLInputElement>) => void;
+  inputStyle?: string;
 }
 
 export interface BtnProps {
@@ -67,5 +57,5 @@ export interface BtnProps {
 }
 export interface SigninModule {
   error__sign__response: string;
-  styles:string;
+  styles: string;
 }

@@ -1,2 +1,19 @@
 .add__new__items {
 }
+
+.items__input {
+  margin-top: 20px;
+}
+
+.items__input input {
+  background-color: #fff;
+  border: 1px solid #000;
+}
+
+.input__box input:focus {
+  outline: 2px solid #000;
+}
+
+.items__input img {
+  display: none;
+}
