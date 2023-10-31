@@ -1,5 +1,5 @@
 import React from "react";
-import ProductAdminComp from "@/components/admin/productsAdmin/product.adminrafce";
+import ProductAdminComp from "@/components/productsAdmin/product.adminrafce";
 
 const ProductAdmin = () => {
   return (

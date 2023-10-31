@@ -9,14 +9,14 @@ import { headerNotification } from "@/assets/iconsrafce";
 import { headerProfileImg } from "@/assets/imagesrafce";
 import Logo from "@/components/general/logo/logorafce";
 
-console.log(searchIcon);
+// console.log(searchIcon);
 
 const AdminHeader = () => {
   const handleChange = () => {
     //
   };
 
-  console.log(searchIcon);
+  // console.log(searchIcon);
 
   return (
     <div className={styles.header__elements}>
