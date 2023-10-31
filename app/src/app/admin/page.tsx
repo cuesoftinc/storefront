@@ -4,7 +4,7 @@ import DashboardComp from "@/components/admin/dashboard/dashboard";
 const Dashboard = () => {
   return (
     <main>
-      <DashboardComp/>
+      <DashboardComp />
     </main>
   );
 };
