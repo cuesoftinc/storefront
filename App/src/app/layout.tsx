@@ -1,9 +1,9 @@
 import React from "react";
 import "../styles/globals.css";
 import type { Metadata } from "next";
-import Footer from "../components/sharedLayouts/footer/footer";
 import { ShowNav } from "@/components/sharedLayouts";
 import { AuthProvider } from "@/context/userContext";
+import ShowFooter from "@/components/sharedLayouts/showFooter";
 
 export const metadata: Metadata = {
   title: "Home",
@@ -21,7 +21,7 @@ export default function RootLayout({
         <AuthProvider>
           <ShowNav />
           {children}
-          <Footer />
+          <ShowFooter />
         </AuthProvider>
       </body>
     </html>
