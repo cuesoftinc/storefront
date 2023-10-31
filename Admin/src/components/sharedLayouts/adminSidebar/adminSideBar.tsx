@@ -1,21 +1,14 @@
 "use client";
 
 import React from "react";
-import styles from "./shared.module.css";
+import styles from "./sideBar.module.css";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useRouter } from "next/navigation";
-import { useSearchParams } from "next/navigation";
-import { adminSideBar } from "@/utils/data";
+import { adminSideBar } from "@/data/datarafce";
 
 const SharedAdminSideBar = () => {
   const pathname = usePathname();
-  const router = useRouter();
-
-  const searchParam = useSearchParams();
-
-  // console.log(router.push);
 
   return (
     <section className={styles.admin__side__bar}>
@@ -25,11 +18,9 @@ const SharedAdminSideBar = () => {
             return (
               <li key={each.id}>
                 <Link
-                  href={`/admin/${each.path}`}
+                  href={`${each.path}`}
                   className={
-                    pathname === `/admin/${each.path}`
-                      ? `${styles.active__page}`
-                      : ""
+                    pathname === `${each.path}` ? `${styles.active__page}` : ""
                   }
                 >
                   <Image src={each.icon} alt={`${each.navItem}`} />
@@ -46,11 +37,9 @@ const SharedAdminSideBar = () => {
             return (
               <li key={each.id}>
                 <Link
-                  href={`/admin/${each.path}`}
+                  href={`/${each.path}`}
                   className={
-                    pathname === `/admin/${each.path}`
-                      ? `${styles.active__page}`
-                      : ""
+                    pathname === `/${each.path}` ? `${styles.active__page}` : ""
                   }
                 >
                   <Image src={each.icon} alt={`${each.navItem}`} />

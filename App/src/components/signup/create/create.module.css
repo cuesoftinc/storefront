@@ -40,6 +40,10 @@
   cursor: pointer;
 }
 
+.input__style {
+  margin-top: 10px;
+}
+
 .hide__sign__response {
   margin-block: 5px;
   color: #fff;

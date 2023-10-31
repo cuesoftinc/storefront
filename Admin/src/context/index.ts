@@ -1,6 +1,4 @@
-import { HomeProvider } from "./homeContext";
-import { CartProvider } from "./cartContext";
-import { useHomeContext } from "./homeContext";
-import { useCartContext } from "./cartContext";
+import { AdminProvider } from "./adminContext";
+import { useAdminContext } from "./adminContext";
 
-export { HomeProvider, CartProvider, useCartContext, useHomeContext };
+export { AdminProvider, useAdminContext };

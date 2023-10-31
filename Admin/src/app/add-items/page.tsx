@@ -2,7 +2,7 @@
 
 import React from "react";
 import styles from "./add-item.module.css";
-import InputBox from "@/components/general/input/input";
+import InputBox from "@/components/general/input/inputrafce";
 
 const itemsData = [
   {

@@ -1,10 +1,10 @@
 import React from "react";
-import ProductAdminComp from "@/components/admin/productsAdmin/product.admin";
+import ProductAdminComp from "@/components/productsAdmin/product.adminrafce";
 
 const ProductAdmin = () => {
   return (
     <div>
-      <ProductAdminComp/>
+      <ProductAdminComp />
     </div>
   );
 };

@@ -126,6 +126,7 @@ const CreateAccount = () => {
         icons={profileIcon.src}
         value={name}
         handleChange={handleChange}
+        inputStyle={styles.input__style}
       />
       <InputBox
         type="email"
@@ -134,6 +135,7 @@ const CreateAccount = () => {
         icons={mailIcon.src}
         value={email}
         handleChange={handleChange}
+        inputStyle={styles.input__style}
       />
       <InputBox
         type="password"
@@ -142,6 +144,7 @@ const CreateAccount = () => {
         icons={lockIcon.src}
         value={password}
         handleChange={handleChange}
+        inputStyle={styles.input__style}
       />
 
       <p
