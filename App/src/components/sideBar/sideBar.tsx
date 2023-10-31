@@ -21,6 +21,7 @@ const SideBar = () => {
         holder="Search"
         value=""
         handleChange={handleElectronicsSearch}
+        inputStyle={styles.side__bar__input}
       />
       <nav className={styles.side__bar__nav__items}>
         <ul>

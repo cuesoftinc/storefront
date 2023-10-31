@@ -10,9 +10,10 @@ const InputBox = ({
   icons,
   value,
   handleChange,
+  inputStyle,
 }: InputProps) => {
   return (
-    <div className={styles.input__box}>
+    <div className={`${styles.input__box} ${inputStyle}`}>
       <input
         type={type}
         name={name}

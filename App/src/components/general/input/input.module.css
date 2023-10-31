@@ -1,7 +1,5 @@
 .input__box {
-  /* border: 2px solid red; */
   position: relative;
-  margin-top: 2.5vh;
 }
 
 .input__box input {
