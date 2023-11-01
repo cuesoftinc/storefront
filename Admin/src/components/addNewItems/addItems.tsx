@@ -4,9 +4,8 @@ import React from "react";
 import styles from "./addItems.module.css";
 import { itemsData } from "@/data/datarafce";
 import InputBox from "../general/input/input";
-import { dropIcon } from "@/assets/iconsrafce";
-import Image from "next/image";
 import Button from "../general/button/button";
+import ImageUpload from "../general/imageUpload/imageUpload";
 
 const AddItems = () => {
   const handleChange = () => {
@@ -16,7 +15,7 @@ const AddItems = () => {
   return (
     <section className={styles.add__new__items}>
       <header className={styles.add__items__header}>
-        <div>
+        <div className={styles.new__items__title}>
           <h2>Add new items</h2>
           <p>Add new available items to your shop.</p>
         </div>
@@ -42,11 +41,12 @@ const AddItems = () => {
             </div>
           );
         })}
-        <div className={styles.drop__images}>
-          <Image src={dropIcon} alt="Drop" width={20} height={20} />
-          <p>Add Image</p>
-        </div>
-        <Button btnContent="Cancel" />
+
+        <ImageUpload />
+      </div>
+
+      <div className={styles.btns}>
+        <Button btnContent="Cancel" btnStyles={styles.cancel__btn} />
         <Button btnStyles={styles.confirm__btn} btnContent="Confirm" />
       </div>
     </section>
