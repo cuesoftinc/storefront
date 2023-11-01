@@ -6,6 +6,7 @@ import (
 	"github.com/CuesoftCloud/storefront/utils"
 	"github.com/gin-gonic/gin"
 	"golang.org/x/crypto/bcrypt"
+	"gorm.io/gorm"
 	"log"
 	"net/http"
 	"strconv"
@@ -13,7 +14,6 @@ import (
 
 type UserController interface {
 	ControllerRegister(*gin.Context)
-	GetUser(*gin.Context)
 	GetUsers(*gin.Context)
 	UpdateUser(*gin.Context)
 	DeleteUser(*gin.Context)
@@ -33,14 +33,17 @@ type LoginResponse struct {
 }
 
 type userController struct {
-	repo repository.UserRepository
+	userRepo repository.UserRepository
+	roleRepo repository.RoleRepository
 }
 
-func NewUserController() UserController {
+func NewUserController(db *gorm.DB) UserController {
 	return &userController{
-		repo: repository.NewUserRepository(),
+		userRepo: repository.NewUserRepository(db),
+		roleRepo: repository.NewRoleRepository(db),
 	}
 }
+
 func hashPassword(password *string) {
 	bytePassword := []byte(*password)
 	hashedPassword, _ := bcrypt.GenerateFromPassword(bytePassword, bcrypt.DefaultCost)
@@ -69,7 +72,7 @@ func (u *userController) ControllerRegister(c *gin.Context) {
 	}
 
 	// Check if email already exists
-	_, err := u.repo.GetUserByEmail(user.Email)
+	_, err := u.userRepo.GetUserByEmail(user.Email)
 	if err == nil {
 		log.Println(err)
 		c.JSON(http.StatusBadRequest, UserResponse{
@@ -80,7 +83,16 @@ func (u *userController) ControllerRegister(c *gin.Context) {
 	}
 
 	hashPassword(&user.Password)
-	user, err = u.repo.AddUser(user)
+	user.RoleID, err = u.roleRepo.GetDefaultRoleID()
+	if err != nil {
+		log.Println(err)
+		c.JSON(http.StatusInternalServerError, UserResponse{
+			Success: false,
+			Message: "Error retrieving default role",
+		})
+		return
+	}
+	user, err = u.userRepo.AddUser(user)
 	if err != nil {
 		log.Println(err)
 		c.JSON(http.StatusInternalServerError, UserResponse{
@@ -97,40 +109,8 @@ func (u *userController) ControllerRegister(c *gin.Context) {
 	})
 }
 
-func (u *userController) GetUser(c *gin.Context) {
-	id := c.Param("id")
-	intID, err := strconv.Atoi(id)
-
-	if err != nil {
-		log.Println(err)
-		c.JSON(http.StatusBadRequest, UserResponse{
-			Success: false,
-			Message: "Invalid user ID",
-		})
-		return
-	}
-
-	user, err := u.repo.GetUser(intID)
-
-	if err != nil {
-		log.Println(err)
-		c.JSON(http.StatusInternalServerError, UserResponse{
-			Success: false,
-			Message: "Error retrieving user",
-		})
-		return
-	}
-
-	user.Password = ""
-	c.JSON(http.StatusOK, UserResponse{
-		Success: true,
-		Message: "User retrieved successfully",
-		Data:    user,
-	})
-}
-
 func (u *userController) GetUsers(c *gin.Context) {
-	users, err := u.repo.GetUsers()
+	users, err := u.userRepo.GetUsers()
 
 	if err != nil {
 		log.Println(err)
@@ -176,7 +156,7 @@ func (u *userController) UpdateUser(c *gin.Context) {
 	}
 
 	user.ID = uint(intID)
-	user, err = u.repo.UpdateUser(user)
+	user, err = u.userRepo.UpdateUser(user)
 
 	if err != nil {
 		log.Println(err)
@@ -220,7 +200,7 @@ func (u *userController) DeleteUser(c *gin.Context) {
 	}
 
 	user.ID = uint(intID)
-	user, err = u.repo.DeleteUser(user)
+	user, err = u.userRepo.DeleteUser(user)
 
 	if err != nil {
 		log.Println(err)
@@ -251,7 +231,7 @@ func (u *userController) ControllerLogin(c *gin.Context) {
 		})
 		return
 	}
-	dbUser, err := u.repo.GetUserByEmail(user.Email)
+	dbUser, err := u.userRepo.GetUserByEmail(user.Email)
 	if err != nil {
 		log.Println(err)
 		c.JSON(http.StatusInternalServerError, LoginResponse{
@@ -272,7 +252,7 @@ func (u *userController) ControllerLogin(c *gin.Context) {
 	isTrue := comparePassword(dbUser.Password, user.Password)
 
 	if isTrue {
-		token := utils.GenerateToken(dbUser.ID)
+		token := utils.GenerateToken(dbUser.ID, dbUser.Email)
 		c.JSON(http.StatusOK, LoginResponse{
 			Success: true,
 			Message: "Login successful",
