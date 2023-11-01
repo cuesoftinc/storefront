@@ -2,6 +2,13 @@
   /* border: 2px solid blue; */
   width: 100%;
   padding: 20px 20px 0px 0px;
+  padding-bottom: 4rem;
+}
+
+.add__items__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .inputs__con {
@@ -58,4 +65,9 @@
 
 .drop__images p {
   font-weight: 600;
+}
+
+.confirm__btn button {
+  background-color: var(--solidFadedBlue);
+  color: #fff;
 }
