@@ -51,6 +51,7 @@ func (pc *productController) CreateNewProduct(ctx *gin.Context) {
 			Success: false,
 			Message: "Invalid request body",
 		})
+		return
 	}
 
 	product, err := pc.productRepo.AddProduct(product)
@@ -61,6 +62,7 @@ func (pc *productController) CreateNewProduct(ctx *gin.Context) {
 			Success: false,
 			Message: "Error creating product",
 		})
+		return
 	}
 
 	ctx.JSON(http.StatusOK, ProductResponse{
