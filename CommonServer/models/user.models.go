@@ -8,8 +8,9 @@ import (
 type User struct {
 	gorm.Model
 	Name     string `gorm:"not null" json:"name"`
-	Email    string `gorm:"unique;not null" json:"email"`
+	Email    string `gorm:"unique;not null;index" json:"email"`
 	Password string `gorm:"not null" json:"password"`
+	RoleID   uint   `gorm:"not null" json:"role_id"`
 }
 
 // TableName returns the name of the table for the user model

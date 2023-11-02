@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"log"
 	"os"
 
 	"github.com/CuesoftCloud/storefront/config"
@@ -13,12 +14,18 @@ import (
 // main is the entry point for the server
 func main() {
 	config.LoadEnvVar()
+	db, err := config.ConnectDB()
+	if err != nil {
+		log.Fatalln(fmt.Sprintf("Error Connecting to Database: %v", err))
+		return
+	}
+
 	server := gin.Default()
 	server.Use(cors.Default())
-	routes.SetupRoutes(server)
-	err := server.Run(os.Getenv("PORT"))
+	routes.SetupRoutes(server, db)
+	err = server.Run(os.Getenv("PORT"))
 	if err != nil {
-		fmt.Println(err)
+		log.Fatalln(fmt.Sprintf("Error Starting Server: %v", err))
 		return
 	}
 }

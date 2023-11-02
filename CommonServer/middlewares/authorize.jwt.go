@@ -25,7 +25,9 @@ func AuthorizeJWT() gin.HandlerFunc {
 			c.AbortWithStatusJSON(http.StatusUnauthorized, gin.H{"error": "Invalid Token"})
 		} else {
 			if claims, ok := token.Claims.(jwt.MapClaims); ok && token.Valid {
-				c.Set("userId", claims["userId"])
+				// Set with it type assertion to uint
+				c.Set("jwtUserId", claims["userId"])
+				c.Set("jwtEmail", claims["email"])
 			} else {
 				c.AbortWithStatusJSON(http.StatusUnauthorized, gin.H{"error": "Invalid Token"})
 			}
