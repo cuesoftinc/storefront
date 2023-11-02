@@ -11,9 +11,9 @@ import { usePathname } from "next/navigation";
 import { CloseNav, OpenNav } from "@/assets/icons/navBarIcons";
 
 const Nav = () => {
-  const pathname = usePathname();
+  const pathname: string = usePathname();
 
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const handleProductSearch = () => {
     //

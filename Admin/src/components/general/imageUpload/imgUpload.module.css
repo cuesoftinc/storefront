@@ -1,0 +1,45 @@
+.drop__images {
+  border: 2px dashed var(--solidFadedBlue);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-block: 3rem;
+  border-radius: 10px;
+  background-color: #fff;
+  position: relative;
+}
+
+.drop__images img {
+  width: 30px;
+  height: 30px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.drop__images p:nth-child(2) {
+  font-weight: 600;
+}
+
+.drop__images p:last-child {
+  position: absolute;
+  font-size: 30px;
+  font-weight: 900;
+  color: var(--solidFadedBlue);
+  transform: scale(0);
+}
+
+.show__image__uploaded__msg {
+  animation: uploadMsg ease-in-out 5s 1;
+}
+
+@keyframes uploadMsg {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
