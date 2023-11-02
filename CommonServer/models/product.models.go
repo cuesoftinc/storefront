@@ -13,7 +13,7 @@ type Product struct {
 	Color         string  `gorm:"not null" json:"color"`
 	Size          string  `gorm:"default:null" json:"size"`
 	Quantity      int     `gorm:"not null" json:"quantity"`
-	Image         string  `gorm:"not null" json:"image"`
+	Image         string  `gorm:"default:null" json:"image"`
 }
 
 func (p *Product) TableName() string {

@@ -27,14 +27,18 @@ func SetupRoutes(server *gin.Engine, db *gorm.DB) {
 		userRoutes.POST("/login", userController.ControllerLogin)
 	}
 
+	adminRoutes := apiRoutes.Group("/admin")
+	{
+		adminRoutes.POST("/create", middlewares.AuthorizeJWT(), middlewares.AuthorizeAdmin(userRepo, admin), productController.CreateNewProduct)
+		adminRoutes.PUT("/:id", middlewares.AuthorizeJWT(), middlewares.AuthorizeAdmin(userRepo, admin), productController.UpdateOneProduct)
+		adminRoutes.DELETE("/:id", middlewares.AuthorizeJWT(), middlewares.AuthorizeAdmin(userRepo, admin), productController.DeleteOneProduct)
+		adminRoutes.POST("/category/create", middlewares.AuthorizeJWT(), middlewares.AuthorizeAdmin(userRepo, admin), productController.CreateNewCategory)
+		adminRoutes.POST("/category/:category_id/subCategory/create", middlewares.AuthorizeJWT(), middlewares.AuthorizeAdmin(userRepo, admin), productController.CreateSubCategory)
+	}
+
 	productRoutes := apiRoutes.Group("/product")
 	{
-		productRoutes.POST("admin/create", middlewares.AuthorizeJWT(), middlewares.AuthorizeAdmin(userRepo, admin), productController.CreateNewProduct)
 		productRoutes.GET("/:id", middlewares.AuthorizeJWT(), productController.GetOneProduct)
 		productRoutes.GET("/", middlewares.AuthorizeJWT(), productController.GetAllProducts)
-		productRoutes.PUT("/:id", middlewares.AuthorizeJWT(), middlewares.AuthorizeAdmin(userRepo, admin), productController.UpdateOneProduct)
-		productRoutes.DELETE("/:id", middlewares.AuthorizeJWT(), middlewares.AuthorizeAdmin(userRepo, admin), productController.DeleteOneProduct)
-		productRoutes.POST("admin/category/create", middlewares.AuthorizeJWT(), middlewares.AuthorizeAdmin(userRepo, admin), productController.CreateNewCategory)
-		productRoutes.POST("/admin/category/:category_id/subCategory/create", middlewares.AuthorizeJWT(), middlewares.AuthorizeAdmin(userRepo, admin), productController.CreateSubCategory)
 	}
 }

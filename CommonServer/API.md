@@ -1,4 +1,4 @@
-### StoreFront API
+# StoreFront API
 
 ## User
 
@@ -105,5 +105,341 @@ Login a user.
 {
   "success": false,
   "message": "Invalid login credentials"
+}
+```
+
+## Admin
+
+The endpoints here helps a user with an admin role to be able to do the following:
+
+- Create a new Category
+- Create a Sub-category under an existing Category
+- Create a new Product
+- Update an existing product
+- Delete an existing Product
+
+### Create Category
+
+**URL**: `api/admin/category/create`
+
+**Method**: `POST`
+
+**Auth required**: Signed in with Admin access
+
+**Data constraints**
+
+```json
+{
+  "name": "[name in string]",
+  "description": "[description in string]"
+}
+```
+
+**Request body example**
+
+```json
+{
+  "name": "Medicals",
+  "description": "A Category of medical equipments, medicine, etc"
+}
+```
+
+**Success Response**
+
+```json
+{
+  "success": true,
+  "message": "Category created successfully",
+  "data": {
+    "ID": 2,
+    "CreatedAt": "2023-11-02T10:09:04.653829985+01:00",
+    "UpdatedAt": "2023-11-02T10:09:04.653829985+01:00",
+    "DeletedAt": null,
+    "name": "Medicals",
+    "description": "A Category of medical equipments, medicine, etc",
+    "SubCategories": null
+  }
+}
+```
+
+### Create Sub-Category
+
+**URL**: `api/admin/category/:category_id/subCategory/create`
+
+**Method**: `POST`
+
+**Auth required**: Signed in with Admin access
+
+**Data constraints**
+
+```json
+{
+  "name": "[name in string]",
+  "description": "[description in string]"
+}
+```
+
+**Request body example**
+
+```json
+{
+  "name": "Medical equipments",
+  "description": "A Sub-category of Medicals"
+}
+```
+
+**Success Response**
+
+```json
+{
+  "success": true,
+  "message": "Subcategory created successfully",
+  "data": {
+    "ID": 3,
+    "CreatedAt": "2023-11-02T10:14:21.486860075+01:00",
+    "UpdatedAt": "2023-11-02T10:14:21.486860075+01:00",
+    "DeletedAt": null,
+    "name": "Medical equipments",
+    "description": "A Sub-category of Medicals",
+    "CategoryID": 2
+  }
+}
+```
+
+### Create Product
+
+**URL**: `api/admin/create`
+
+**Method**: `POST`
+
+**Auth required**: Signed in with Admin access
+
+**Data constraints**
+
+```json
+{
+  "name": "[name in string]",
+  "description": "[description in string]",
+  "price": "[price in float]",
+  "quantity": "[quantity in integer]",
+  "category_id": "[category_id in integer]",
+  "sub_category": "[sub_category_id in integer]",
+  "shipping": "[shipping in boolean]",
+  "color": "[color in string]",
+  "size": "[size in string] NOTE: This is nullable",
+  "image": "[images in array of strings] NOTE: This is nullable"
+}
+```
+
+**Request body example**
+
+```json
+{
+  "name": "Surgical box",
+  "description":"A box containing surgical equipments",
+  "category_id": 2,
+  "sub_category": 3,
+  "price": 50000,
+  "shipping_info": "No shipping fee discount",
+  "color": "Black",
+  "size": "",
+  "quantity": 10,
+  "image": "no image right now"
+}
+```
+
+**Success Response**
+
+```json
+{
+  "success": true,
+  "message": "Product created successfully",
+  "data": {
+    "ID": 2,
+    "CreatedAt": "2023-11-02T10:24:45.867644099+01:00",
+    "UpdatedAt": "2023-11-02T10:24:45.867644099+01:00",
+    "DeletedAt": null,
+    "name": "Surgical box",
+    "description": "A box containing surgical equipments",
+    "category_id": 2,
+    "sub_category": 3,
+    "price": 50000,
+    "shipping_info": "No shipping fee discount",
+    "color": "Black",
+    "size": "",
+    "quantity": 10,
+    "image": "no image right now"
+  }
+}
+```
+
+### Product 
+
+The endpoints here helps a user to be able to do the following:
+
+- Get all products
+- Get a single product
+- Get all products in a category
+- Get all products in a sub-category
+- Get all products in a category and sub-category
+
+### Get all products
+
+**URL**: `api/product/`
+
+**Method**: `GET`
+
+**Auth required**: Signed-in user
+
+**Success Response**
+
+```json
+{
+    "success": true,
+    "message": "Products retrieved successfully",
+    "data": {
+        "categories": [
+            {
+                "ID": 1,
+                "CreatedAt": "2023-11-01T15:10:48.127082+01:00",
+                "UpdatedAt": "2023-11-01T15:10:48.127082+01:00",
+                "DeletedAt": null,
+                "name": "Fashion",
+                "description": "A Category of men, women and kids fashion",
+                "SubCategories": [
+                    {
+                        "ID": 2,
+                        "CreatedAt": "2023-11-01T15:34:00.922019+01:00",
+                        "UpdatedAt": "2023-11-01T15:34:00.922019+01:00",
+                        "DeletedAt": null,
+                        "name": "Men",
+                        "description": "A Sub-category of mens fashion wears",
+                        "CategoryID": 1
+                    }
+                ]
+            },
+            {
+                "ID": 2,
+                "CreatedAt": "2023-11-02T10:09:04.653829+01:00",
+                "UpdatedAt": "2023-11-02T10:09:04.653829+01:00",
+                "DeletedAt": null,
+                "name": "Medicals",
+                "description": "A Category of medical equipments, medicine, etc",
+                "SubCategories": [
+                    {
+                        "ID": 3,
+                        "CreatedAt": "2023-11-02T10:14:21.48686+01:00",
+                        "UpdatedAt": "2023-11-02T10:14:21.48686+01:00",
+                        "DeletedAt": null,
+                        "name": "Medical equipments",
+                        "description": "A Sub-category of Medicals",
+                        "CategoryID": 2
+                    }
+                ]
+            }
+        ],
+        "products": [
+            {
+                "ID": 1,
+                "CreatedAt": "2023-11-01T17:02:21.420582+01:00",
+                "UpdatedAt": "2023-11-01T17:02:21.420582+01:00",
+                "DeletedAt": null,
+                "name": "Nike Jordan 2",
+                "description": "The new Nike Jordan 2",
+                "category_id": 1,
+                "sub_category": 2,
+                "price": 50000,
+                "shipping_info": "No shipping fee discount",
+                "color": "Blue",
+                "size": "35",
+                "quantity": 0,
+                "image": "no image right now"
+            },
+            {
+                "ID": 2,
+                "CreatedAt": "2023-11-02T10:24:45.867644+01:00",
+                "UpdatedAt": "2023-11-02T10:24:45.867644+01:00",
+                "DeletedAt": null,
+                "name": "Surgical box",
+                "description": "A box containing surgical equipments",
+                "category_id": 2,
+                "sub_category": 3,
+                "price": 50000,
+                "shipping_info": "No shipping fee discount",
+                "color": "Black",
+                "size": "",
+                "quantity": 0,
+                "image": "no image right now"
+            },
+            {
+                "ID": 3,
+                "CreatedAt": "2023-11-02T10:26:59.579321+01:00",
+                "UpdatedAt": "2023-11-02T10:26:59.579321+01:00",
+                "DeletedAt": null,
+                "name": "Specialized Surgical box",
+                "description": "A box containing Specialized surgical equipments",
+                "category_id": 2,
+                "sub_category": 3,
+                "price": 50000,
+                "shipping_info": "No shipping fee discount",
+                "color": "Black",
+                "size": "",
+                "quantity": 0,
+                "image": "no image right now"
+            },
+            {
+                "ID": 4,
+                "CreatedAt": "2023-11-02T10:30:52.727375+01:00",
+                "UpdatedAt": "2023-11-02T10:30:52.727375+01:00",
+                "DeletedAt": null,
+                "name": "Specialized Surgical box 2",
+                "description": "A box containing Specialized surgical equipments 2",
+                "category_id": 2,
+                "sub_category": 3,
+                "price": 50000,
+                "shipping_info": "No shipping fee discount",
+                "color": "Black",
+                "size": "",
+                "quantity": 0,
+                "image": "no image right now"
+            },
+            {
+                "ID": 5,
+                "CreatedAt": "2023-11-02T10:39:23.626156+01:00",
+                "UpdatedAt": "2023-11-02T10:39:23.626156+01:00",
+                "DeletedAt": null,
+                "name": "Specialized Surgical box 3",
+                "description": "A box containing Specialized surgical equipments 3",
+                "category_id": 2,
+                "sub_category": 3,
+                "price": 50000,
+                "shipping_info": "No shipping fee discount",
+                "color": "Black",
+                "size": "",
+                "quantity": 10,
+                "image": "no image right now"
+            }
+        ],
+        "sub_categories": [
+            {
+                "ID": 2,
+                "CreatedAt": "2023-11-01T15:34:00.922019+01:00",
+                "UpdatedAt": "2023-11-01T15:34:00.922019+01:00",
+                "DeletedAt": null,
+                "name": "Men",
+                "description": "A Sub-category of mens fashion wears",
+                "CategoryID": 1
+            },
+            {
+                "ID": 3,
+                "CreatedAt": "2023-11-02T10:14:21.48686+01:00",
+                "UpdatedAt": "2023-11-02T10:14:21.48686+01:00",
+                "DeletedAt": null,
+                "name": "Medical equipments",
+                "description": "A Sub-category of Medicals",
+                "CategoryID": 2
+            }
+        ]
+    }
 }
 ```
