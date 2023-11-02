@@ -3,10 +3,10 @@
 import { ChangeEvent, useState } from "react";
 import React from "react";
 import styles from "./addItems.module.css";
-import { itemsData } from "@/data/datarafce";
 import InputBox from "../general/input/input";
 import Button from "../general/button/button";
 import ImageUpload from "../general/imageUpload/imageUpload";
+import SubCategory from "./subCat";
 
 const catObj = {
   name: "",
@@ -44,6 +44,8 @@ const AddItems = () => {
       ...addProduct,
       [name]: value,
     });
+
+    console.log(addProduct);
   };
 
   const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -53,59 +55,8 @@ const AddItems = () => {
       ...addProduct,
       [name]: value,
     });
-  };
 
-  const handleCategoryChange = (label: string) => {
-    if (category_id === "") {
-      return (
-        <section>
-          <label>{label}</label>
-          <div>
-            <select name="" value="">
-              <option value="">Please select a category</option>
-            </select>
-          </div>
-        </section>
-      );
-    }
-    if (category_id === "Electronics") {
-      return (
-        <section>
-          <label>{label}</label>
-          <div>
-            <select
-              name="sub_category"
-              value={sub_category}
-              onChange={handleSelectChange}
-            >
-              <option value=""></option>
-              <option value="laptops">Laptops</option>
-              <option value="phones">Phones</option>
-              <option value="accessories">Accessories</option>
-              <option value="smartTv">SmartTv</option>
-            </select>
-          </div>
-        </section>
-      );
-    }
-    return (
-      <section>
-        <label>{label}</label>
-        <div>
-          <select
-            name="sub_category"
-            value={sub_category}
-            onChange={handleSelectChange}
-          >
-            <option value=""></option>
-            <option value="shoes">Shoes</option>
-            <option value="men">Men</option>
-            <option value="women">Women</option>
-            <option value="accessories">Accessories</option>
-          </select>
-        </div>
-      </section>
-    );
+    console.log(addProduct);
   };
 
   return (
@@ -127,84 +78,91 @@ const AddItems = () => {
             type="text"
             name="name"
             holder="Name"
-            value={""}
+            value={name}
             handleChange={handleChange}
             inputStyle={styles.items__input}
             icons="" // Just added to avoid error message
           />
         </section>
+
         <section>
           <label>Product Description</label>
           <InputBox
             type="text"
             name="description"
             holder="Description"
-            value={""}
+            value={description}
             handleChange={handleChange}
             inputStyle={styles.items__input}
             icons="" // Just added to avoid error message
           />
         </section>
+
         <section>
           <label>Price</label>
           <InputBox
-            type="text"
+            type="number"
             name="price"
             holder="$0.00"
-            value={""}
+            value={price}
             handleChange={handleChange}
             inputStyle={styles.items__input}
             icons="" // Just added to avoid error message
           />
         </section>
+
         <section>
           <label>Quantity</label>
           <InputBox
-            type="text"
+            type="number"
             name="quantity"
             holder="1"
-            value={""}
+            value={quantity}
             handleChange={handleChange}
             inputStyle={styles.items__input}
             icons="" // Just added to avoid error message
           />
         </section>
+
         <section>
           <label>Shopping Information</label>
           <InputBox
             type="text"
             name="shipping"
             holder="Info"
-            value={""}
+            value={shipping}
             handleChange={handleChange}
             inputStyle={styles.items__input}
             icons="" // Just added to avoid error message
           />
         </section>
+
         <section>
           <label>Size</label>
           <InputBox
             type="text"
             name="size"
             holder="Inch"
-            value={""}
+            value={size}
             handleChange={handleChange}
             inputStyle={styles.items__input}
             icons="" // Just added to avoid error message
           />
         </section>
+
         <section>
           <label>Available Colors</label>
           <InputBox
             type="text"
             name="color"
             holder="Red"
-            value={""}
+            value={color}
             handleChange={handleChange}
             inputStyle={styles.items__input}
             icons="" // Just added to avoid error message
           />
         </section>
+
         <section>
           <label>Category</label>
           <div>
@@ -214,12 +172,18 @@ const AddItems = () => {
               onChange={handleSelectChange}
             >
               <option value=""></option>
-              <option value="Electronics">Electronics</option>
-              <option value="Fashion">Fashion</option>
+              <option value="electronics">Electronics</option>
+              <option value="fashion">Fashion</option>
             </select>
           </div>
         </section>
-        {handleCategoryChange("Sub Category")}
+
+        <SubCategory
+          label="Sub Category"
+          category_id={category_id}
+          sub_category={sub_category}
+          handleSelectChange={handleSelectChange}
+        />
 
         <ImageUpload />
       </div>
