@@ -6,7 +6,7 @@ import styles from "./nav.module.css";
 import Logo from "../../general/logo/logo";
 import InputBox from "@/components/general/input/input";
 import { cartIcon, favIcon, profileIcon, searchIcon } from "@/assets/icons";
-import Image from "next/image";
+import { FaHeart, FaCartPlus, FaUser, FaSearch } from "react-icons/fa";
 import { usePathname } from "next/navigation";
 import { CloseNav, OpenNav } from "@/assets/icons/navBarIcons";
 
@@ -66,7 +66,7 @@ const Nav = () => {
             <InputBox
               type="text"
               name="search"
-              icons={searchIcon.src}
+              icons={<FaSearch />}
               holder="Search"
               value=""
               handleChange={handleProductSearch}
@@ -74,19 +74,19 @@ const Nav = () => {
           </li>
           <li onClick={handleCloseNavClick}>
             <Link href="">
-              <Image src={favIcon} alt="Fav" />
+              <FaHeart />
               <p>Favourite</p>
             </Link>
           </li>
           <li onClick={handleCloseNavClick}>
             <Link href="">
-              <Image src={cartIcon} alt="Cart" />
+              <FaCartPlus />
               <p>Cart</p>
             </Link>
           </li>
           <li onClick={handleCloseNavClick}>
             <Link href="">
-              <Image src={profileIcon} alt="profile" />
+              <FaUser />
               <p>Profile</p>
             </Link>
           </li>

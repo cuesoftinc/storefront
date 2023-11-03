@@ -1,5 +1,6 @@
 .single__electronics__product {
   /* border: 2px solid red; */
+  position: relative;
 }
 
 .single__electronics__product > img {
@@ -7,7 +8,24 @@
   height: 200px;
 }
 
+.favourite__icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #fff;
+  font-size: 25px;
+  cursor: pointer;
+  transition: ease 0.5s all;
+}
+.favourite__icon:hover {
+  transform: scale(1.2);
+}
+
 .short__desc {
   display: flex;
   justify-content: space-between;
+}
+
+.cart__icon {
+  /* color: #fff; */
 }

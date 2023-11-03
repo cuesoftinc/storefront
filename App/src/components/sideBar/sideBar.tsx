@@ -5,6 +5,7 @@ import styles from "./sideBar.module.css";
 import InputBox from "../general/input/input";
 import { searchIcon } from "@/assets/icons";
 import Link from "next/link";
+import { FaSearch } from "react-icons/fa";
 import { usePathname } from "next/navigation";
 
 const SideBar = () => {
@@ -20,7 +21,7 @@ const SideBar = () => {
       <InputBox
         type="text"
         name="search"
-        icons={searchIcon.src}
+        icons={<FaSearch />}
         holder="Search"
         value=""
         handleChange={handleElectronicsSearch}
