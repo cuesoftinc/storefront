@@ -24,6 +24,11 @@
 .fashion__short__desc {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  margin-block: 10px;
+}
+.fashion__short__desc h3:first-child {
+  width: 70%;
 }
 
 .cart__icon {

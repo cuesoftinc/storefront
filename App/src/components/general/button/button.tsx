@@ -1,19 +1,18 @@
 import React from "react";
-import { BtnProps } from "@/types";
-import { useAuthContext } from "@/context/userContext";
+import { FaCartPlus } from "react-icons/fa";
+import styles from "./button.module.css";
 
-const Button = ({
-  btnContent,
-  btnStyle,
-  disable,
-  handleRegClick,
-}: BtnProps) => {
-  const { signupUser, setSignupUser } = useAuthContext();
+interface BtnProps {
+  btnContent: string;
+  btnStyle: string;
+  handleClick: (e: React.FormEvent) => void;
+}
 
+const Button = () => {
   return (
-    <div>
-      <button className={btnStyle} onClick={handleRegClick} disabled={disable}>
-        {signupUser.isLoading ? "Loading..." : btnContent}
+    <div className={styles.__btn}>
+      <button>
+        <FaCartPlus className={styles.cart__icon} /> <span>Add to Cart</span>
       </button>
     </div>
   );
