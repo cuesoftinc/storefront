@@ -46,13 +46,13 @@ export const adminSideBar = {
       id: 1,
       icon: settingIcon,
       navItem: "Settings",
-      path: "settings",
+      path: "/settings",
     },
     {
       id: 2,
       icon: helpIcon,
       navItem: "Help and Support",
-      path: "help-and-support",
+      path: "/help-and-support",
     },
   ],
 };

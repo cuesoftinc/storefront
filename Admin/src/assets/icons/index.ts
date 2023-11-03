@@ -5,9 +5,8 @@ import createNewIcon from "./cart.png";
 import settingIcon from "./settingsIcon.png";
 import helpIcon from "./headphone.png";
 import headerNotification from "./headerNotification.png";
-import searchIcon from "./search.png"
-import mail from "./mail.png"
-import lock from "./lock.png"
+import searchIcon from "./search.png";
+import dropIcon from "./drop-image.png";
 
 export {
   dashboardIcon,
@@ -18,6 +17,5 @@ export {
   helpIcon,
   headerNotification,
   searchIcon,
-  mail,
-  lock
+  dropIcon,
 };
