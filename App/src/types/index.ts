@@ -49,12 +49,6 @@ export interface InputProps {
   inputStyle?: string;
 }
 
-export interface BtnProps {
-  btnContent: string;
-  btnStyle: string;
-  disable: boolean;
-  handleRegClick: (e: React.FormEvent) => void;
-}
 export interface SigninModule {
   error__sign__response: string;
   styles: string;

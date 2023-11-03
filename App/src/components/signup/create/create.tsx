@@ -11,7 +11,7 @@ import {
   twitter,
 } from "@/assets/icons";
 import InputBox from "@/components/general/input/input";
-import Button from "@/components/general/button/button";
+import AuthButton from "@/components/general/button/authButton";
 import Link from "next/link";
 import { fetchSignUpUser } from "../../../api/users";
 import { useAuthContext } from "@/context/userContext";
@@ -155,7 +155,7 @@ const CreateAccount = () => {
         {isError}
       </p>
 
-      <Button
+      <AuthButton
         btnContent="Sign Up"
         btnStyle={styles.signUpBtn}
         disable={isLoading}
