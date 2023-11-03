@@ -194,11 +194,7 @@ justify-content: center;
      }
        
     }
-    @media only screen and (width: 375px)  {
-        .popularcontainer{
-            /* margin-top: 200px !important; */
-        }
-    }
+   
      /* Media query for tablets */
  @media (min-width: 767px) and (max-width: 1024px) {
     .popularcontainer{
