@@ -8,6 +8,7 @@ import InputBox from "@/components/general/input/input";
 import { cartIcon, favIcon, profileIcon, searchIcon } from "@/assets/icons";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import { Favourite } from "@/components/favourite";
 import { CloseNav, OpenNav } from "@/assets/icons/navBarIcons";
 
 const Nav = () => {
@@ -26,8 +27,19 @@ const Nav = () => {
   const handleCloseNavClick = () => {
     setIsOpen(false);
   };
+  // favourite overlay
+
+  const [isOverlayOpen, setIsOverlayOpen] = useState(false);
+  const handleOpenOverlay = () => {
+    setIsOverlayOpen(true);
+  };
+
+  const handleCloseOverlay = () => {
+    setIsOverlayOpen(false);
+  };
 
   return (
+    <>
     <header className={styles.header}>
       <Logo uniqueStyle={styles.nav__logo} />
       <div className={styles.open__nav} onClick={handleOpenNavClick}>
@@ -73,10 +85,13 @@ const Nav = () => {
             />
           </li>
           <li onClick={handleCloseNavClick}>
-            <Link href="">
+            <button
+            style={{border:"none",backgroundColor:"transparent"}}
+             onClick={handleOpenOverlay}
+             >
               <Image src={favIcon} alt="Fav" />
-              <p>Favourite</p>
-            </Link>
+              <p><strong>Favourite</strong></p>
+            </button>
           </li>
           <li onClick={handleCloseNavClick}>
             <Link href="">
@@ -92,7 +107,11 @@ const Nav = () => {
           </li>
         </ul>
       </nav>
+
     </header>
+    {isOverlayOpen && <Favourite onClose={handleCloseOverlay} />}
+
+    </>
   );
 };
 

@@ -59,3 +59,10 @@ export interface SigninModule {
   error__sign__response: string;
   styles: string;
 }
+
+export interface OverlayProps {
+  onClose: () => void;
+  // setClose: Dispatch<SetStateAction<boolean>>;
+  // isClose: boolean;
+
+}
