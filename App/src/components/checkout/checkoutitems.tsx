@@ -31,4 +31,4 @@ function CheckoutItems() {
   )
 }
 
-export default Favouritecard
+export default CheckoutItems
