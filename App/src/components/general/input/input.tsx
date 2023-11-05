@@ -1,6 +1,5 @@
 import React from "react";
 import { InputProps } from "@/types";
-import Image from "next/image";
 import styles from "./input.module.css";
 
 const InputBox = ({
@@ -21,7 +20,7 @@ const InputBox = ({
         value={value}
         onChange={handleChange}
       />
-      <Image src={icons} alt="profile" width="40" height="20" />
+      <span>{icons}</span>
     </div>
   );
 };

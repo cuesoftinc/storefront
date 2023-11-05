@@ -1,5 +1,6 @@
 import React from "react";
 import { cartIcon } from "@/assets/icons";
+import { FaHeart, FaCartPlus } from "react-icons/fa";
 import Image from "next/image";
 import styles from "./singleFashion.module.css";
 
@@ -13,6 +14,7 @@ const SingleFashionProduct = ({
   return (
     <section className={styles.single__fashion__product}>
       <Image src={image} alt={category} width={200} height={100} />
+      <FaHeart title="Add to favourite" className={styles.favourite__icon} />
       <div className={styles.fashion__short__desc}>
         <p>This is a short desc</p>
         <p>
@@ -27,7 +29,7 @@ const SingleFashionProduct = ({
         rating <span>(91)</span>
       </p>
       <button>
-        <Image src={cartIcon} alt="cart" /> <span>Add to Cart</span>
+        <FaCartPlus className={styles.cart__icon} /> <span>Add to Cart</span>
       </button>
     </section>
   );
