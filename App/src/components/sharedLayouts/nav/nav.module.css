@@ -138,6 +138,9 @@
 .nav ul li {
   list-style-type: none;
 }
+.nav ul li:hover {
+  transform: scale(1.05);
+}
 
 .nav a {
   text-decoration: none;

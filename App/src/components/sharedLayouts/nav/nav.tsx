@@ -86,7 +86,12 @@ const Nav = () => {
             </li>
             <li onClick={handleCloseNavClick}>
               <button
-                style={{ border: "none", backgroundColor: "transparent" }}
+                style={{
+                  border: "none",
+                  backgroundColor: "transparent",
+                  fontSize: "16px",
+                  cursor: "pointer",
+                }}
                 onClick={handleOpenOverlay}
               >
                 <FaHeart />
