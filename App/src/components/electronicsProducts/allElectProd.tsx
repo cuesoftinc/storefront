@@ -1,3 +1,5 @@
+"use client";
+
 import React, { Suspense } from "react";
 // import SingleElectronicProduct from "./singleElectProduct";
 import { electronics } from "@/utils/data";

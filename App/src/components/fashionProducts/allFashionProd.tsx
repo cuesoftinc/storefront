@@ -1,3 +1,5 @@
+"use client";
+
 import React, { Suspense } from "react";
 // import SingleFashionProduct from "./singleFashion";
 import { fashion } from "@/utils/data";
