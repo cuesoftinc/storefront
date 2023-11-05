@@ -3,6 +3,7 @@ import React, { Suspense } from "react";
 import { bag } from '@/assets/images';
 import styles from './description.module.css'
 import { Delivery, Ratesvg } from "@/assets/icons";
+import SimilarProductr from "../Similarproduct/Similarproduct";
 export default function Description() {
   return (
     <section className={styles.section}>
@@ -81,6 +82,8 @@ export default function Description() {
       </Suspense>
 
     </div>
+
+    <SimilarProductr/>
     </section>
 
   )

@@ -8,6 +8,7 @@ import InputBox from "@/components/general/input/input";
 import { cartIcon, favIcon, profileIcon, searchIcon } from "@/assets/icons";
 import { FaHeart, FaCartPlus, FaUser, FaSearch } from "react-icons/fa";
 import { usePathname } from "next/navigation";
+import { Favourite } from "@/components/favourite";
 import { CloseNav, OpenNav } from "@/assets/icons/navBarIcons";
 
 const Nav = () => {
@@ -26,74 +27,91 @@ const Nav = () => {
   const handleCloseNavClick = () => {
     setIsOpen(false);
   };
+  // favourite overlay
+
+  const [isOverlayOpen, setIsOverlayOpen] = useState(false);
+  const handleOpenOverlay = () => {
+    setIsOverlayOpen(true);
+  };
+
+  const handleCloseOverlay = () => {
+    setIsOverlayOpen(false);
+  };
 
   return (
-    <header className={styles.header}>
-      <Logo uniqueStyle={styles.nav__logo} />
-      <div className={styles.open__nav} onClick={handleOpenNavClick}>
-        <OpenNav />
-      </div>
-
-      <nav
-        className={`${styles.nav} ${isOpen ? styles.open__nav__control : ""}`}
-      >
-        <div className={styles.close__nav} onClick={handleCloseNavClick}>
-          <CloseNav />
+    <>
+      <header className={styles.header}>
+        <Logo uniqueStyle={styles.nav__logo} />
+        <div className={styles.open__nav} onClick={handleOpenNavClick}>
+          <OpenNav />
         </div>
-        <ul className={styles.first__nav__item}>
-          <li
-            onClick={handleCloseNavClick}
-            className={`${
-              pathname === "/electronics"
-                ? styles.add__active__page__border
-                : ""
-            }`}
-          >
-            <Link href="electronics">Electronics</Link>
-          </li>
-          <li
-            onClick={handleCloseNavClick}
-            className={`${
-              pathname === "/fashion" ? styles.add__active__page__border : ""
-            }`}
-          >
-            <Link href="fashion">Fashion</Link>
-          </li>
-        </ul>
 
-        <ul className={styles.second__nav__item}>
-          <li>
-            <InputBox
-              type="text"
-              name="search"
-              icons={<FaSearch />}
-              holder="Search"
-              value=""
-              handleChange={handleProductSearch}
-              inputStyle={styles.nav__input}
-            />
-          </li>
-          <li onClick={handleCloseNavClick}>
-            <Link href="">
-              <FaHeart />
-              <p>Favourite</p>
-            </Link>
-          </li>
-          <li onClick={handleCloseNavClick}>
-            <Link href="">
-              <FaCartPlus />
-              <p>Cart</p>
-            </Link>
-          </li>
-          <li onClick={handleCloseNavClick}>
-            <Link href="">
-              <FaUser />
-              <p>Profile</p>
-            </Link>
-          </li>
-        </ul>
-      </nav>
-    </header>
+        <nav
+          className={`${styles.nav} ${isOpen ? styles.open__nav__control : ""}`}
+        >
+          <div className={styles.close__nav} onClick={handleCloseNavClick}>
+            <CloseNav />
+          </div>
+          <ul className={styles.first__nav__item}>
+            <li
+              onClick={handleCloseNavClick}
+              className={`${
+                pathname === "/electronics"
+                  ? styles.add__active__page__border
+                  : ""
+              }`}
+            >
+              <Link href="electronics">Electronics</Link>
+            </li>
+            <li
+              onClick={handleCloseNavClick}
+              className={`${
+                pathname === "/fashion" ? styles.add__active__page__border : ""
+              }`}
+            >
+              <Link href="fashion">Fashion</Link>
+            </li>
+          </ul>
+
+          <ul className={styles.second__nav__item}>
+            <li>
+              <InputBox
+                type="text"
+                name="search"
+                icons={<FaSearch />}
+                holder="Search"
+                value=""
+                handleChange={handleProductSearch}
+              />
+            </li>
+            <li onClick={handleCloseNavClick}>
+              <button
+                style={{ border: "none", backgroundColor: "transparent" }}
+                onClick={handleOpenOverlay}
+              >
+                <FaHeart />
+                <p>
+                  <strong>Favourite</strong>
+                </p>
+              </button>
+            </li>
+            <li onClick={handleCloseNavClick}>
+              <Link href="">
+                <FaCartPlus />
+                <p>Cart</p>
+              </Link>
+            </li>
+            <li onClick={handleCloseNavClick}>
+              <Link href="">
+                <FaUser />
+                <p>Profile</p>
+              </Link>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      {isOverlayOpen && <Favourite onClose={handleCloseOverlay} />}
+    </>
   );
 };
 

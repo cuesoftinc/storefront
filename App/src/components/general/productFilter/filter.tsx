@@ -20,9 +20,7 @@ const Filter = () => {
       </select>
 
       <select name="" value="">
-        <option value="">
-          Sort by: <b>A - Z</b>
-        </option>
+        <option value="">Sort by: A - Z</option>
         <option value="highest">A - Z</option>
         <option value="lowest">Z - A</option>
       </select>

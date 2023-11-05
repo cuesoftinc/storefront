@@ -20,6 +20,7 @@ export default function RootLayout({
       <body>
         <AuthProvider>
           <ShowNav />
+
           {children}
           <ShowFooter />
         </AuthProvider>
