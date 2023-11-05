@@ -1,6 +1,15 @@
-import React from "react";
-import { InputProps } from "@/types";
+import React, { ChangeEvent } from "react";
 import styles from "./input.module.css";
+
+interface InputProps {
+  type: string;
+  name: string;
+  holder: string;
+  icons?: any;
+  value: string;
+  handleChange: (e: ChangeEvent<HTMLInputElement>) => void;
+  inputStyle?: string;
+}
 
 const InputBox = ({
   type,

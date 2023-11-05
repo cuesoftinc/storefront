@@ -70,6 +70,7 @@ const Nav = () => {
               holder="Search"
               value=""
               handleChange={handleProductSearch}
+              inputStyle={styles.nav__input}
             />
           </li>
           <li onClick={handleCloseNavClick}>

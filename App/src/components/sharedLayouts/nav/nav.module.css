@@ -126,9 +126,13 @@
   margin-block: auto;
 }
 
-.second__nav__item li a img {
+/* .second__nav__item li a img {
   width: 15px;
   height: 15px;
+} */
+
+.nav__input input {
+  height: 40px !important;
 }
 
 .nav ul li {

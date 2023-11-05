@@ -25,7 +25,7 @@ const SingleFashionProduct = ({ image, category }: FashionProps) => {
         </h3>
       </div>
 
-      <Button />
+      <Button btnContent="Add to Cart" />
     </section>
   );
 };

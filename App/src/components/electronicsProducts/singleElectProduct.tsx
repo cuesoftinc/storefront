@@ -25,7 +25,7 @@ const SingleElectronicProduct = ({ image, category }: ElectProps) => {
         </h3>
       </div>
 
-      <Button />
+      <Button btnContent="Add to Cart" icon={<FaCartPlus />} />
     </section>
   );
 };
