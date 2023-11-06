@@ -26,9 +26,20 @@
   justify-content: space-between;
   align-items: center;
   margin-block: 10px;
+  opacity: 0.7;
 }
-.fashion__short__desc h3:first-child {
+.fashion__short__desc h4:first-child {
   width: 80%;
+}
+
+.fashion__short__desc h3:last-child {
+  /* border: 2px solid green; */
+  display: flex;
+}
+
+.fashion__short__desc h3 span:first-child,
+.fashion__short__desc h3 span:last-child {
+  font-size: 13px;
 }
 
 .cart__icon {

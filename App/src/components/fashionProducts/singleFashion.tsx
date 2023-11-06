@@ -19,9 +19,9 @@ const SingleFashionProduct = ({ image, category }: FashionProps) => {
       <div className={styles.fashion__short__desc}>
         <h3>Red Shimmer Summer Dress</h3>
         <h3>
-          <sup>$</sup>
+          <span>$</span>
           <span>95</span>
-          <sup>.00</sup>
+          <span>.00</span>
         </h3>
       </div>
 

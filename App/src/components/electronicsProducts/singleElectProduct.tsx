@@ -19,9 +19,9 @@ const SingleElectronicProduct = ({ image, category }: ElectProps) => {
       <div className={styles.short__desc}>
         <h3>Acer 5822Q bi 21.5 Inches Full HD</h3>
         <h3>
-          <sup>$</sup>
+          <span>$</span>
           <span>95</span>
-          <sup>.00</sup>
+          <span>.00</span>
         </h3>
       </div>
 

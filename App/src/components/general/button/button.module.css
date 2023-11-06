@@ -17,5 +17,6 @@
 }
 .__btn button:hover {
   background-color: var(--solidFadedBlue);
+  border: 1px solid var(--solidFadedBlue);
   color: #fff;
 }
