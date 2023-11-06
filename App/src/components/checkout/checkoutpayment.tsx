@@ -43,7 +43,7 @@ function Checkoutpayment() {
         </div>
 
         <div className={styles.checkout__card__information}>
-        <p><strong>Enter Card Information</strong></p>
+          <p><strong>Enter Card Information</strong></p>
           <div>
           <small>Cardholder Name</small>
           <input type="text" placeholder='Richard john' />
@@ -54,38 +54,36 @@ function Checkoutpayment() {
           <input type="text" placeholder='2323 1232 6543 2345' />
           </div>
 
-          <div>
-          <div>
-          <small>Expiry Date</small>
-   
-        
-          <input
-           type="text" 
-           id="cardExpiration"
-           placeholder="09 / 2025"
-           pattern="(0[1-9]|1[0-2]) / [0-9]{4}"
-           maxLength={7}
-          required/>
-          <span id="expirationError" className="error-message"></span>
+          <div className={styles.checkout__expiry__cvv__div}>
+            <div>
+            <small>Expiry Date</small>
+            <input
+            type="text" 
+            id="cardExpiration"
+            placeholder="09 / 2025"
+            pattern="(0[1-9]|1[0-2]) / [0-9]{4}"
+            maxLength={7}
+            required/>
+            <span id="expirationError" className="error-message"></span>
 
 
 
-          </div>
+            </div>
 
-          <div>
-          <small>Card Number</small>
-          <input
-           type="text" 
-           id="cardExpiration"
-            placeholder="MM / YYYY"
-            pattern=" [0-9]{3}" 
-            maxLength={3}
-          required/>
-          <span id="expirationError" className="error-message"></span>          </div>
-          </div>
+            <div>
+            <small>CVV</small>
+            <input
+            type="text" 
+            id="cardExpiration"
+              placeholder="MM / YYYY"
+              pattern=" [0-9]{3}" 
+              maxLength={3}
+            required/>
+            <span id="expirationError" className="error-message"></span>          </div>
+            </div>
         </div>
 
-        <div>
+        <div className={styles.checkout__total__cost__div}>
           <p>
             <small>
               sub Total 
@@ -112,7 +110,7 @@ function Checkoutpayment() {
           </p>
         </div>
 
-        <div>
+        <div className={styles.checkout__total}>
           <p>
             <small>Total</small>
             <sub><strong>$603.00</strong></sub>

@@ -2,8 +2,10 @@
     max-width: 1285px;
     margin: var(--small) auto;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    margin-top: 4rem;
+    padding-inline: 10px;
 }
 .checkout__section{
     width: 100%;
@@ -11,7 +13,22 @@
     display: grid;
     grid-template-columns: 1.5fr 1fr;
     grid-template-rows: 1fr;
-    grid-column-gap: 20px;
+    grid-column-gap: 40px;
     grid-row-gap: 20px;
-    }
+
+    @media (max-width: 950px) {
+        grid-template-columns:repeat(auto-fit, minmax(100%,1fr)) ;
+        padding: 30px;
+        
+
+      }
     
+    }
+
+    /* @media (width: 1024) {
+      .checkout__section{
+        padding: 30px;
+
+      } */
+      
+

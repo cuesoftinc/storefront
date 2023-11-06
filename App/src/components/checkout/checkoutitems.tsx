@@ -1,13 +1,16 @@
-import React from 'react'
+import React,{useState} from 'react'
 import styles from './checkout.module.css'
 import Image from 'next/image'
 import { Tv } from '@/assets/images'
-import { Cartsvg } from '@/assets/icons'
+import Deliveryform from './(checkout delivery)/deliveryform'
 
 function CheckoutItems() {
+
+
   return (
     <div className={styles.checkout__card}>
-        <div className={styles.checkout__card__body} >
+       <div className={styles.checkout__card__items__div}>
+       <div className={styles.checkout__card__body} >
             <div className={styles.checkout__img__container}>
                 <Image src={Tv} alt='tv' className={styles.checkout__img} />
 
@@ -24,6 +27,14 @@ function CheckoutItems() {
                 
             </div>
         </div>
+       </div>
+        <div className={styles.checkout__card__delivery} >
+        <Deliveryform/>
+
+        </div>
+
+        {/* <div> */}
+        {/* </div> */}
     </div>
   )
 }
