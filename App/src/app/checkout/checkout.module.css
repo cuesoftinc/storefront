@@ -1,0 +1,17 @@
+.checkout__main{
+    max-width: 1285px;
+    margin: var(--small) auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.checkout__section{
+    width: 100%;
+    /* place-items: flex-start; */
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    grid-template-rows: 1fr;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    }
+    
