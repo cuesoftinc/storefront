@@ -126,13 +126,20 @@
   margin-block: auto;
 }
 
-.second__nav__item li a img {
+/* .second__nav__item li a img {
   width: 15px;
   height: 15px;
+} */
+
+.nav__input input {
+  height: 40px !important;
 }
 
 .nav ul li {
   list-style-type: none;
+}
+.nav ul li:hover {
+  transform: scale(1.05);
 }
 
 .nav a {

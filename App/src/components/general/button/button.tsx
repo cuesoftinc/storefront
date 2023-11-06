@@ -1,19 +1,19 @@
 import React from "react";
-import { BtnProps } from "@/types";
-import { useAuthContext } from "@/context/userContext";
+import styles from "./button.module.css";
 
-const Button = ({
-  btnContent,
-  btnStyle,
-  disable,
-  handleRegClick,
-}: BtnProps) => {
-  const { signupUser, setSignupUser } = useAuthContext();
+interface BtnProps {
+  btnContent: string;
+  btnStyle?: string;
+  icon?: any;
+  handleClick?: () => void;
+}
 
+const Button = ({ btnContent, btnStyle, icon, handleClick }: BtnProps) => {
   return (
-    <div>
-      <button className={btnStyle} onClick={handleRegClick} disabled={disable}>
-        {signupUser.isLoading ? "Loading..." : btnContent}
+    <div className={`${styles.__btn} ${btnStyle}`}>
+      <button onClick={handleClick}>
+        <span className={styles.cart__icon}>{icon}</span>{" "}
+        <span>{btnContent}</span>
       </button>
     </div>
   );

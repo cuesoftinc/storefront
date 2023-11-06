@@ -14,10 +14,12 @@ import favIcon from "./fav.png";
 import cartIcon from "./cart.png";
 import Summerarrow from "./summerarrow";
 import Delivery from "./delivery";
+import Delete from "./Delete";
 
 export {
   facebook,
   twitter,
+  Delete,
   profileIcon,
   lockIcon,
   mailIcon,

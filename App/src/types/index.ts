@@ -39,23 +39,14 @@ export interface SigninUserProp {
   };
 }
 
-export interface InputProps {
-  type: string;
-  name: string;
-  holder: string;
-  icons?: any;
-  value: string;
-  handleChange: (e: ChangeEvent<HTMLInputElement>) => void;
-  inputStyle?: string;
-}
-
-export interface BtnProps {
-  btnContent: string;
-  btnStyle: string;
-  disable: boolean;
-  handleRegClick: (e: React.FormEvent) => void;
-}
 export interface SigninModule {
   error__sign__response: string;
   styles: string;
+}
+
+export interface OverlayProps {
+  onClose: () => void;
+  // setClose: Dispatch<SetStateAction<boolean>>;
+  // isClose: boolean;
+
 }

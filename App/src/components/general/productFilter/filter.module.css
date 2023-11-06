@@ -1,0 +1,28 @@
+.filter__product {
+  /* border: 2px solid red; */
+  display: flex;
+  align-items: center;
+}
+
+.filter__product select {
+  display: block;
+  border: 2px solid var(--fadedBlue);
+  border-radius: 5px;
+  font-size: 16px;
+  margin-left: 20px;
+  cursor: pointer;
+  padding: 5px 8px;
+}
+.filter__product select:focus {
+  border: none;
+  outline: 2px solid var(--solidFadedBlue);
+}
+
+.filter__product select option {
+  /* accent-color: var(--solidFadedBlue); */
+  /* background-color: var(--solidFadedBlue); */
+}
+
+.filter__product select:last-child {
+  margin-left: auto;
+}
