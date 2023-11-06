@@ -1,7 +1,15 @@
-import React from "react";
-import { InputProps } from "@/types";
-import Image from "next/image";
+import React, { ChangeEvent } from "react";
 import styles from "./input.module.css";
+
+interface InputProps {
+  type: string;
+  name: string;
+  holder: string;
+  icons?: any;
+  value: string;
+  handleChange: (e: ChangeEvent<HTMLInputElement>) => void;
+  inputStyle?: string;
+}
 
 const InputBox = ({
   type,
@@ -21,7 +29,7 @@ const InputBox = ({
         value={value}
         onChange={handleChange}
       />
-      <Image src={icons} alt="profile" width="40" height="20" />
+      <span>{icons}</span>
     </div>
   );
 };

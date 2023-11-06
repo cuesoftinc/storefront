@@ -1,5 +1,6 @@
 .single__fashion__product {
   /* border: 2px solid red; */
+  position: relative;
 }
 
 .single__fashion__product > img {
@@ -7,7 +8,40 @@
   height: 200px;
 }
 
+.favourite__icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #fff;
+  font-size: 25px;
+  cursor: pointer;
+  transition: ease 0.5s all;
+}
+.favourite__icon:hover {
+  transform: scale(1.2);
+}
+
 .fashion__short__desc {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  margin-block: 10px;
+  opacity: 0.7;
+}
+.fashion__short__desc h4:first-child {
+  width: 80%;
+}
+
+.fashion__short__desc h3:last-child {
+  /* border: 2px solid green; */
+  display: flex;
+}
+
+.fashion__short__desc h3 span:first-child,
+.fashion__short__desc h3 span:last-child {
+  font-size: 13px;
+}
+
+.cart__icon {
+  /* color: #fff; */
 }

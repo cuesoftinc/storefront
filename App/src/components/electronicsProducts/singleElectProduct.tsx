@@ -1,34 +1,31 @@
 import React from "react";
 import { cartIcon } from "@/assets/icons";
+import { FaHeart, FaCartPlus } from "react-icons/fa";
 import Image from "next/image";
 import styles from "./sinlgeElectProduct.module.css";
+import Button from "../general/button/button";
 
-const SingleElectronicProduct = ({
-  image,
-  category,
-}: {
+interface ElectProps {
   image: string;
   category: string;
-}) => {
+}
+
+const SingleElectronicProduct = ({ image, category }: ElectProps) => {
   return (
     <section className={styles.single__electronics__product}>
       <Image src={image} alt={category} width={200} height={100} />
+      <FaHeart title="Add to favourite" className={styles.favourite__icon} />
+
       <div className={styles.short__desc}>
-        <p>This is a short desc</p>
-        <p>
-          <sup>$</sup>
+        <h3>Acer 5822Q bi 21.5 Inches Full HD</h3>
+        <h3>
+          <span>$</span>
           <span>95</span>
-          <sup>.00</sup>
-        </p>
+          <span>.00</span>
+        </h3>
       </div>
 
-      <h3>Full HD</h3>
-      <p>
-        rating <span>(91)</span>
-      </p>
-      <button>
-        <Image src={cartIcon} alt="cart" /> <span>Add to Cart</span>
-      </button>
+      <Button btnContent="Add to Cart" icon={<FaCartPlus />} />
     </section>
   );
 };
