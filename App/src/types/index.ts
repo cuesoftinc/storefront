@@ -50,3 +50,22 @@ export interface OverlayProps {
   // isClose: boolean;
 
 }
+// delivery form
+
+export interface FormData {
+  firstName: string;
+  lastName: string;
+  address: string;
+  city: string;
+  zipCode: string;
+  tell: string;
+  email: string;
+  // Add more fields as needed
+}
+export interface formdetails {
+  formData: FormData;
+  setFormSubmitted:Dispatch<SetStateAction<boolean>>;
+
+  // handleFormSubmit:  void;
+  
+}
