@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import styles from "./cart.module.css";
+import styles from "./cartCard.module.css";
 import { FaTrash } from "react-icons/fa";
 import RaisedElement from "../general/raisedElement/raisedElement";
 
@@ -28,11 +28,11 @@ const CartCard = ({ image }: CartItemsProps) => {
 
         <footer>
           <button>
-            <span>-</span>
+            <span>–</span>
             <span>1</span>
             <span>+</span>
           </button>
-          <FaTrash />
+          <FaTrash className={styles.trash__cart} />
         </footer>
       </summary>
     </div>

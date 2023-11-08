@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { ShowNav } from "@/components/sharedLayouts";
 import { AuthProvider } from "@/context/userContext";
 import ShowFooter from "@/components/sharedLayouts/showFooter";
+import { CartProvider } from "@/context";
 
 export const metadata: Metadata = {
   title: "Home",
@@ -19,10 +20,12 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <AuthProvider>
-          <ShowNav />
+          <CartProvider>
+            <ShowNav />
 
-          {children}
-          <ShowFooter />
+            {children}
+            <ShowFooter />
+          </CartProvider>
         </AuthProvider>
       </body>
     </html>

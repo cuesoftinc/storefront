@@ -9,12 +9,20 @@
 }
 
 .cart__modal {
+  /* border: 2px solid red; */
   background-color: #fff;
   position: absolute;
   right: 0px;
   width: 590px;
-  /* height: 100vh; */
-  padding: 3rem 0px 60px 3rem;
+  height: 100vh;
+  padding: 5vh 20px 20px 3rem;
+}
+
+@media screen and (max-width: 650px) {
+  .cart__modal {
+    width: 100%;
+    padding-inline: var(--small) 0px;
+  }
 }
 
 .main__cart__header {
@@ -38,47 +46,52 @@
 
 .close__icon {
   margin-left: auto;
+  margin-right: 3rem;
   font-size: 20px;
   cursor: pointer;
 }
 
 .cart___items {
-  overflow-y: scroll;
-  height: 100vh;
-  margin-top: 40px;
-  padding-bottom: 200px;
+  overflow-y: auto;
+  height: 60vh;
+  margin-top: 4vh;
 }
 
-/* ================== */
-/* Each cart item CSS */
-.single__cart__card {
-  /* border: 2px solid green; */
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  padding-right: 30px;
-}
-
-.img__con img {
-  width: 220px;
-}
-
-.single__cart__card summary {
-  /* border: 2px solid red; */
-  width: 100%;
-}
-
-.each__cart__header {
+/* =================== */
+/* Footer */
+.subtotal__con {
   display: flex;
   justify-content: space-between;
-  gap: 30px;
+  margin-top: 5vh;
+  padding-right: 3rem;
 }
 
-.each__cart__header h4 {
-  /* border: 2px solid red; */
-  width: 180px;
-}
-
-.each__cart__header h3 {
+.subtotal__con h3 {
   display: flex;
+}
+
+.cart__btn {
+  /* border: 2px solid red; */
+  margin-inline: auto;
+  width: 400px !important;
+  /* margin-bottom: 3vh; */
+}
+.cart__btn button {
+  width: 100%;
+  background-color: #2f8ac7 !important;
+  color: #fff;
+  padding-block: 10px !important;
+}
+.cart__btn button:hover {
+  transform: scale(1.05);
+}
+
+@media screen and (max-width: 650px) {
+  .close__icon {
+    margin-right: 2rem;
+  }
+
+  .cart__btn {
+    width: 200px !important;
+  }
 }

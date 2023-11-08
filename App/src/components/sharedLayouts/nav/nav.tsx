@@ -10,12 +10,14 @@ import { usePathname } from "next/navigation";
 import { Favourite } from "@/components/favourite";
 import { CloseNav, OpenNav } from "@/assets/icons/navBarIcons";
 import Cart from "@/components/cart/cart";
+import { useCartContext } from "@/context";
 
 const Nav = () => {
   const pathname: string = usePathname();
 
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const [isCartOverlay, setIsCartOverlay] = useState<boolean>(false);
+
+  const { isCartOverlay, setIsCartOverlay } = useCartContext();
 
   const handleProductSearch = () => {
     //
@@ -42,10 +44,6 @@ const Nav = () => {
   // CART OVERLAY
   const handleCartOpenOverlay = () => {
     setIsCartOverlay(true);
-  };
-
-  const handleCartCloseOverlay = () => {
-    setIsCartOverlay(false);
   };
 
   return (
@@ -120,7 +118,7 @@ const Nav = () => {
         </nav>
       </header>
       {isOverlayOpen && <Favourite onClose={handleCloseOverlay} />}
-      {isCartOverlay && <Cart closeOverlay={handleCartCloseOverlay} />}
+      {isCartOverlay && <Cart />}
     </>
   );
 };
