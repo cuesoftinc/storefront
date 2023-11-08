@@ -4,6 +4,7 @@ import { FaHeart, FaCartPlus } from "react-icons/fa";
 import Image from "next/image";
 import styles from "./sinlgeElectProduct.module.css";
 import Button from "../general/button/button";
+import RaisedElement from "../general/raisedElement/raisedElement";
 
 interface ElectProps {
   image: string;
@@ -19,9 +20,9 @@ const SingleElectronicProduct = ({ image, category }: ElectProps) => {
       <div className={styles.short__desc}>
         <h3>Acer 5822Q bi 21.5 Inches Full HD</h3>
         <h3>
-          <span>$</span>
+          <RaisedElement content="$" />
           <span>95</span>
-          <span>.00</span>
+          <RaisedElement content=".00" />
         </h3>
       </div>
 

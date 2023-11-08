@@ -15,7 +15,7 @@ const Nav = () => {
   const pathname: string = usePathname();
 
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const [isCartOverlay, setIsCartOverlay] = useState<boolean>(true);
+  const [isCartOverlay, setIsCartOverlay] = useState<boolean>(false);
 
   const handleProductSearch = () => {
     //
