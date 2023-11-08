@@ -1,0 +1,17 @@
+.cart__con {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  min-height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 999;
+}
+
+.cart__modal {
+  background-color: #fff;
+  position: absolute;
+  right: 0px;
+  width: 590px;
+  min-height: 100vh;
+}
