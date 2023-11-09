@@ -5,16 +5,19 @@ import Link from "next/link";
 import styles from "./nav.module.css";
 import Logo from "../../general/logo/logo";
 import InputBox from "@/components/general/input/input";
-import { cartIcon, favIcon, profileIcon, searchIcon } from "@/assets/icons";
 import { FaHeart, FaCartPlus, FaUser, FaSearch } from "react-icons/fa";
 import { usePathname } from "next/navigation";
 import { Favourite } from "@/components/favourite";
 import { CloseNav, OpenNav } from "@/assets/icons/navBarIcons";
+import Cart from "@/components/cart/cart";
+import { useCartContext } from "@/context";
 
 const Nav = () => {
   const pathname: string = usePathname();
 
   const [isOpen, setIsOpen] = useState<boolean>(false);
+
+  const { isCartOverlay, setIsCartOverlay } = useCartContext();
 
   const handleProductSearch = () => {
     //
@@ -27,8 +30,8 @@ const Nav = () => {
   const handleCloseNavClick = () => {
     setIsOpen(false);
   };
-  // favourite overlay
 
+  // favourite overlay
   const [isOverlayOpen, setIsOverlayOpen] = useState(false);
   const handleOpenOverlay = () => {
     setIsOverlayOpen(true);
@@ -36,6 +39,11 @@ const Nav = () => {
 
   const handleCloseOverlay = () => {
     setIsOverlayOpen(false);
+  };
+
+  // CART OVERLAY
+  const handleCartOpenOverlay = () => {
+    setIsCartOverlay(true);
   };
 
   return (
@@ -85,15 +93,7 @@ const Nav = () => {
               />
             </li>
             <li onClick={handleCloseNavClick}>
-              <button
-                style={{
-                  border: "none",
-                  backgroundColor: "transparent",
-                  fontSize: "16px",
-                  cursor: "pointer",
-                }}
-                onClick={handleOpenOverlay}
-              >
+              <button onClick={handleOpenOverlay}>
                 <FaHeart />
                 <p>
                   <strong>Favourite</strong>
@@ -101,10 +101,12 @@ const Nav = () => {
               </button>
             </li>
             <li onClick={handleCloseNavClick}>
-              <Link href="">
+              <button onClick={handleCartOpenOverlay}>
                 <FaCartPlus />
-                <p>Cart</p>
-              </Link>
+                <p>
+                  <strong>Cart</strong>
+                </p>
+              </button>
             </li>
             <li onClick={handleCloseNavClick}>
               <Link href="">
@@ -116,6 +118,7 @@ const Nav = () => {
         </nav>
       </header>
       {isOverlayOpen && <Favourite onClose={handleCloseOverlay} />}
+      {isCartOverlay && <Cart />}
     </>
   );
 };

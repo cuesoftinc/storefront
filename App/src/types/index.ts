@@ -17,6 +17,11 @@ export interface SigninContextProps {
   setIsSuccessBg: Dispatch<SetStateAction<string>>;
 }
 
+export interface CartContextProps {
+  isCartOverlay: boolean;
+  setIsCartOverlay: Dispatch<SetStateAction<boolean>>;
+}
+
 /* ==================== */
 // Other Types
 export interface SignupUserProp {
@@ -48,7 +53,6 @@ export interface OverlayProps {
   onClose: () => void;
   // setClose: Dispatch<SetStateAction<boolean>>;
   // isClose: boolean;
-
 }
 // delivery form
 
@@ -64,8 +68,7 @@ export interface FormData {
 }
 export interface formdetails {
   formData: FormData;
-  setFormSubmitted:Dispatch<SetStateAction<boolean>>;
+  setFormSubmitted: Dispatch<SetStateAction<boolean>>;
 
   // handleFormSubmit:  void;
-  
 }

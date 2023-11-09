@@ -110,16 +110,29 @@
     margin-top: 20px;
     color: #fff;
   }
+
   .first__nav__item li a {
     color: #fff;
+  }
+
+  .second__nav__item {
+    /* border: 2px solid red; */
   }
 
   .second__nav__item li {
     margin-top: 20px;
   }
+
   .second__nav__item li a {
     color: #fff;
   }
+}
+
+.second__nav__item li > button {
+  border: none;
+  background-color: transparent;
+  font-size: 16px;
+  cursor: pointer;
 }
 
 .second__nav__item li div {

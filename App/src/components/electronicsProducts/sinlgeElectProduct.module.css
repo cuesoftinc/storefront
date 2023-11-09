@@ -37,10 +37,10 @@
   display: flex;
 }
 
-.short__desc h3 span:first-child,
+/* .short__desc h3 span:first-child,
 .short__desc h3 span:last-child {
   font-size: 13px;
-}
+} */
 
 .cart__icon {
   /* color: #fff; */
