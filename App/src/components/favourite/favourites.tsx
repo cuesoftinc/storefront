@@ -21,7 +21,7 @@ const Favourite: React.FC<OverlayProps> = ({onClose}) => {
         }}>
        <div className={styles.favourite__header}>
             <h2>Favourite <span>3</span></h2>
-            <button onClick={onClose}><AiOutlineClose/></button>
+            <button onClick={onClose}><AiOutlineClose className={styles.btn} /></button>
         </div>
         <div>
             <Favouritecard />
