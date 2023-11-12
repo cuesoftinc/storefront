@@ -22,6 +22,13 @@ export interface CartContextProps {
   setIsCartOverlay: Dispatch<SetStateAction<boolean>>;
 }
 
+export interface generalContextProps {
+  isOpenSidebar: boolean;
+  setIsOpenSidebar: Dispatch<SetStateAction<boolean>>;
+  isOpen: boolean;
+  setIsOpen: Dispatch<SetStateAction<boolean>>;
+}
+
 /* ==================== */
 // Other Types
 export interface SignupUserProp {

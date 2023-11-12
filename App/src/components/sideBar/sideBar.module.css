@@ -3,6 +3,37 @@
   width: 300px;
 }
 
+.close__sidebar {
+  display: none;
+}
+@media screen and (max-width: 768px) {
+  .side__bar {
+    position: fixed;
+    top: 0;
+    z-index: 9;
+    min-height: 100vh;
+    background-color: #fff;
+    padding-top: 9rem;
+    transition: ease 0.5s all;
+  }
+
+  .remove__sidebar {
+    left: -400px;
+  }
+
+  .add__sidebar {
+    left: 0;
+  }
+
+  .close__sidebar {
+    display: block;
+    font-size: 25px;
+    color: var(--solidFadedBlue);
+    cursor: pointer;
+    margin-left: auto;
+  }
+}
+
 .side__bar__input {
   margin-top: 2.5vh;
 }

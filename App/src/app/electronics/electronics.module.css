@@ -4,4 +4,5 @@
   margin-inline: auto;
   padding-inline: var(--small);
   display: flex;
+  gap: 2.5vw;
 }

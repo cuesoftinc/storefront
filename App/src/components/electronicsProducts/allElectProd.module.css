@@ -1,7 +1,6 @@
 .all__electronics__products {
-  /* border: 2px solid green; */
+  border: 2px solid green;
   width: 100%;
-  margin-left: 3rem;
 }
 
 .all__elect__products__display {
@@ -10,4 +9,32 @@
   gap: 20px;
   margin-top: 20px;
   /* justify-items: center; */
+}
+.open__sidebar {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .all__electronics__products {
+    /* width: 80%; */
+    /* margin-left: auto; */
+  }
+
+  .all__elect__products__display {
+    /* grid-template-columns: 1fr;
+    max-width: 200px; */
+  }
+
+  .open__sidebar {
+    font-size: 25px;
+    color: var(--solidFadedBlue);
+    cursor: pointer;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  /* .all__electronics__products {
+    width: 100%;
+  } */
 }
