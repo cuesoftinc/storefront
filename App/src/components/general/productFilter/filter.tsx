@@ -24,7 +24,6 @@ const Filter = () => {
       ...filter,
       [name]: value,
     });
-    console.log(pathname);
   };
 
   // Function to handle change in the content of brand depending on the current page
@@ -40,7 +39,7 @@ const Filter = () => {
 
   return (
     <div className={styles.filter__product}>
-      <span>Filters:</span>
+      <h3>Filters:</h3>
       <select name="brand" value={brand} onChange={handleSelectChange}>
         <option value="">Brand</option>
         <option value={`${handleFilterPlaceholder("acer", "native")}`}>

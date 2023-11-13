@@ -10,14 +10,13 @@ import { usePathname } from "next/navigation";
 import { Favourite } from "@/components/favourite";
 import { CloseNav, OpenNav } from "@/assets/icons/navBarIcons";
 import Cart from "@/components/cart/cart";
-import { useCartContext } from "@/context";
+import { useCartContext, useGeneralContext } from "@/context";
 
 const Nav = () => {
   const pathname: string = usePathname();
 
-  const [isOpen, setIsOpen] = useState<boolean>(false);
-
   const { isCartOverlay, setIsCartOverlay } = useCartContext();
+  const { setIsOpenSidebar, isOpen, setIsOpen } = useGeneralContext();
 
   const handleProductSearch = () => {
     //
@@ -25,6 +24,7 @@ const Nav = () => {
 
   const handleOpenNavClick = () => {
     setIsOpen(true);
+    setIsOpenSidebar(false); // Close the side bar every time nav bar is opened
   };
 
   const handleCloseNavClick = () => {

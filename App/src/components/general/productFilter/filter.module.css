@@ -26,3 +26,25 @@
 .filter__product select:last-child {
   margin-left: auto;
 }
+
+@media screen and (max-width: 540px) {
+  .filter__product {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .filter__product select {
+    margin: 5px 0px;
+    width: 60%;
+  }
+
+  .filter__product select:last-child {
+    margin-left: 0px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .filter__product select {
+    width: 100%;
+  }
+}

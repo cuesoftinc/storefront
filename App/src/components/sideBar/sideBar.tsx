@@ -3,12 +3,15 @@
 import React from "react";
 import styles from "./sideBar.module.css";
 import InputBox from "../general/input/input";
-import { searchIcon } from "@/assets/icons";
 import Link from "next/link";
 import { FaSearch } from "react-icons/fa";
 import { usePathname } from "next/navigation";
+import { useGeneralContext } from "@/context";
+import { FaTimesCircle } from "react-icons/fa";
 
 const SideBar = () => {
+  const { isOpenSidebar, setIsOpenSidebar } = useGeneralContext();
+
   const pathname = usePathname();
 
   const handleElectronicsSearch = () => {
@@ -16,8 +19,18 @@ const SideBar = () => {
   };
 
   return (
-    <section className={styles.side__bar}>
-      <h3>{`${pathname === "/electronics" ? "Electronics" : "Fashion"}`}</h3>
+    <section
+      className={`${styles.side__bar} ${
+        isOpenSidebar ? styles.add__sidebar : styles.remove__sidebar
+      }`}
+    >
+      <h3>
+        {`${pathname === "/electronics" ? "Electronics" : "Fashion"}`}{" "}
+        <FaTimesCircle
+          className={styles.close__sidebar}
+          onClick={() => setIsOpenSidebar(false)} // Close the nav bar every time side bar is opened
+        />
+      </h3>
       <InputBox
         type="text"
         name="search"
