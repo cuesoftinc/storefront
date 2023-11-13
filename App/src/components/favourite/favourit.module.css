@@ -14,7 +14,7 @@
   @media (max-width: 768px) {
     justify-content: center !important;
   }
-
+}
 
 .modal {
   background: #fff;
@@ -133,10 +133,9 @@
   width: 24px;
   height: auto;
 }
-.btn{
+.btn {
   color: #101928;
   font-weight: bold;
-
 }
 
 .favourite__icon {
