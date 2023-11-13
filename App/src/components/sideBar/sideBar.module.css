@@ -35,6 +35,12 @@
   }
 }
 
+@media screen and (max-width: 400px) {
+  .side__bar {
+    width: 90%;
+  }
+}
+
 .side__bar__input {
   margin-top: 2.5vh;
 }
