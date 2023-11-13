@@ -40,7 +40,7 @@ const Filter = () => {
 
   return (
     <div className={styles.filter__product}>
-      <span>Filters:</span>
+      <h3>Filters:</h3>
       <select name="brand" value={brand} onChange={handleSelectChange}>
         <option value="">Brand</option>
         <option value={`${handleFilterPlaceholder("acer", "native")}`}>

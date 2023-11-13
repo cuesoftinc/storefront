@@ -6,6 +6,7 @@
 .single__product > img {
   width: 100%;
   height: 200px;
+  border-radius: 5px;
 }
 
 .favourite__icon {

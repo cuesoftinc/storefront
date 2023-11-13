@@ -26,3 +26,14 @@
 .filter__product select:last-child {
   margin-left: auto;
 }
+
+@media screen and (max-width: 540px) {
+  .filter__product {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .filter__product select:last-child {
+    margin-left: 20px;
+  }
+}
