@@ -16,6 +16,8 @@ func SetupRoutes(server *gin.Engine, db *gorm.DB) {
 	_ = repository.NewProductRepository(db)
 	userController := controllers.NewUserController(db)
 	productController := controllers.NewProductController(db)
+	cartController := controllers.NewCartController(db)
+	favoriteController := controllers.NewFavoriteController(db)
 	admin := roleRepo.GetAdminRoleID()
 
 	server.GET("/ping", controllers.ControllerPing)
@@ -40,5 +42,21 @@ func SetupRoutes(server *gin.Engine, db *gorm.DB) {
 	{
 		productRoutes.GET("/:id", middlewares.AuthorizeJWT(), productController.GetOneProduct)
 		productRoutes.GET("/", middlewares.AuthorizeJWT(), productController.GetAllProducts)
+		productRoutes.GET("/category/:category_id", middlewares.AuthorizeJWT(), productController.GetProductsByCategory)
+		productRoutes.GET("/category/:category_id/subCategory/:sub_category_id", middlewares.AuthorizeJWT(), productController.GetProductsBySubCategory)
+	}
+
+	cartRoutes := apiRoutes.Group("/cart")
+	{
+		cartRoutes.POST("/create", middlewares.AuthorizeJWT(), cartController.CreateNewCart)
+		cartRoutes.GET("/", middlewares.AuthorizeJWT(), cartController.GetUserCarts)
+		//cartRoutes.DELETE("/:id", middlewares.AuthorizeJWT(), cartController.RemoveFromCart)
+	}
+
+	favoriteRoutes := apiRoutes.Group("/favorite")
+	{
+		favoriteRoutes.POST("/create", middlewares.AuthorizeJWT(), favoriteController.CreateNewFavorite)
+		favoriteRoutes.GET("/", middlewares.AuthorizeJWT(), favoriteController.GetUserFavorites)
+		//favoriteRoutes.DELETE("/:id", middlewares.AuthorizeJWT(), favoriteController.RemoveFromFavorite)
 	}
 }
