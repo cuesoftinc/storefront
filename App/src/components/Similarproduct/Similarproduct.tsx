@@ -4,6 +4,7 @@ import { Tv } from "@/assets/images";
 import Image from "next/image";
 import { Cartsvg, Ratesvg } from '@/assets/icons';
 import Link from 'next/link';
+import { FaHeart } from 'react-icons/fa';
 
 export default function SimilarProductr() {
   return (
@@ -43,6 +44,8 @@ export default function SimilarProductr() {
                         </button>
 
                     </div>
+                    <FaHeart title="Add to favourite" className={styles.favourite__icon} />
+
 
                 </Link>
                 <div className={styles.productcol}>
@@ -71,6 +74,7 @@ export default function SimilarProductr() {
                         </button>
 
                     </div>
+                    <FaHeart title="Add to favourite" className={styles.favourite__icon} />
 
                 </div>
                 <div className={styles.productcol} >
@@ -99,6 +103,7 @@ export default function SimilarProductr() {
                         </button>
 
                     </div>
+                    <FaHeart title="Add to favourite" className={styles.favourite__icon} />
 
                 </div>
                 <div className={styles.productcol} >
@@ -127,6 +132,7 @@ export default function SimilarProductr() {
                         </button>
 
                     </div>
+                    <FaHeart title="Add to favourite" className={styles.favourite__icon} />
 
                 </div>
               

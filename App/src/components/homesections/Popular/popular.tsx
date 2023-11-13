@@ -4,6 +4,8 @@ import { Tv } from "@/assets/images";
 import Image from "next/image";
 import { Cartsvg, Ratesvg } from '@/assets/icons';
 import Link from 'next/link';
+import { FaHeart } from "react-icons/fa";
+
 
 export default function Popular() {
   return (
@@ -19,6 +21,8 @@ export default function Popular() {
          <div className={styles.popularimgcontainer}>
                 <Link href="/electronics/electronicsId" className={styles.productcol} >
                 <Image src={Tv} alt="popular  Image"className={styles.popularimg} />
+               
+
                     <div className={styles.imgtextcontainer}>
                         <div className={styles.imgtext}>
                             <p className={styles.imgp}>Acer 5822Q bi 21.5 Inches Full HD</p>
@@ -43,10 +47,11 @@ export default function Popular() {
                         </button>
 
                     </div>
+                    <FaHeart title="Add to favourite" className={styles.favourite__icon} />
 
                 </Link>
                 <div className={styles.productcol}>
-                <Image src={Tv} alt="popular  Image"className={styles.popularimg} />
+                    <Image src={Tv} alt="popular  Image"className={styles.popularimg} />
                     <div className={styles.imgtextcontainer}>
                         <div className={styles.imgtext}>
                             <p className={styles.imgp}>Acer 5822Q bi 21.5 Inches Full HD</p>
@@ -71,6 +76,8 @@ export default function Popular() {
                         </button>
 
                     </div>
+
+                    <FaHeart title="Add to favourite" className={styles.favourite__icon} />
 
                 </div>
                 <div className={styles.productcol} >
@@ -99,6 +106,7 @@ export default function Popular() {
                         </button>
 
                     </div>
+                    <FaHeart title="Add to favourite" className={styles.favourite__icon} />
 
                 </div>
                 <div className={styles.productcol} >
@@ -127,6 +135,7 @@ export default function Popular() {
                         </button>
 
                     </div>
+                    <FaHeart title="Add to favourite" className={styles.favourite__icon} />
 
                 </div>
               
