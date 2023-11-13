@@ -24,7 +24,6 @@ const Filter = () => {
       ...filter,
       [name]: value,
     });
-    console.log(pathname);
   };
 
   // Function to handle change in the content of brand depending on the current page
