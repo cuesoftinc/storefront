@@ -15,16 +15,6 @@
 }
 
 @media screen and (max-width: 768px) {
-  .all__products {
-    /* width: 80%; */
-    /* margin-left: auto; */
-  }
-
-  .all__products__display {
-    /* grid-template-columns: 1fr;
-    max-width: 200px; */
-  }
-
   .open__sidebar {
     font-size: 25px;
     color: var(--solidFadedBlue);
@@ -33,8 +23,9 @@
   }
 }
 
-@media screen and (max-width: 650px) {
-  /* .all__products {
+@media screen and (max-width: 540px) {
+  .all__products__display {
+    grid-template-columns: 1fr;
     width: 100%;
-  } */
+  }
 }

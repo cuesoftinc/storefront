@@ -42,7 +42,7 @@
     gap: 10px;
   }
 }
-@media screen and (max-width: 330px) {
+@media screen and (max-width: 400px) {
   .footer__con {
     grid-template-columns: 1fr;
   }
