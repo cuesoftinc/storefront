@@ -1,8 +1,7 @@
 import React from "react";
-import { cartIcon } from "@/assets/icons";
 import { FaHeart, FaCartPlus } from "react-icons/fa";
 import Image from "next/image";
-import styles from "./sinlgeElectProduct.module.css";
+import styles from "./sinlgeProduct.module.css";
 import Button from "../general/button/button";
 import RaisedElement from "../general/raisedElement/raisedElement";
 
@@ -13,7 +12,7 @@ interface ElectProps {
 
 const SingleElectronicProduct = ({ image, category }: ElectProps) => {
   return (
-    <section className={styles.single__electronics__product}>
+    <section className={styles.single__product}>
       <Image src={image} alt={category} width={200} height={100} />
       <FaHeart title="Add to favourite" className={styles.favourite__icon} />
 

@@ -15,8 +15,6 @@ import { useCartContext, useGeneralContext } from "@/context";
 const Nav = () => {
   const pathname: string = usePathname();
 
-  // const [isOpen, setIsOpen] = useState<boolean>(false);
-
   const { isCartOverlay, setIsCartOverlay } = useCartContext();
   const { setIsOpenSidebar, isOpen, setIsOpen } = useGeneralContext();
 

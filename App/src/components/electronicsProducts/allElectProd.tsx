@@ -3,7 +3,7 @@
 import React, { Suspense } from "react";
 // import SingleElectronicProduct from "./singleElectProduct";
 import { electronics } from "@/utils/data";
-import styles from "./allElectProd.module.css";
+import styles from "./allProd.module.css";
 import Filter from "../general/productFilter/filter";
 import { FaArrowCircleRight } from "react-icons/fa";
 import { useGeneralContext } from "@/context";
@@ -16,7 +16,7 @@ const AllElectronicsProducts = () => {
   const { setIsOpenSidebar, setIsOpen } = useGeneralContext();
 
   return (
-    <section className={styles.all__electronics__products}>
+    <section className={styles.all__products}>
       <Filter />
 
       <FaArrowCircleRight
@@ -27,7 +27,7 @@ const AllElectronicsProducts = () => {
         }}
       />
 
-      <article className={styles.all__elect__products__display}>
+      <article className={styles.all__products__display}>
         {electronics.map((each) => (
           <Suspense fallback={<p>Loading...</p>} key={each.id}>
             <SingleElectronicProduct {...each} />

@@ -28,7 +28,7 @@ const SideBar = () => {
         {`${pathname === "/electronics" ? "Electronics" : "Fashion"}`}{" "}
         <FaTimesCircle
           className={styles.close__sidebar}
-          onClick={() => setIsOpenSidebar(false)}
+          onClick={() => setIsOpenSidebar(false)} // Close the nav bar every time side bar is opened
         />
       </h3>
       <InputBox

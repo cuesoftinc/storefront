@@ -123,6 +123,10 @@
     margin-top: 20px;
   }
 
+  .nav ul li > button {
+    color: #fff;
+  }
+
   .second__nav__item li a {
     color: #fff;
   }
@@ -138,11 +142,6 @@
 .second__nav__item li div {
   margin-block: auto;
 }
-
-/* .second__nav__item li a img {
-  width: 15px;
-  height: 15px;
-} */
 
 .nav__input input {
   height: 40px !important;
