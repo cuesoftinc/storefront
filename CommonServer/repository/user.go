@@ -7,7 +7,7 @@ import (
 
 type UserRepository interface {
 	AddUser(models.User) (models.User, error)
-	GetUser(uint) (models.User, error)
+	GetUser(id string) (models.User, error)
 	GetUsers() ([]models.User, error)
 	UpdateUser(models.User) (models.User, error)
 	DeleteUser(models.User) (models.User, error)
@@ -24,9 +24,9 @@ func NewUserRepository(db *gorm.DB) UserRepository {
 	}
 }
 
-func (db *userRepository) GetUser(id uint) (models.User, error) {
+func (db *userRepository) GetUser(id string) (models.User, error) {
 	var user models.User
-	result := db.connection.First(&user, id)
+	result := db.connection.Where("id = ?", id).First(&user)
 	return user, result.Error
 }
 
@@ -49,7 +49,7 @@ func (db *userRepository) UpdateUser(user models.User) (models.User, error) {
 }
 
 func (db *userRepository) DeleteUser(user models.User) (models.User, error) {
-	if err := db.connection.First(&user, user.ID).Error; err != nil {
+	if err := db.connection.Where("id = ?", user.ID).First(&user).Error; err != nil {
 		return user, err
 	}
 	return user, db.connection.Delete(&user).Error
