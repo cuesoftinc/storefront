@@ -1,6 +1,12 @@
-import { HomeProvider } from "./homeContext";
-import { CartProvider } from "./cartContext";
-import { useHomeContext } from "./homeContext";
-import { useCartContext } from "./cartContext";
+import { CartProvider, useCartContext } from "./cartContext";
+import { GeneralProvider, useGeneralContext } from "./generalContext";
+import { AuthProvider, useAuthContext } from "./userContext";
 
-export { HomeProvider, CartProvider, useCartContext, useHomeContext };
+export {
+  CartProvider,
+  useCartContext,
+  GeneralProvider,
+  useGeneralContext,
+  AuthProvider,
+  useAuthContext,
+};

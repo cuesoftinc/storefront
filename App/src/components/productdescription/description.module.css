@@ -4,7 +4,7 @@
     align-items: center;
     justify-content: center;
     padding: 50px 0;
-    /* gap: 40px; */
+    gap: 70px;
     justify-content: center !;
     /* max-width: 1312px !important; */
     /* background-color: #101928; */
@@ -289,3 +289,17 @@ gap: 10px;
     }
 
 }
+
+/* fav */
+/* animation: myfav 1s ease-in 0s 1 normal both;
+@keyframes myfav {
+	0% {
+		opacity: 0;
+		transform: translateY(-50px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+} */
