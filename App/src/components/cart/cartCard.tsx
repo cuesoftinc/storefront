@@ -3,6 +3,7 @@ import Image from "next/image";
 import styles from "./cartCard.module.css";
 import { FaTrash } from "react-icons/fa";
 import RaisedElement from "../general/raisedElement/raisedElement";
+import { Delete } from "@/assets/icons";
 
 interface CartItemsProps {
   image: string;
@@ -32,7 +33,7 @@ const CartCard = ({ image }: CartItemsProps) => {
             <span>1</span>
             <span>+</span>
           </button>
-          <FaTrash className={styles.trash__cart} />
+          <Delete />
         </footer>
       </summary>
     </div>
