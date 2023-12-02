@@ -1,0 +1,11 @@
+root = "."
+tmp_dir = "tmp"
+build_args = ["-tags", "development"]
+delay = 1000
+exclude_dir = ["tmp", "vendor"]
+exclude_file = []
+include_ext = ["go"]
+log_color = true
+log_time = true
+log_prefix = "air"
+log_suffix = ""

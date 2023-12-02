@@ -7,7 +7,7 @@ import (
 	"time"
 )
 
-func GenerateToken(userId uint, email string) string {
+func GenerateToken(userId string, email string) string {
 	claims := jwt.MapClaims{
 		"userId": userId,
 		"email":  email,

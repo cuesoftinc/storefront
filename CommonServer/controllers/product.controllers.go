@@ -7,7 +7,6 @@ import (
 	"gorm.io/gorm"
 	"log"
 	"net/http"
-	"strconv"
 )
 
 type ProductController interface {
@@ -18,6 +17,8 @@ type ProductController interface {
 	DeleteOneProduct(ctx *gin.Context)
 	CreateNewCategory(ctx *gin.Context)
 	CreateSubCategory(ctx *gin.Context)
+	GetProductsByCategory(ctx *gin.Context)
+	GetProductsBySubCategory(ctx *gin.Context)
 }
 
 type ProductResponse struct {
@@ -77,17 +78,9 @@ func (pc *productController) GetOneProduct(ctx *gin.Context) {
 	var categoryName string
 	var subCategoryName string
 
-	id, err := strconv.Atoi(ctx.Param("id"))
+	id := ctx.Param("id")
 
-	if err != nil {
-		log.Println(err)
-		ctx.JSON(http.StatusBadRequest, ProductResponse{
-			Success: false,
-			Message: "Invalid product ID",
-		})
-		return
-	}
-	product, err = pc.productRepo.GetProduct(id)
+	product, err := pc.productRepo.GetProduct(id)
 
 	if err != nil {
 		log.Println(err)
@@ -159,10 +152,58 @@ func (pc *productController) GetAllProducts(ctx *gin.Context) {
 }
 
 func (pc *productController) UpdateOneProduct(ctx *gin.Context) {
+	var product models.Product
+
+	if err := ctx.ShouldBindJSON(&product); err != nil {
+		log.Println(err)
+		ctx.JSON(http.StatusBadRequest, ProductResponse{
+			Success: false,
+			Message: "Invalid request body",
+		})
+		return
+	}
+
+	product, err := pc.productRepo.UpdateProduct(product)
+
+	if err != nil {
+		log.Println(err)
+		ctx.JSON(http.StatusInternalServerError, ProductResponse{
+			Success: false,
+			Message: "Error updating product",
+		})
+		return
+	}
+
+	ctx.JSON(http.StatusOK, ProductResponse{
+		Success: true,
+		Message: "Product updated successfully",
+		Data:    product,
+	})
+
 }
 
 func (pc *productController) DeleteOneProduct(ctx *gin.Context) {
+	var product models.Product
 
+	id := ctx.Param("id")
+
+	product.ID = id
+	product, err := pc.productRepo.DeleteProduct(product)
+
+	if err != nil {
+		log.Println(err)
+		ctx.JSON(http.StatusInternalServerError, ProductResponse{
+			Success: false,
+			Message: "Error deleting product",
+		})
+		return
+	}
+
+	ctx.JSON(http.StatusOK, ProductResponse{
+		Success: true,
+		Message: "Product deleted successfully",
+		Data:    product,
+	})
 }
 
 func (pc *productController) CreateNewCategory(ctx *gin.Context) {
@@ -207,12 +248,12 @@ func (pc *productController) CreateSubCategory(ctx *gin.Context) {
 		return
 	}
 
-	// Take category ID from request params and convert to uint
-	categoryID, err := strconv.Atoi(ctx.Param("category_id"))
+	// Take category ID from request params
+	categoryID := ctx.Param("category_id")
 
-	subCategory.CategoryID = uint(categoryID)
+	subCategory.CategoryID = categoryID
 
-	subCategory, err = pc.categoryRepo.AddSubCategory(subCategory)
+	subCategory, err := pc.categoryRepo.AddSubCategory(subCategory)
 
 	if err != nil {
 		log.Println(err)
@@ -227,5 +268,52 @@ func (pc *productController) CreateSubCategory(ctx *gin.Context) {
 		Success: true,
 		Message: "Subcategory created successfully",
 		Data:    subCategory,
+	})
+}
+
+func (pc *productController) GetProductsByCategory(ctx *gin.Context) {
+	var products []models.Product
+
+	categoryID := ctx.Param("category_id")
+
+	products, err := pc.productRepo.GetProductsByCategory(categoryID)
+
+	if err != nil {
+		log.Println(err)
+		ctx.JSON(http.StatusInternalServerError, ProductResponse{
+			Success: false,
+			Message: "Error getting products",
+		})
+		return
+	}
+
+	ctx.JSON(http.StatusOK, ProductResponse{
+		Success: true,
+		Message: "Products retrieved successfully",
+		Data:    products,
+	})
+}
+
+func (pc *productController) GetProductsBySubCategory(ctx *gin.Context) {
+	var products []models.Product
+
+	categoryID := ctx.Param("category_id")
+	subCategoryID := ctx.Param("sub_category_id")
+
+	products, err := pc.productRepo.GetProductsBySubCategory(categoryID, subCategoryID)
+
+	if err != nil {
+		log.Println(err)
+		ctx.JSON(http.StatusInternalServerError, ProductResponse{
+			Success: false,
+			Message: "Error getting products",
+		})
+		return
+	}
+
+	ctx.JSON(http.StatusOK, ProductResponse{
+		Success: true,
+		Message: "Products retrieved successfully",
+		Data:    products,
 	})
 }

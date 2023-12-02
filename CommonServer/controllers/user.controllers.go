@@ -9,7 +9,6 @@ import (
 	"gorm.io/gorm"
 	"log"
 	"net/http"
-	"strconv"
 )
 
 type UserController interface {
@@ -143,19 +142,30 @@ func (u *userController) UpdateUser(c *gin.Context) {
 		return
 	}
 
+	// Get user from DB, note that ID is a string
 	id := c.Param("id")
-	intID, err := strconv.Atoi(id)
+
+	// Get user from DB
+	dbUser, err := u.userRepo.GetUser(id)
 
 	if err != nil {
 		log.Println(err)
-		c.JSON(http.StatusBadRequest, UserResponse{
+		c.JSON(http.StatusInternalServerError, UserResponse{
 			Success: false,
-			Message: "Invalid user ID",
+			Message: "Error retrieving user",
 		})
 		return
 	}
 
-	user.ID = uint(intID)
+	// Hash password if it is not empty
+	if user.Password != "" {
+		hashPassword(&user.Password)
+	} else {
+		user.Password = dbUser.Password
+	}
+
+	// Update user
+	user.ID = dbUser.ID
 	user, err = u.userRepo.UpdateUser(user)
 
 	if err != nil {
@@ -168,6 +178,7 @@ func (u *userController) UpdateUser(c *gin.Context) {
 	}
 
 	user.Password = ""
+
 	c.JSON(http.StatusOK, UserResponse{
 		Success: true,
 		Message: "User updated successfully",
@@ -188,19 +199,9 @@ func (u *userController) DeleteUser(c *gin.Context) {
 	}
 
 	id := c.Param("id")
-	intID, err := strconv.Atoi(id)
 
-	if err != nil {
-		log.Println(err)
-		c.JSON(http.StatusBadRequest, UserResponse{
-			Success: false,
-			Message: "Invalid user ID",
-		})
-		return
-	}
-
-	user.ID = uint(intID)
-	user, err = u.userRepo.DeleteUser(user)
+	user.ID = id
+	user, err := u.userRepo.DeleteUser(user)
 
 	if err != nil {
 		log.Println(err)
