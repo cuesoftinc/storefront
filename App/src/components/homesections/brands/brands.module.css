@@ -34,6 +34,9 @@
         justify-content: center;
         align-content: flex-start;
     }
+   .brandcontainer h1{
+        padding-left: 10px;
+    }
     .brandimg{
         width: 53px;
         height: 40px;

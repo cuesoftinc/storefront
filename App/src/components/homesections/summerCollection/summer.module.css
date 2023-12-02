@@ -203,7 +203,7 @@
 
 @media screen and (width: 540px) {
   .summercontainer {
-    margin-bottom: 200px;
+    margin-bottom: 33em !important;
   }
 }
 
@@ -211,8 +211,9 @@
 @media (min-width: 330px) and (max-width: 765px) {
   .summercontainer {
     width: 98vw !important;
-    height: 100svh;
+    height: fit-content;
     padding: 0 10px;
+    margin-bottom: 390px;
   }
 
   .summerimgcontainer {
@@ -221,7 +222,6 @@
     /* flex-direction: column; */
     flex-wrap: wrap;
     width: 100%;
-    height: 100svh !important;
   }
   .summerimg1 {
     width: 100%;
@@ -239,7 +239,7 @@
   }
   /* top text */
   .toptext {
-    font-size: 15px;
+    font-size: 10px;
   }
   /* buttom text */
   .buttomtext {
@@ -248,12 +248,12 @@
 
     gap: 24px;
     flex-wrap: wrap;
-    width: 342px;
+    width: 50%;
   }
   .buttomheader > h2 {
     font-feature-settings: "cv04" on, "cv03" on, "cv01" on;
     /* font-family: Open Sans; */
-    font-size: 25px;
+    font-size: 20px;
     font-style: normal;
     font-weight: 600;
     line-height: 120%; /* 43.2px */
@@ -262,13 +262,22 @@
   .secondh2 {
     font-feature-settings: "cv04" on, "cv03" on, "cv01" on;
     /* font-family: Open Sans; */
-    font-size: 25px;
+    font-size: 20px;
     font-style: normal;
     font-weight: 600;
     line-height: 120%; /* 43.2px */
     letter-spacing: -1.44px;
   }
+  .centered h2{
+    font-size: 25px;
+  }
+  .centered{
+    flex-wrap: wrap;
+    display: flex;
+    flex-direction: column;
+    width: 90%;
 
+  }
   .buttomtext > a {
     font-size: 16px;
   }
@@ -321,12 +330,12 @@
   }
 }
 /* Media query for tablets */
-@media (min-width: 767px) and (max-width: 1023px) {
+@media (min-width: 767px) and (max-width: 915px) {
   .summercontainer {
-    width: 100vw !important;
-    height: 100svh;
+    width: 100vw ;
+    height: 100svh ;
     padding: 0 10px;
-    margin-bottom: 100px;
+    margin-bottom: 220px;
   }
   .summerheadercontainer {
     width: 97%;
@@ -338,7 +347,7 @@
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    height: 100svh !important;
+    height: 100svh ;
   }
   .containerimg {
     width: 100%;
@@ -368,6 +377,7 @@
   .summercontainer {
     width: 100vw !important ;
     padding: 0 10px;
+    margin-bottom: 70px;
   }
 
   /* top text */
@@ -378,7 +388,7 @@
   /* buttom text */
   .buttomtext {
     position: absolute;
-    bottom: 8px;
+    bottom: 2px;
 
     gap: 10px;
     flex-wrap: wrap;
@@ -393,17 +403,17 @@
   .buttomheader > h2 {
     font-feature-settings: "cv04" on, "cv03" on, "cv01" on;
     /* font-family: Open Sans; */
-    font-size: 20px;
+    font-size: 16px;
     font-style: normal;
     display: flex;
     flex-wrap: wrap;
     width: 200px;
-    font-weight: 600;
+    font-weight: 500;
     line-height: 120%; /* 43.2px */
     letter-spacing: -1.44px;
   }
   .centered > h2 {
-    font-size: 20px;
+    font-size: 15px;
   }
   .centered {
     display: flex;
@@ -413,17 +423,16 @@
   .summerimgcontainer {
     padding: 10px !important;
     width: 100% !important;
-    /* max-height: 500px; */
     display: flex;
     align-items: center;
     height: 100svh !important;
 
-    gap: 30px;
-    justify-content: center;
+    gap: 10px;
+    justify-content: flex-start;
     flex-wrap: wrap;
   }
   .summerimg {
-    width: 100% !important;
+    width: 90% !important;
     display: flex;
     justify-content: center;
     height: 160px;
@@ -432,13 +441,16 @@
   }
   .summerimg1 {
     width: 100% !important;
-    /* padding: 0 10px; */
     display: flex;
+    height: 160px;
+
     justify-content: center;
   }
 
   .summerimgleft {
-    width: 100% !important;
+    /* width: 100% !important; */
     background-color: #2d2d2d;
+    height: 160px;
+
   }
 }
