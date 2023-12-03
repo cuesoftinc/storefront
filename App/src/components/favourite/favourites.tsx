@@ -2,7 +2,7 @@ import React from 'react'
 import Favouritecard from './favouritecard'
 import styles from './favourit.module.css'
 import { OverlayProps } from '@/types'
-import {AiOutlineClose} from 'react-icons/ai'
+import { FaTimes } from "react-icons/fa";
 
 
 const Favourite: React.FC<OverlayProps> = ({onClose}) => {
@@ -21,7 +21,7 @@ const Favourite: React.FC<OverlayProps> = ({onClose}) => {
         }}>
        <div className={styles.favourite__header}>
             <h2>Favourite <span>3</span></h2>
-            <button onClick={onClose}><AiOutlineClose className={styles.btn} /></button>
+            <button onClick={onClose}><FaTimes className={styles.btn} /></button>
         </div>
         <div>
             <Favouritecard />

@@ -1,17 +1,14 @@
 .show__sign__response {
-    /* transform: scale(1); */
-    /* opacity: 1; */
+    
     margin-block: 5px;
     color: black;
-    /* padding-block: 10px; */
     font-weight: 600;
     padding: 15px;
     width: 100% !important;
     display: flex;
     justify-content: center;
     align-items: center;
-    /* transform: scale(0); */
-    /* opacity: 0; */
+   
     background-color: #aa0707;
 
     transition: ease 1s all;
