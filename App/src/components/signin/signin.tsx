@@ -13,7 +13,7 @@ import { useAuthContext } from "@/context/loginContect";
 
 import { handleResponsesigninMsg } from "@/utils/response";
 
-export default function Signinpage() {
+export default function Signinadmin() {
   const {
     signinUser,
     setSigninUser,

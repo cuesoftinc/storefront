@@ -6,15 +6,18 @@
 }
 
 .admin__page {
+  /* border: 2px solid green; */
+  background-color: #f9fafb;
   display: flex;
   max-width: 1440px;
   margin-inline: auto;
-  padding: 20px;
+  /* padding: 20px; */
+  gap: 20px;
 }
 
 .children__styles {
   /* margin-top: 5rem; */
-  background-color: #f9fafb;
+  width: 80%;
 }
 
 .admin__logo {

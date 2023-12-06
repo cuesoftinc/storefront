@@ -17,6 +17,18 @@ export interface SigninContextProps {
   setIsSuccessBg: Dispatch<SetStateAction<string>>;
 }
 
+export interface CartContextProps {
+  isCartOverlay: boolean;
+  setIsCartOverlay: Dispatch<SetStateAction<boolean>>;
+}
+
+export interface generalContextProps {
+  isOpenSidebar: boolean;
+  setIsOpenSidebar: Dispatch<SetStateAction<boolean>>;
+  isOpen: boolean;
+  setIsOpen: Dispatch<SetStateAction<boolean>>;
+}
+
 /* ==================== */
 // Other Types
 export interface SignupUserProp {
@@ -39,23 +51,31 @@ export interface SigninUserProp {
   };
 }
 
-export interface InputProps {
-  type: string;
-  name: string;
-  holder: string;
-  icons?: string;
-  value: string;
-  handleChange: (e: ChangeEvent<HTMLInputElement>) => void;
-  inputStyle?: string;
-}
-
-export interface BtnProps {
-  btnContent: string;
-  btnStyle: string;
-  disable: boolean;
-  handleRegClick: (e: React.FormEvent) => void;
-}
 export interface SigninModule {
   error__sign__response: string;
   styles: string;
+}
+
+export interface OverlayProps {
+  onClose: () => void;
+  // setClose: Dispatch<SetStateAction<boolean>>;
+  // isClose: boolean;
+}
+// delivery form
+
+export interface FormData {
+  firstName: string;
+  lastName: string;
+  address: string;
+  city: string;
+  zipCode: string;
+  tell: string;
+  email: string;
+  // Add more fields as needed
+}
+export interface formdetails {
+  formData: FormData;
+  setFormSubmitted: Dispatch<SetStateAction<boolean>>;
+
+  // handleFormSubmit:  void;
 }

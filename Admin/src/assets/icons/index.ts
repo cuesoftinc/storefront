@@ -6,6 +6,7 @@ import settingIcon from "./settingsIcon.png";
 import helpIcon from "./headphone.png";
 import headerNotification from "./headerNotification.png";
 import searchIcon from "./search.png";
+import dropIcon from "./drop-image.png";
 
 export {
   dashboardIcon,
@@ -16,4 +17,5 @@ export {
   helpIcon,
   headerNotification,
   searchIcon,
+  dropIcon,
 };

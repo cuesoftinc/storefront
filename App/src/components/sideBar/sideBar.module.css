@@ -3,8 +3,49 @@
   width: 300px;
 }
 
+.close__sidebar {
+  display: none;
+}
+@media screen and (max-width: 768px) {
+  .side__bar {
+    position: fixed;
+    top: 0;
+    z-index: 9;
+    min-height: 100vh;
+    background-color: #fff;
+    padding-top: 9rem;
+    transition: ease 0.5s all;
+    border-right: 2px solid var(--solidFadedBlue);
+  }
+
+  .remove__sidebar {
+    left: -400px;
+  }
+
+  .add__sidebar {
+    left: var(--small);
+  }
+
+  .close__sidebar {
+    display: block;
+    font-size: 25px;
+    color: var(--solidFadedBlue);
+    cursor: pointer;
+    margin-left: auto;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .side__bar {
+    width: 90%;
+  }
+}
+
 .side__bar__input {
   margin-top: 2.5vh;
+}
+.side__bar__input input {
+  height: 40px;
 }
 
 .side__bar__nav__items {

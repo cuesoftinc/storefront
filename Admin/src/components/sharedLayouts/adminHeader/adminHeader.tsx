@@ -9,14 +9,10 @@ import { headerNotification } from "@/assets/iconsrafce";
 import { headerProfileImg } from "@/assets/imagesrafce";
 import Logo from "@/components/general/logo/logorafce";
 
-// console.log(searchIcon);
-
 const AdminHeader = () => {
   const handleChange = () => {
     //
   };
-
-  // console.log(searchIcon);
 
   return (
     <div className={styles.header__elements}>
@@ -31,8 +27,13 @@ const AdminHeader = () => {
         inputStyle={styles.admin__nav__input}
       />
       <div className={styles.notification}>
-        <Image src={headerNotification} alt="Notification" />
-        <Image src={headerProfileImg} alt="Profile" />
+        <Image
+          src={headerNotification}
+          alt="Notification"
+          width={20}
+          height={20}
+        />
+        <Image src={headerProfileImg} alt="Profile" width={20} height={20} />
       </div>
     </div>
   );
