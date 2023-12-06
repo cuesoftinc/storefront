@@ -4,6 +4,7 @@ import Image from "next/image";
 import styles from "./sinlgeProduct.module.css";
 import Button from "../general/button/button";
 import RaisedElement from "../general/raisedElement/raisedElement";
+import { Cartsvg } from "@/assets/icons";
 
 interface ElectProps {
   image: string;
@@ -25,7 +26,7 @@ const SingleElectronicProduct = ({ image, category }: ElectProps) => {
         </h3>
       </div>
 
-      <Button btnContent="Add to Cart" icon={<FaCartPlus />} />
+      <Button btnContent="Add to Cart" icon={<Cartsvg />} />
     </section>
   );
 };
