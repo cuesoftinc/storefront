@@ -1,17 +1,27 @@
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import { ChangeEvent, Dispatch, SetStateAction } from "react";
 
+export interface CatObjType {
+  name: string;
+  description: string;
+  price: string;
+  quantity: string;
+  category_id: string;
+  sub_category: string;
+  shipping: string;
+  color: string;
+  size: string;
+  image: string;
+}
+
 // Context Types
-export interface AdminContextProps {
-  homeState: number;
-  setHomeState: Dispatch<SetStateAction<number>>;
+export interface addItemContextProps {
+  addProduct: CatObjType;
+  setAddProduct: Dispatch<SetStateAction<CatObjType>>;
 }
 
 // Other Types
-// export interface UserProps {
-//   id: number;
-//   username: string;
-// }
+
 export interface SigninContextProps {
   signinUser: SigninUserProp;
   setSigninUser: Dispatch<SetStateAction<SigninUserProp>>;
