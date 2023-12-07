@@ -22,6 +22,7 @@ export interface SigninContextProps {
 }
 export interface InputProps {
   type: string;
+  id?: string;
   name: string;
   holder: string;
   icons?: any;

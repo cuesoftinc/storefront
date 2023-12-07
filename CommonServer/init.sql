@@ -1,1 +1,1 @@
-CREATE DATABASE storefront;
+-- CREATE DATABASE storefront;

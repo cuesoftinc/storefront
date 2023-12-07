@@ -17,7 +17,11 @@
   cursor: pointer;
 }
 
-.drop__images p:nth-child(2) {
+.image__style {
+  display: none;
+}
+
+/* .drop__images p:nth-child(2) {
   font-weight: 600;
 }
 
@@ -27,13 +31,13 @@
   font-weight: 900;
   color: var(--solidFadedBlue);
   transform: scale(0);
-}
+} */
 
-.show__image__uploaded__msg {
+/* .show__image__uploaded__msg {
   animation: uploadMsg ease-in-out 5s 1;
-}
+} */
 
-@keyframes uploadMsg {
+/* @keyframes uploadMsg {
   0% {
     transform: scale(1);
     opacity: 1;
@@ -42,4 +46,4 @@
     transform: scale(0);
     opacity: 0;
   }
-}
+} */

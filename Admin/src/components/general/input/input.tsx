@@ -21,7 +21,7 @@ const InputBox = ({
         value={value}
         onChange={handleChange}
       />
-      <Image src={icons} alt="profile" width={20} height={20} />
+      <span>{icons}</span>
     </div>
   );
 };

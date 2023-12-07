@@ -56,7 +56,7 @@ const AddItems = () => {
       [name]: value,
     });
 
-    console.log(addProduct);
+    // console.log(addProduct);
   };
 
   return (
