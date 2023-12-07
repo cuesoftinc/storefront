@@ -7,22 +7,10 @@ import InputBox from "../general/input/input";
 import Button from "../general/button/button";
 import ImageUpload from "../general/imageUpload/imageUpload";
 import SubCategory from "./subCat";
-
-const catObj = {
-  name: "",
-  description: "",
-  price: "",
-  quantity: "",
-  category_id: "",
-  sub_category: "",
-  shipping: "",
-  color: "",
-  size: "",
-  image: "",
-};
+import { useAddItemContext } from "@/contextrafce";
 
 const AddItems = () => {
-  const [addProduct, setAddProduct] = useState(catObj);
+  const { addProduct, setAddProduct } = useAddItemContext();
 
   const {
     name,
@@ -34,7 +22,6 @@ const AddItems = () => {
     shipping,
     color,
     size,
-    image,
   } = addProduct;
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -45,7 +32,7 @@ const AddItems = () => {
       [name]: value,
     });
 
-    console.log(addProduct);
+    // console.log(addProduct);
   };
 
   const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -56,7 +43,7 @@ const AddItems = () => {
       [name]: value,
     });
 
-    console.log(addProduct);
+    // console.log(addProduct);
   };
 
   return (

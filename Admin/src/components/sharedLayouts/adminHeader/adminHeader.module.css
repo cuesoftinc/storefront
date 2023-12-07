@@ -8,3 +8,21 @@
 .admin__nav__input {
   width: 40vw;
 }
+
+.notification {
+  /* border: 2px solid red; */
+  display: flex;
+  /* align-items: center; */
+  gap: 10px;
+}
+
+.notification > span {
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.notification > img {
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
