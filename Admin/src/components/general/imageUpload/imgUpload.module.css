@@ -27,6 +27,7 @@
 .attach__img > span {
   font-weight: 600;
   font-size: 20px;
+  cursor: pointer;
 }
 
 .image__style {
