@@ -25,3 +25,9 @@
   position: fixed;
   top: 20px; */
 }
+
+@media screen and (max-width: 670px) {
+  .children__styles {
+    width: 100%;
+  }
+}

@@ -27,7 +27,9 @@ const AdminHeader = () => {
         inputStyle={styles.admin__nav__input}
       />
       <div className={styles.notification}>
-        <IoIosNotificationsOutline />
+        <span>
+          <IoIosNotificationsOutline />
+        </span>
         <Image src={headerProfileImg} alt="Profile" width={20} height={20} />
       </div>
     </div>

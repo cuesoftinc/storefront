@@ -24,7 +24,9 @@ const SharedAdminSideBar = () => {
                     pathname === `${each.path}` ? `${styles.active__page}` : ""
                   }
                 >
-                  <each.icon />
+                  <span>
+                    <each.icon />
+                  </span>
                   <span>{each.navItem}</span>
                 </Link>
               </li>
@@ -43,7 +45,9 @@ const SharedAdminSideBar = () => {
                     pathname === `${each.path}` ? `${styles.active__page}` : ""
                   }
                 >
-                  <each.icon />
+                  <span>
+                    <each.icon />
+                  </span>
                   <span>{each.navItem}</span>
                 </Link>
               </li>

@@ -14,13 +14,15 @@ export interface CatObjType {
 }
 
 // Context Types
-export interface addItemContextProps {
+export interface AddItemContextProps {
   addProduct: CatObjType;
   setAddProduct: Dispatch<SetStateAction<CatObjType>>;
   image: string;
   setImage: Dispatch<SetStateAction<string>>;
   showMsg: boolean;
   setShowMsg: Dispatch<SetStateAction<boolean>>;
+  imageFullFile: File | undefined;
+  setImageFullFile: Dispatch<SetStateAction<File | undefined>>;
 }
 
 // Other Types

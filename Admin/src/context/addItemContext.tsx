@@ -1,9 +1,9 @@
 "use client";
 
 import { createContext, ReactNode, useState, useContext } from "react";
-import { CatObjType, addItemContextProps } from "@/typesrafce";
+import { CatObjType, AddItemContextProps } from "@/typesrafce";
 
-const addItemContext = createContext<addItemContextProps | undefined>(
+const addItemContext = createContext<AddItemContextProps | undefined>(
   undefined
 );
 
@@ -23,6 +23,7 @@ export const AddItemProvider = ({ children }: { children: ReactNode }) => {
   const [addProduct, setAddProduct] = useState<CatObjType>(catObj);
 
   const [image, setImage] = useState<string>("Add Image");
+  const [imageFullFile, setImageFullFile] = useState<File | undefined>();
   const [showMsg, setShowMsg] = useState<boolean>(false);
 
   return (
@@ -34,6 +35,8 @@ export const AddItemProvider = ({ children }: { children: ReactNode }) => {
         setImage,
         showMsg,
         setShowMsg,
+        imageFullFile,
+        setImageFullFile,
       }}
     >
       {children}
