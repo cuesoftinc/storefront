@@ -11,13 +11,16 @@ export interface CatObjType {
   shipping: string;
   color: string;
   size: string;
-  image: string;
 }
 
 // Context Types
 export interface addItemContextProps {
   addProduct: CatObjType;
   setAddProduct: Dispatch<SetStateAction<CatObjType>>;
+  image: string;
+  setImage: Dispatch<SetStateAction<string>>;
+  showMsg: boolean;
+  setShowMsg: Dispatch<SetStateAction<boolean>>;
 }
 
 // Other Types

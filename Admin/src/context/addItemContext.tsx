@@ -17,14 +17,25 @@ const catObj: CatObjType = {
   shipping: "",
   color: "",
   size: "",
-  image: "",
 };
 
 export const AddItemProvider = ({ children }: { children: ReactNode }) => {
   const [addProduct, setAddProduct] = useState<CatObjType>(catObj);
 
+  const [image, setImage] = useState<string>("Add Image");
+  const [showMsg, setShowMsg] = useState<boolean>(false);
+
   return (
-    <addItemContext.Provider value={{ addProduct, setAddProduct }}>
+    <addItemContext.Provider
+      value={{
+        addProduct,
+        setAddProduct,
+        image,
+        setImage,
+        showMsg,
+        setShowMsg,
+      }}
+    >
       {children}
     </addItemContext.Provider>
   );

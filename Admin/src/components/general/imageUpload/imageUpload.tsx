@@ -3,11 +3,10 @@ import Image from "next/image";
 import { dropIcon } from "@/assets/iconsrafce";
 import styles from "./imgUpload.module.css";
 import InputBox from "../input/input";
+import { useAddItemContext } from "@/contextrafce";
 
 const ImageUpload = () => {
-  const [image, setImage] = useState("Add Image");
-
-  const [showMsg, setShowMsg] = useState<boolean>(false);
+  const { image, setShowMsg } = useAddItemContext();
 
   const handleImageChange = (e: ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
@@ -16,15 +15,15 @@ const ImageUpload = () => {
   return (
     <div className={styles.drop__images}>
       <InputBox
-        type={"file"}
+        type="file"
         id="imageInput"
-        name={"uploadImage"}
-        holder={""}
-        value={""}
+        name="uploadImage"
+        holder=""
+        value=""
         inputStyle="image__style"
         handleChange={handleImageChange}
       />
-      <label htmlFor="imageInput">
+      <label htmlFor="imageInput" className="attach__img">
         <Image src={dropIcon} alt="Drop" width={20} height={20} />
         <span>{image}</span>
       </label>
