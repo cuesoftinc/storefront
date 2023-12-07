@@ -22,7 +22,6 @@ const AddItems = () => {
     shipping,
     color,
     size,
-    image,
   } = addProduct;
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
