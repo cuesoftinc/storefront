@@ -7,8 +7,8 @@ import (
 )
 
 type RoleRepository interface {
-	GetDefaultRoleID() (uint, error)
-	GetAdminRoleID() uint
+	GetDefaultRoleID() (string, error)
+	GetAdminRoleID() string
 }
 
 type roleRepository struct {
@@ -21,18 +21,18 @@ func NewRoleRepository(db *gorm.DB) RoleRepository {
 	}
 }
 
-func (db *roleRepository) GetDefaultRoleID() (uint, error) {
+func (db *roleRepository) GetDefaultRoleID() (string, error) {
 	var role models.Role
 	result := db.connection.First(&role, "name = ?", "User")
 	return role.ID, result.Error
 }
 
-func (db *roleRepository) GetAdminRoleID() uint {
+func (db *roleRepository) GetAdminRoleID() string {
 	var role models.Role
 	result := db.connection.First(&role, "name = ?", "Admin")
 	if result.Error != nil {
 		log.Println("Error Getting Admin Role ID")
-		return 0
+		return ""
 	}
 	return role.ID
 }

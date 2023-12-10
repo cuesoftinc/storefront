@@ -3,6 +3,7 @@ import { FaHeart, FaCartPlus } from "react-icons/fa";
 import Image from "next/image";
 import styles from "../electronicsProducts/sinlgeProduct.module.css";
 import Button from "../general/button/button";
+import { Cartsvg } from "@/assets/icons";
 
 interface FashionProps {
   image: string;
@@ -24,7 +25,7 @@ const SingleFashionProduct = ({ image, category }: FashionProps) => {
         </h3>
       </div>
 
-      <Button btnContent="Add to Cart" icon={<FaCartPlus />} />
+      <Button btnContent="Add to Cart" icon={<Cartsvg />} />
     </section>
   );
 };

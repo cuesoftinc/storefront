@@ -10,6 +10,7 @@
 .img__con img {
   width: 220px;
   height: 150px;
+  border-radius: 5px;
 }
 @media screen and (max-width: 650px) {
   .single__cart__card {
@@ -77,12 +78,18 @@
 .single__cart__card footer button {
   border-radius: 30px;
   border: none;
+  display: flex;
+  align-items: center;
+}
+
+.single__cart__card footer button > span {
+  display: block;
 }
 
 .single__cart__card footer button span:first-child {
   font-size: 25px;
   cursor: pointer;
-  padding-inline: 10px;
+  padding: 0px 10px 5px;
   border-radius: 30px 0px 0px 30px;
   transition: ease 0.5s all;
 }

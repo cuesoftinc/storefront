@@ -13,8 +13,11 @@ var DB *gorm.DB
 
 func ConnectDB() (*gorm.DB, error) {
 	var err error
-	dsn := "host=" + os.Getenv("DB_HOST") + " user=" + os.Getenv("DB_USER") + " password=" + os.Getenv("DB_PASSWORD") + " dbname=storefront port=" + os.Getenv("DB_PORT") + " sslmode=disable TimeZone=Africa/Lagos"
+	dsn := os.Getenv("DATABASE_URL")
 
+	if dsn == "" {
+		log.Fatal("Missing DATABASE_URL environment variable")
+	}
 	DB, err = gorm.Open(postgres.Open(dsn), &gorm.Config{})
 	if err != nil {
 		panic("failed to connect database")
@@ -59,6 +62,18 @@ func ConnectDB() (*gorm.DB, error) {
 	err = DB.AutoMigrate(&models.SubCategory{})
 	if err != nil {
 		log.Println("Error Migrating SubCategory Table")
+		return nil, err
+	}
+
+	err = DB.AutoMigrate(&models.Favorite{})
+	if err != nil {
+		log.Println("Error Migrating Favorite Table")
+		return nil, err
+	}
+
+	err = DB.AutoMigrate(&models.Cart{})
+	if err != nil {
+		log.Println("Error Migrating Cart Table")
 		return nil, err
 	}
 

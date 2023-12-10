@@ -8,7 +8,7 @@ import (
 type CategoryRepository interface {
 	AddCategory(models.Category) (models.Category, error)
 	AddSubCategory(models.SubCategory) (models.SubCategory, error)
-	GetCategory(uint) (models.Category, error)
+	GetCategory(id string) (models.Category, error)
 	GetCategories() []models.Category
 	GetSubCategories() []models.SubCategory
 }
@@ -39,9 +39,9 @@ func (db *categoryRepository) AddSubCategory(subCategory models.SubCategory) (mo
 	return subCategory, nil
 }
 
-func (db *categoryRepository) GetCategory(id uint) (models.Category, error) {
+func (db *categoryRepository) GetCategory(id string) (models.Category, error) {
 	var category models.Category
-	err := db.connection.First(&category, id).Error
+	err := db.connection.Preload("SubCategories").Where("id = ?", id).First(&category).Error
 	if err != nil {
 		return models.Category{}, err
 	}
