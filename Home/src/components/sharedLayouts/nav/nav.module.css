@@ -7,6 +7,11 @@
   justify-content: space-between;
   align-items: center;
 }
+@media screen and (max-width: 1024px) {
+  .nav {
+    padding-inline: 3vw;
+  }
+}
 
 .links__ul {
   /* border: 2px solid red; */
@@ -18,6 +23,9 @@
   text-decoration: none;
   margin-inline: 20px;
 }
+.add__active__path {
+  font-weight: 600;
+}
 
 .btns__ul {
   /* border: 2px solid red; */
@@ -26,10 +34,10 @@
 }
 
 .sign__in > button {
-  border: 2px solid var(--solidBlue);
+  border: 2px solid var(--solidBlue) !important;
   color: var(--solidBlue);
-  padding-inline: 25px;
-  border-radius: 8px;
+  padding-inline: 25px !important;
+  border-radius: 8px !important;
   font-weight: 600;
 }
 .sign__in > button:hover {
@@ -39,12 +47,13 @@
 }
 
 .get__started > button {
-  border: 2px solid var(--solidBlue);
+  border: 2px solid var(--solidBlue) !important;
   color: #fff;
-  background-color: var(--solidBlue);
-  border-radius: 8px;
+  background-color: var(--solidBlue) !important;
+  border-radius: 8px !important;
 }
 .get__started > button:hover {
-  border: 2px solid var(--solidBlue);
-  color: var(--solidBlue);
+  border: 2px solid var(--solidBlue) !important;
+  color: var(--solidBlue) !important;
+  background-color: #fff !important;
 }

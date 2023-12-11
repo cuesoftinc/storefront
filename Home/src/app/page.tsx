@@ -1,13 +1,10 @@
-"use client";
-
-import { useHomeContext } from "@/contextrafce";
+import { Hero } from "@/components/homerafce";
+import styles from "./home.module.css";
 
 export default function Home() {
-  const { homeState, setHomeState } = useHomeContext();
-
   return (
-    <main>
-      <p>This is the home page</p>
+    <main className={styles.home__page}>
+      <Hero />
     </main>
   );
 }

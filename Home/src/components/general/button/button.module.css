@@ -8,7 +8,7 @@
 
 .__btn button {
   background-color: #fff;
-  border: 1px solid var(--solidFadedBlue);
+  border: 1px solid var(--solidBlue);
   padding: 5px 12px;
   border-radius: 30px;
   cursor: pointer;
@@ -16,7 +16,7 @@
   transition: ease 0.5s all;
 }
 .__btn button:hover {
-  background-color: var(--solidFadedBlue);
-  border: 1px solid var(--solidFadedBlue);
+  background-color: var(--solidBlue);
+  border: 1px solid var(--solidBlue);
   color: #fff;
 }
