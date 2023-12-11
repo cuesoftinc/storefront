@@ -29,6 +29,7 @@ type LoginResponse struct {
 	Success bool   `json:"success"`
 	Message string `json:"message"`
 	Token   string `json:"token,omitempty"`
+	Data    string `json:"data,omitempty"`
 }
 
 type userController struct {
@@ -254,10 +255,20 @@ func (u *userController) ControllerLogin(c *gin.Context) {
 
 	if isTrue {
 		token := utils.GenerateToken(dbUser.ID, dbUser.Email)
+		// Check Role
+		role, err := u.roleRepo.GetRoleByID(dbUser.RoleID)
+		if err != nil {
+			c.JSON(http.StatusInternalServerError, LoginResponse{
+				Success: false,
+				Message: "Error retrieving user role",
+			})
+			return
+		}
 		c.JSON(http.StatusOK, LoginResponse{
 			Success: true,
 			Message: "Login successful",
 			Token:   token,
+			Data:    role.Name,
 		})
 		return
 	} else {
