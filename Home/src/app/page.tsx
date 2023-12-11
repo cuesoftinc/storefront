@@ -7,9 +7,7 @@ export default function Home() {
 
   return (
     <main>
-      <h1>This is Home Page</h1>
-      <p>This is the first page to be seen by users {homeState}</p>
-      <button onClick={() => setHomeState(homeState + 1)}>Increase</button>
+      <p>This is the home page</p>
     </main>
   );
 }
