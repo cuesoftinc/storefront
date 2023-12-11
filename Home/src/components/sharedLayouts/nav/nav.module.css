@@ -1,10 +1,50 @@
 .nav {
-  border: 2px solid gray;
+  /* border: 2px solid gray; */
   max-width: 1300px;
-  margin-inline: auto;
+  margin: 20px auto;
+  padding-inline: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.nav a {
-  /* margin-inline: 20px; */
-  font-size: var(--medium);
+.links__ul {
+  /* border: 2px solid red; */
+  display: flex;
+}
+
+.nav ul a {
+  color: #757575;
+  text-decoration: none;
+  margin-inline: 20px;
+}
+
+.btns__ul {
+  /* border: 2px solid red; */
+  display: flex;
+  gap: 10px;
+}
+
+.sign__in > button {
+  border: 2px solid var(--solidBlue);
+  color: var(--solidBlue);
+  padding-inline: 25px;
+  border-radius: 8px;
+  font-weight: 600;
+}
+.sign__in > button:hover {
+  border: 2px solid var(--solidBlue);
+  color: #fff;
+  background-color: var(--solidBlue);
+}
+
+.get__started > button {
+  border: 2px solid var(--solidBlue);
+  color: #fff;
+  background-color: var(--solidBlue);
+  border-radius: 8px;
+}
+.get__started > button:hover {
+  border: 2px solid var(--solidBlue);
+  color: var(--solidBlue);
 }
