@@ -21,14 +21,14 @@ const Nav = () => {
   };
 
   return (
-    <header>
+    <header className={styles.nav__header}>
       <div className={styles.open__nav} onClick={handleOpenNav}>
         <OpenNav />
       </div>
       <nav
         className={`${styles.nav} ${isNavOpen ? styles.add__show__nav : ""}`}
       >
-        <Logo uniqueStyle={styles.nav__log} />
+        <Logo uniqueStyle={styles.nav__logo} />
         <div className={styles.close__nav} onClick={handleCloseNav}>
           <CloseNav />
         </div>

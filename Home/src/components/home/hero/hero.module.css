@@ -17,6 +17,11 @@
   margin: 20px auto;
   line-height: 0.8cm;
 }
+@media screen and (max-width: 820px) {
+  .hero__section {
+    margin-top: 6rem;
+  }
+}
 @media screen and (max-width: 640px) {
   .hero__section {
     max-width: 500px;

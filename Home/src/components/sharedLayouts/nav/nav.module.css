@@ -36,9 +36,17 @@
   display: none;
 }
 @media screen and (max-width: 820px) {
+  .nav__header {
+    /* border: 2px solid red; */
+    height: 60px;
+    backdrop-filter: blur(20px);
+    z-index: 999;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+  }
   .nav {
     border: 2px solid red;
-    /* position: relative; */
     width: 200px;
     position: fixed;
     right: -400px;
@@ -48,14 +56,13 @@
     justify-content: flex-start;
     transition: ease 0.5s all;
     z-index: 999;
-    /* align-items: flex-start; */
   }
   .add__show__nav {
     right: 0px;
   }
-  .nav__log {
+  .nav__logo {
     position: fixed;
-    left: 20px;
+    left: 2.5vw;
     top: 20px;
   }
   .close__nav {
@@ -70,7 +77,7 @@
     display: block;
     position: fixed;
     top: 10px;
-    right: 20px;
+    right: 2.5vw;
     width: 40px;
     cursor: pointer;
   }
