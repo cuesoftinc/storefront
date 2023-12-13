@@ -1,4 +1,3 @@
-import { AdminProvider } from "./adminContext";
-import { useAdminContext } from "./adminContext";
+import { AddItemProvider, useAddItemContext } from "./addItemContext";
 
-export { AdminProvider, useAdminContext };
+export { AddItemProvider, useAddItemContext };

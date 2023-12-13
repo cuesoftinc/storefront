@@ -2,7 +2,6 @@
 
 import React from "react";
 import styles from "./sideBar.module.css";
-import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { adminSideBar } from "@/data/datarafce";
@@ -25,12 +24,9 @@ const SharedAdminSideBar = () => {
                     pathname === `${each.path}` ? `${styles.active__page}` : ""
                   }
                 >
-                  <Image
-                    src={each.icon.src}
-                    alt={`${each.navItem}`}
-                    width={20}
-                    height={20}
-                  />
+                  <span>
+                    <each.icon />
+                  </span>
                   <span>{each.navItem}</span>
                 </Link>
               </li>
@@ -49,7 +45,9 @@ const SharedAdminSideBar = () => {
                     pathname === `${each.path}` ? `${styles.active__page}` : ""
                   }
                 >
-                  <Image src={each.icon} alt={`${each.navItem}`} />
+                  <span>
+                    <each.icon />
+                  </span>
                   <span>{each.navItem}</span>
                 </Link>
               </li>
