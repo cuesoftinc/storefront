@@ -1,4 +1,9 @@
-import { Hero, OurOffering, StoreHome } from "@/components/homerafce";
+import {
+  Hero,
+  OurOffering,
+  OurService,
+  StoreHome,
+} from "@/components/homerafce";
 import styles from "./home.module.css";
 
 export default function Home() {
@@ -7,6 +12,7 @@ export default function Home() {
       <Hero />
       <StoreHome />
       <OurOffering />
+      <OurService />
     </main>
   );
 }

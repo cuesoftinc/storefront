@@ -1,3 +1,13 @@
+.nav__header {
+  /* border: 2px solid red; */
+  height: 60px;
+  backdrop-filter: blur(20px);
+  z-index: 999;
+  position: fixed;
+  top: 0px;
+  width: 100%;
+}
+
 .nav {
   /* border: 2px solid gray; */
   max-width: 1300px;
@@ -36,15 +46,6 @@
   display: none;
 }
 @media screen and (max-width: 820px) {
-  .nav__header {
-    /* border: 2px solid red; */
-    height: 60px;
-    backdrop-filter: blur(20px);
-    z-index: 999;
-    position: fixed;
-    top: 0px;
-    width: 100%;
-  }
   .nav {
     border: 2px solid red;
     width: 200px;
