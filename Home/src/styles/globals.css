@@ -47,3 +47,7 @@
   --smallPhone: 330;
   --galaxyFold: 280;
 }
+
+body {
+  font-family: "Montserrat", sans-serif;
+}

@@ -2,9 +2,6 @@ import "../styles/globals.css";
 import { Footer, Nav } from "@/components/sharedLayoutsrafce";
 import { HomeProvider } from "@/contextrafce";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Home",
@@ -18,7 +15,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body>
         <HomeProvider>
           <Nav />
           {children}
