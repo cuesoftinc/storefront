@@ -1,0 +1,8 @@
+.dev__section {
+  margin-top: 6rem;
+}
+
+.dev__section > h2,
+.dev__section > p {
+  text-align: center;
+}

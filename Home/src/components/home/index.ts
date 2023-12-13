@@ -2,5 +2,6 @@ import Hero from "./hero/hero";
 import StoreHome from "./storeHome/storeHome";
 import OurOffering from "./ourOfferings/ourOffering";
 import OurService from "./ourService/ourservice";
+import ForDev from "./forDevelopers/forDev";
 
-export { Hero, StoreHome, OurOffering, OurService };
+export { Hero, StoreHome, OurOffering, OurService, ForDev };

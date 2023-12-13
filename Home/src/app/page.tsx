@@ -1,4 +1,5 @@
 import {
+  ForDev,
   Hero,
   OurOffering,
   OurService,
@@ -13,6 +14,7 @@ export default function Home() {
       <StoreHome />
       <OurOffering />
       <OurService />
+      <ForDev />
     </main>
   );
 }
