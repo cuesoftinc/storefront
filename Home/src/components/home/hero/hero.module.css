@@ -51,7 +51,6 @@
   color: var(--solidBlue);
   padding-inline: 25px !important;
   border-radius: 8px !important;
-  font-weight: 600;
 }
 .self__host > button:hover {
   border: 2px solid var(--solidBlue);

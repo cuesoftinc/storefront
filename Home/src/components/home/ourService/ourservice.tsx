@@ -12,7 +12,7 @@ const OurService = () => {
 
       <div className={styles.all__services}>
         <div className={styles.service__con}>
-          <FaLock />
+          <FaLock className={styles.service__icon} />
           <h4>Buyers</h4>
           <p>As a Buyer on Storefront, you can:</p>
           <ul>
@@ -23,7 +23,7 @@ const OurService = () => {
           </ul>
         </div>
         <div className={styles.service__con}>
-          <MdOutlineSell />
+          <MdOutlineSell className={styles.service__icon} />
           <h4>Sellers</h4>
           <p>As a Seller on Storefront, you can:</p>
           <ul>
@@ -43,8 +43,8 @@ const OurService = () => {
           automating processes, and seamlessly integrating various apps and data
         </p>
         <div className={styles.btns__con}>
-          <Button btnContent="Try Cloud" btnStyle="" />
-          <Button btnContent="Self Host" btnStyle="" />
+          <Button btnContent="Try Cloud" btnStyle={styles.try__cloud} />
+          <Button btnContent="Self Host" btnStyle={styles.self__host} />
         </div>
       </div>
     </section>
