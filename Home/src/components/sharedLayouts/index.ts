@@ -1,4 +1,4 @@
-import Nav from "./nav";
-import Footer from "./footer";
+import Nav from "./nav/nav";
+import Footer from "./footer/footer";
 
 export { Nav, Footer };
