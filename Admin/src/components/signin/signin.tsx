@@ -155,12 +155,7 @@ export default function Signinpage() {
                 </p>
               </div>
             </form>
-            <p className={styles.signintext}>
-              Don't have an account ?{" "}
-              <Link href="/signup" className={styles.signuplink}>
-                Sign up
-              </Link>
-            </p>
+           
           </div>
 
         
