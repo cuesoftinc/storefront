@@ -1,6 +1,7 @@
 import {
   ForDev,
   Hero,
+  JoinUs,
   OpenSource,
   OurOffering,
   OurService,
@@ -17,6 +18,7 @@ export default function Home() {
       <OurService />
       <ForDev />
       <OpenSource />
+      <JoinUs />
     </main>
   );
 }
