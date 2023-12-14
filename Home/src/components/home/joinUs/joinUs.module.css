@@ -15,7 +15,6 @@
 
 .join__us__section > h2 {
   font-size: 30px;
-  /* margin-bottom: 5px; */
 }
 
 .join__us__section > p {
@@ -31,15 +30,9 @@
 
 .icon {
   font-size: 1.5rem;
-  margin-left: 15px;
+  margin: 0 5px;
   cursor: pointer;
   color: #55acee;
-}
-
-@media screen and (max-width: 820px) {
-  .icon {
-    margin: 0px 10px 10px;
-  }
 }
 
 @media screen and (max-width: 640px) {
