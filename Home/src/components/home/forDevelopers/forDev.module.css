@@ -2,6 +2,11 @@
   margin-top: 6rem;
 }
 
+.dev__section > h2 {
+  margin-bottom: 5px;
+  font-size: 30px;
+}
+
 .dev__section > h2,
 .dev__section > p {
   text-align: center;
@@ -25,4 +30,16 @@
 
 .dev__con > h3 {
   margin-block: 30px 12px;
+}
+
+@media screen and (max-width: 640px) {
+  .dev__section > h2 {
+    font-size: 25px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .dev__con {
+    width: 90%;
+  }
 }

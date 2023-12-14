@@ -3,5 +3,6 @@ import StoreHome from "./storeHome/storeHome";
 import OurOffering from "./ourOfferings/ourOffering";
 import OurService from "./ourService/ourservice";
 import ForDev from "./forDevelopers/forDev";
+import OpenSource from "./openSource/openSource";
 
-export { Hero, StoreHome, OurOffering, OurService, ForDev };
+export { Hero, StoreHome, OurOffering, OurService, ForDev, OpenSource };
