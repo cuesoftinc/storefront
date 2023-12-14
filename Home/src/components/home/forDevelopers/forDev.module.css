@@ -6,3 +6,23 @@
 .dev__section > p {
   text-align: center;
 }
+
+.dev__section > h2 > span {
+  color: var(--solidBlue);
+}
+
+.dev__con {
+  /* border: 2px solid red; */
+  width: 420px;
+  margin: 3rem auto 0px;
+  text-align: center;
+}
+
+.dev__con > p:nth-child(2) {
+  color: var(--solidBlue);
+  margin-top: 10px;
+}
+
+.dev__con > h3 {
+  margin-block: 30px 12px;
+}
