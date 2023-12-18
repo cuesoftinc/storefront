@@ -4,6 +4,8 @@ import { bag } from "@/assets/images";
 import styles from "./description.module.css";
 import { Delivery, Ratesvg } from "@/assets/icons";
 import SimilarProductr from "../Similarproduct/Similarproduct";
+import Button from "../general/button/button";
+import { ProductIncreaser } from "../helpers";
 
 export default function Description() {
   return (
@@ -114,9 +116,10 @@ export default function Description() {
                 }}
               >
                 <div className={styles.descriptionbuttondiv}>
-                  <button>-</button>
+                  {/* <button>-</button>
                   <span>1</span>
-                  <button>+</button>
+                  <button>+</button> */}
+                  <ProductIncreaser content="1" />
                 </div>
                 <p
                   style={{
@@ -139,8 +142,10 @@ export default function Description() {
                 }}
                 className={styles.buy_addtocart_btn}
               >
-                <button>Buy now</button>
-                <button>Add to cart</button>
+                {/* <button>Buy now</button>
+                <button>Add to cart</button> */}
+                <Button btnContent="Buy now" />
+                <Button btnContent="Add to cart" />
               </div>
             </div>
             <div
