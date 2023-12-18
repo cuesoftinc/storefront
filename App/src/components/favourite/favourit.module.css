@@ -12,7 +12,8 @@
   z-index: 1;
 
   @media (max-width: 768px) {
-    justify-content: center !important;
+    justify-content: flex-end !important;
+    z-index: 200;
   }
 }
 
@@ -31,9 +32,8 @@
   border-top: 1px solid var(--grey-100, #f0f2f5);
   background: var(--shade-white, #fff);
   @media (max-width: 768px) {
-    width: 100%;
-    border-radius: 0;
-    margin-top: 118px;
+    width: 70%;
+    z-index: 200;
   }
 }
 .favourite__header {
@@ -41,12 +41,15 @@
   justify-content: space-between;
 }
 .favourite__header > h2 span {
-  height: 15px;
-  width: 15px;
-  padding: 6px 12px;
-  border-radius: 30px;
-  align-items: center;
+  width: 35px;
+  height: 35px;
   background-color: #2f8ac7;
+  color: #fff;
+  font-size: 20px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .favourite__header > h2 {
   color: var(--grey-900, #101928);
@@ -56,11 +59,19 @@
   font-weight: 600;
   line-height: 120%; /* 33.6px */
   letter-spacing: -0.56px;
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  @media (max-width:419) {
+    font-size: 18px;
+    
+  }
 }
 .favourite__header > button {
   background-color: transparent;
   border: none;
   padding: 10px;
+  cursor: pointer;
 }
 .favourite__card {
   display: grid;
@@ -91,6 +102,11 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
+  @media (max-width:419) {
+    flex-wrap: wrap;
+    flex-direction: column;
+    
+  }
 }
 .favourite__details > p {
   width: 162px;
@@ -98,7 +114,12 @@
   font-feature-settings: "cv04" on, "cv03" on, "cv01" on;
   font-size: 16px;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 600;
+  @media (max-width:419) {
+    font-size: 10px;
+    
+  }
+
 }
 .favourite__details > p span {
   color: var(--grey-900, #101928);
@@ -106,8 +127,11 @@
   font-size: 18px;
   font-style: normal;
   font-weight: 600;
-  line-height: 145%; /* 26.1px */
-}
+  line-height: 145%; 
+  @media (max-width:419) {
+    font-size: 12px;
+    
+  }}
 .favourite__size__color > p {
   color: var(--grey-600, #475367);
 
@@ -134,8 +158,10 @@
   height: auto;
 }
 .btn {
-  color: #101928;
-  font-weight: bold;
+  margin-left: auto;
+  margin-right: 3rem;
+  font-size: 20px;
+  cursor: pointer;
 }
 
 .favourite__icon {
