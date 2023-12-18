@@ -10,7 +10,7 @@ type Category struct {
 	ID            string        `gorm:"not null;primaryKey" json:"id"`
 	Name          string        `gorm:"not null;unique" json:"name"`
 	Description   string        `gorm:"default:null" json:"description"`
-	SubCategories []SubCategory `gorm:"foreignKey:CategoryID"`
+	SubCategories []SubCategory `gorm:"foreignKey:CategoryID" json:"sub_categories"`
 	CreatedAt     time.Time     `gorm:"not null" json:"created_at"`
 	UpdatedAt     time.Time     `gorm:"not null" json:"updated_at"`
 }

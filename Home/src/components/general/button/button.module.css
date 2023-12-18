@@ -1,0 +1,22 @@
+/* Auth button css */
+
+/* Other buttons css */
+.__btn {
+  /* border: 2px solid red; */
+  width: fit-content;
+}
+
+.__btn button {
+  background-color: #fff;
+  border: 1px solid var(--solidBlue);
+  padding: 5px 12px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: ease 0.5s all;
+}
+.__btn button:hover {
+  background-color: var(--solidBlue);
+  border: 1px solid var(--solidBlue);
+  color: #fff;
+}
