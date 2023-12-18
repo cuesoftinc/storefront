@@ -116,9 +116,6 @@ export default function Description() {
                 }}
               >
                 <div className={styles.descriptionbuttondiv}>
-                  {/* <button>-</button>
-                  <span>1</span>
-                  <button>+</button> */}
                   <ProductIncreaser content="1" />
                 </div>
                 <p
@@ -134,28 +131,16 @@ export default function Description() {
               </div>
             </div>
             <div>
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "space-between",
-                  width: "404px",
-                }}
-                className={styles.buy_addtocart_btn}
-              >
-                {/* <button>Buy now</button>
-                <button>Add to cart</button> */}
-                <Button btnContent="Buy now" />
-                <Button btnContent="Add to cart" />
+              <div className={styles.buy_addtocart_btn}>
+                <Button btnContent="Buy now" btnStyle={styles.btn__con} />
+                <Button btnContent="Add to cart" btnStyle={styles.btn__con} />
               </div>
             </div>
-            <div
-              className={styles.Deliverycontainer}
-              style={{ display: "flex", gap: "40px" }}
-            >
+            <div className={styles.Deliverycontainer}>
               <div>
                 <Delivery />
               </div>
-              <div style={{ width: "404px" }}>
+              <div>
                 <p>
                   <strong>Free Delivery</strong>
                 </p>
