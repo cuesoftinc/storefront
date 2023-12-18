@@ -25,7 +25,7 @@ export const adminSideBar = {
       id: 3,
       icon: addItemIcon,
       navItem: "Add New Item",
-      path: "/add-items",
+      path: "/dashboard/add-items",
     },
     {
       id: 4,

@@ -24,11 +24,14 @@ export const fetchSigninUser = async (
 
     if (response.status === 200 ) {
       const { success, message, token ,data } = response.data;
-      // data = admin 
-
-      if (success ) {
+console.log(data)
+      if (success  ) {
         localStorage.setItem('authToken', token);
         console.log("Authentication successful");
+        setSigninUser((prevState) => ({
+          ...prevState,
+          success: message || "admin access sucessfull", // Set the error message
+        }));
 
         // Route to dashboard
         router.push('/dashboard');
@@ -36,7 +39,7 @@ export const fetchSigninUser = async (
         console.log("Authentication failed");
         setSigninUser((prevState) => ({
           ...prevState,
-          error: message || "Access denied", // Set the error message
+          error: "Access denied", // Set the error message
         }));
       }
     } else {

@@ -8,7 +8,9 @@ const api = axios.create({
 
 export const addItem = async (addProduct: any) => {
   try {
+    // if()
     const response = await api.post(`${BASE_URL}/api/admin/create`, addProduct);
+
     return response.data;
   } catch (error) {
     console.log(error)

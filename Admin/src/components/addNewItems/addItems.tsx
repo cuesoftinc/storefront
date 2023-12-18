@@ -38,7 +38,7 @@ const AddItems = () => {
     description,
     price,
     quantity,
-    category_id,
+    category_id, 
     sub_category,
     shipping,
     color,
@@ -53,7 +53,6 @@ const AddItems = () => {
       ...addProduct,
       [name]: value,
     });
-
   };
 
   const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -63,49 +62,48 @@ const AddItems = () => {
       ...addProduct,
       [name]: value,
     });
-
-
   };
   // const [item, setItem] = useState<any>({});
 
   const handleAddItem = async () => {
     try {
-      console.log('Adding item:', addProduct, images);  // Log product and images
-      const result = await addItem({ ...addProduct, image: images });  // Assuming `addItem` takes an object with an `image` property
-      console.log('Success:', result);
+      console.log("Adding item:", addProduct, images); // Log product and images
+      const result = await addItem({ ...addProduct, image: images }); // Assuming `addItem` takes an object with an `image` property
+      console.log("Success:", result);
 
       if (result.status === 200) {
-        setMessage('Product created successfully!');
+        setMessage("Product created successfully!");
         // You can perform additional actions for a successful response
       } else {
         // Handle other status codes
-        console.error('Unexpected status code:', result.status);
+        console.error("Unexpected status code:", result.status);
         setMessage(`Unexpected status code: ${result.status}`);
       }
     } catch (error: any) {
-      console.error('Error:', error);
-  
+      console.error("Error:", error);
+
       if (axios.isAxiosError(error)) {
         // Check if it's an AxiosError to access the response
         if (error.response) {
           // Handle AxiosError with response
-          console.error('Error response data:', error.response.data);
-          console.error('Error response status:', error.response.status);
-          setMessage(`Error: ${error.response.data.message || 'An error occurred'}`);
+          console.error("Error response data:", error.response.data);
+          console.error("Error response status:", error.response.status);
+          setMessage(
+            `Error: ${error.response.data.message || "An error occurred"}`
+          );
         } else {
           // Handle AxiosError without response
-          console.error('No response received');
-          setMessage('No response received');
+          console.error("No response received");
+          setMessage("No response received");
         }
       } else {
         // Handle other types of errors
-        console.error('Non-Axios error message:', error.message);
-        setMessage(`Error: ${error.message}`);
+        console.error("Non-Axios error message:", error.message);
+        setMessage(`Error while trying.............`);
       }
     }
   };
   console.log(addProduct);
-
 
   return (
     <section className={styles.add__new__items}>
@@ -248,20 +246,22 @@ const AddItems = () => {
         </section>
       </div>
       {message ? (
-          <div style={{backgroundColor:"blue",padding:"10px"}}>
-            <span>{message}</span>
-          </div>
-        ) : (
-          <div>
-            <span></span>
-          </div>
-        )}
+        <div style={{ backgroundColor: "blue", padding: "10px" }}>
+          <span>{message}</span>
+        </div>
+      ) : (
+        <div>
+          <span></span>
+        </div>
+      )}
 
       <div className={styles.btns}>
-      {/* <Button btnContent="Cancel" btnStyles={styles.cancel__btn}  /> */}
-<Button onSubmit={handleAddItem} btnStyles={styles.confirm__btn} btnContent="Confirm" />
-
-
+        {/* <Button btnContent="Cancel" btnStyles={styles.cancel__btn}  /> */}
+        <Button
+          onSubmit={handleAddItem}
+          btnStyles={styles.confirm__btn}
+          btnContent="Confirm"
+        />
       </div>
     </section>
   );
