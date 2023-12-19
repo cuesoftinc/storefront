@@ -6,11 +6,6 @@ export interface HomeContextProps {
   setHomeState: Dispatch<SetStateAction<number>>;
 }
 
-export interface CartContextProps {
-  cartState: UserProps[];
-  setCartState: Dispatch<SetStateAction<UserProps[]>>;
-}
-
 // Other Types
 export interface UserProps {
   id: number;

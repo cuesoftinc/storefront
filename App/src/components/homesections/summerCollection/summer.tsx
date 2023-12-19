@@ -5,13 +5,12 @@ import Image from "next/image";
 import { Shopnow } from "..";
 import { Summerarrow } from "@/assets/icons";
 import Link from "next/link";
+import Button from "@/components/general/button/button";
 
 export default function Summer() {
   return (
     <section>
       <div className={styles.summercontainer}>
-        
-
         <div className={styles.summerimgcontainer}>
           <div className={styles.summerimg1}>
             <Image
@@ -19,7 +18,7 @@ export default function Summer() {
               alt="Register Image"
               className={styles.summerimg}
             />
-             <div className={styles.toptext}> UP TO 80% OFF</div>
+            <div className={styles.toptext}> UP TO 80% OFF</div>
             <a href="#" className={styles.toprighttext}>
               <Summerarrow />
             </a>
@@ -27,15 +26,16 @@ export default function Summer() {
               <div className={styles.buttomheader}>
                 <h2>Kiddies Korean Summer Collection</h2>
               </div>
-              <Link href="fashion">
-                {" "}
-                Shop now <Shopnow />
+              <Link href="/fashion" className={styles.cat__btn}>
+                <Button
+                  btnContent="Shop now"
+                  icon={<Shopnow />}
+                  btnStyle={styles.shop__now__btn}
+                />
               </Link>
-                </div>
-               
-                
             </div>
-            <div className={styles.summerimgcontainer2}>
+          </div>
+          <div className={styles.summerimgcontainer2}>
             <div className={styles.summerimg1}>
               <Image
                 src={swim}
@@ -54,16 +54,8 @@ export default function Summer() {
               className={styles.summerimgleft}
             />
           </div>
-           
         </div>
-         
       </div>
-     
-
-
-       
-            
-           
     </section>
   );
 }

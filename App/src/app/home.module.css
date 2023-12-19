@@ -1,21 +1,5 @@
 .main {
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around !important;
-  align-items: center;
   padding: 20px;
-  max-width: 100vw;
-}
-/* Media query for tablets */
-@media (min-width: 768px) and (max-width: 1024px) {
-  .main {
-    justify-content: space-between;
-  }
-}
-
-@media screen and (max-width: 912px) {
-  .main {
-    margin-top: 6rem;
-  }
+  margin-top: 6rem;
 }

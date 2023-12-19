@@ -3,6 +3,8 @@ import { Metadata } from "next";
 import React from "react";
 import Signinpage from "@/components/signin/signin";
 import { AuthProvider } from "@/context/loginContect";
+import Logo from "@/components/general/logo/logo";
+
 
 
 export const metadata: Metadata = {
@@ -13,6 +15,7 @@ const Signin = () => {
   return (
     <AuthProvider>
     <main className={styles.main} >
+      <Logo/>
       <Signinpage/>
     </main>
     </AuthProvider>

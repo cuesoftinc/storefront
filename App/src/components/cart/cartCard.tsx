@@ -1,9 +1,9 @@
 import React from "react";
 import Image from "next/image";
 import styles from "./cartCard.module.css";
-import { FaTrash } from "react-icons/fa";
 import RaisedElement from "../general/raisedElement/raisedElement";
 import { Delete } from "@/assets/icons";
+import { ProductIncreaser } from "../helpers";
 
 interface CartItemsProps {
   image: string;
@@ -28,11 +28,7 @@ const CartCard = ({ image }: CartItemsProps) => {
         <p>Size: 41 inches</p>
 
         <footer>
-          <button>
-            <span>–</span>
-            <span>1</span>
-            <span>+</span>
-          </button>
+          <ProductIncreaser content="1" />
           <Delete />
         </footer>
       </summary>
