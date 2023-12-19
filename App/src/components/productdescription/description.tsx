@@ -153,7 +153,7 @@ export default function Description() {
         </Suspense>
       </div>
 
-      {/* <SimilarProductr /> */}
+      <SimilarProductr />
     </section>
   );
 }
