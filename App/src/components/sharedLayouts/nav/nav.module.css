@@ -166,6 +166,7 @@
   font-weight: 700;
   display: block;
   text-align: center;
+  mix-blend-mode: difference;
 }
 
 .nav__icon {
