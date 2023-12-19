@@ -13,10 +13,10 @@ const ElectronicsPage = () => {
   return (
     <>
       <ProductPath />
-      <main className={styles.electronics__category}>
+      <section className={styles.electronics__category}>
         <SideBar />
         <AllElectronicsProducts />
-      </main>
+      </section>
     </>
   );
 };

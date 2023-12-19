@@ -5,12 +5,13 @@ import Link from "next/link";
 import styles from "./nav.module.css";
 import Logo from "../../general/logo/logo";
 import InputBox from "@/components/general/input/input";
-import { FaHeart, FaCartPlus, FaUser, FaSearch } from "react-icons/fa";
+import { FaHeart, FaUser, FaSearch } from "react-icons/fa";
 import { usePathname } from "next/navigation";
 import { Favourite } from "@/components/favourite";
 import { CloseNav, OpenNav } from "@/assets/icons/navBarIcons";
 import Cart from "@/components/cart/cart";
 import { useCartContext, useGeneralContext } from "@/context";
+import { Cartsvg } from "@/assets/icons";
 
 const Nav = () => {
   const pathname: string = usePathname();
@@ -102,7 +103,7 @@ const Nav = () => {
             </li>
             <li onClick={handleCloseNavClick}>
               <button onClick={handleCartOpenOverlay}>
-                <FaCartPlus />
+                <Cartsvg />
                 <p>
                   <strong>Cart</strong>
                 </p>

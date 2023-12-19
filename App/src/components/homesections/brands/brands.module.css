@@ -1,12 +1,34 @@
 .brandcontainer{
     display: flex;
-    width: 1312px;
+    max-width: 1312px;
+    width: 100vw;
     flex-direction: column;
     justify-content: center;
     gap: 46px;
-    padding: 0 50px;
+    padding: 0 10px;
     margin-bottom: 40px;
 
+}
+.brandcontainer h1{
+    font-size: var(--header);
+    padding: 0 30px;
+    @media (min-width:700px) and (max-width:912px) {
+        font-size: 20px;
+        padding: 0;
+        
+      }
+      @media (min-width:300px) and (max-width:699px) {
+        font-size: 20px;
+        padding: 0;
+    
+        
+      }
+      @media  (max-width:299px) {
+        font-size: 15px;
+        padding: 0;
+    
+        
+      }
 }
 .brandimgcontainer{
     display: flex;
@@ -22,21 +44,49 @@
 }
 
 /* media quary for medium size mobile devices */
-@media (min-width: 330px) and (max-width: 765px) {
-    .brandcontainer{
-        width: 100% !important;
-    }
+@media (min-width: 458px) and (max-width: 691px) {
+   
     .brandimgcontainer{
-        width: 100% ;
+       width: 100%;
         display: flex;
         gap: 0;
-        /* flex-wrap: wrap; */
-        justify-content: center;
+        justify-content: space-around;
         align-content: flex-start;
     }
+  
     .brandimg{
-        width: 53px;
-        height: 40px;
+        width: 70px;
+        height: auto;
+    }
+}
+@media (min-width: 331px) and (max-width: 457px) {
+   
+    .brandimgcontainer{
+       width: 100%;
+        display: flex;
+        gap: 0;
+        justify-content: space-around;
+        align-content: flex-start;
+    }
+  
+    .brandimg{
+        width: 50px;
+        height: auto;
+    }
+}
+@media (min-width: 281px) and (max-width: 332px) {
+   
+    .brandimgcontainer{
+       width: 100%;
+        display: flex;
+        gap: 0;
+        align-content: flex-start;
+       
+    }
+  
+    .brandimg{
+        width: 35px;
+        height: auto;
     }
 }
 @media (max-width: 280px) {
@@ -59,9 +109,9 @@
 }
 
  /* Media query for tablets */
- @media (min-width: 767px) and (max-width: 1024px) {
+ @media (min-width: 692px) and (max-width: 1024px) {
     .brandcontainer{
-        width: 100vw !important;
+        width: 100svw !important;
         padding: 20px;
     }
     .brandimgcontainer{
