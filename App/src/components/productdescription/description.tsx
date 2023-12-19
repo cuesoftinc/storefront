@@ -6,6 +6,7 @@ import { Delivery, Ratesvg } from "@/assets/icons";
 import SimilarProductr from "../Similarproduct/Similarproduct";
 import Button from "../general/button/button";
 import { ProductIncreaser } from "../helpers";
+import SinglePopular from "../homesections/Popular/singlePopular";
 
 export default function Description() {
   return (
@@ -153,7 +154,16 @@ export default function Description() {
         </Suspense>
       </div>
 
-      <SimilarProductr />
+      {/* <SimilarProductr /> */}
+      <div className={styles.might__like}>
+        <h2>Similar Items You Might Like</h2>
+        <div className={styles.popularimgcontainer}>
+          <SinglePopular />
+          <SinglePopular />
+          <SinglePopular />
+          <SinglePopular />
+        </div>
+      </div>
     </section>
   );
 }
