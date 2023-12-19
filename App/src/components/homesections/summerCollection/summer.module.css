@@ -13,7 +13,7 @@
 .summerimgcontainer2 {
   display: grid;
   grid-template-rows: 1fr 1fr;
-  gap: 20px;
+  gap: 10px;
   width: 100%;
   height: auto;
   padding: 0;
@@ -121,6 +121,15 @@
   font-weight: 600;
   line-height: 120%; /* 39.431px */
   letter-spacing: -0.657px;
+}
+@media screen and (max-width: 912px) {
+  .centered {
+    top: 20px;
+    left: 10px;
+  }
+  .centered > h2 {
+    font-size: 20px;
+  }
 }
 .text {
   border-radius: 12px;

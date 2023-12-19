@@ -1,7 +1,7 @@
 .popularcontainer {
   /* border: 2px solid red; */
   max-width: 1312px;
-  margin: 50px auto;
+  margin: 4rem auto;
 }
 .popularheadercontainer {
   display: flex;

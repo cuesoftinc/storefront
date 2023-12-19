@@ -43,7 +43,7 @@
 .categoriesimgcontainer2 {
   display: grid;
   grid-template-rows: 1fr 1fr;
-  gap: 20px;
+  gap: 10px;
   width: 100%;
   height: auto;
   padding: 0;
