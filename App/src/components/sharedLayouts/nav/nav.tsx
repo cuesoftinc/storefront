@@ -83,7 +83,7 @@ const Nav = () => {
           </ul>
 
           <ul className={styles.second__nav__item}>
-            <li>
+            <li className={styles.nav__input__field}>
               <InputBox
                 type="text"
                 name="search"
@@ -93,7 +93,10 @@ const Nav = () => {
                 handleChange={handleProductSearch}
               />
             </li>
-            <li onClick={handleCloseNavClick}>
+            <li
+              onClick={handleCloseNavClick}
+              className={styles.fav__list__item}
+            >
               <button onClick={handleOpenOverlay}>
                 <FaHeart />
                 <p>
@@ -101,7 +104,10 @@ const Nav = () => {
                 </p>
               </button>
             </li>
-            <li onClick={handleCloseNavClick}>
+            <li
+              onClick={handleCloseNavClick}
+              className={styles.cart__list__item}
+            >
               <button onClick={handleCartOpenOverlay}>
                 <Cartsvg />
                 <p>
@@ -109,7 +115,7 @@ const Nav = () => {
                 </p>
               </button>
             </li>
-            <li onClick={handleCloseNavClick}>
+            <li onClick={handleCloseNavClick} className={styles.nav__profile}>
               <Link href="">
                 <FaUser />
                 <p>Profile</p>

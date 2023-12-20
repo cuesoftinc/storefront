@@ -78,14 +78,16 @@
   .close__nav {
     position: absolute;
     top: 10px;
+    color: #fff;
   }
 
   .nav {
-    /* border: 2px solid gray; */
+    /* border: 2px solid red; */
     position: relative;
     width: 300px;
     flex-direction: column;
     justify-content: flex-start;
+    align-items: flex-start;
     background-color: var(--solidFadedBlue);
     position: fixed;
     top: 0px;
@@ -93,6 +95,7 @@
     min-height: 100vh;
     transition: ease 0.5s all;
     z-index: 99;
+    gap: 20px;
   }
   .open__nav__control {
     right: 0px;
@@ -102,14 +105,22 @@
     /* border: 2px solid red; */
     /* width: fit-content; */
     flex-direction: column;
+    align-items: flex-start;
+    margin-left: 2rem;
+    gap: 20px;
   }
   .nav .first__nav__item {
+    /* border: 2px solid red; */
     margin-top: 5rem;
-    /* width: 25%; */
+    width: fit-content;
+    /* align-items: flex-start; */
   }
   .nav .second__nav__item {
-    /* margin-top: 20px; */
-    /* width: 65%; */
+    /* border: 2px solid red; */
+  }
+
+  .nav__input__field {
+    display: none;
   }
 
   .first__nav__item li {
@@ -119,6 +130,7 @@
 
   .first__nav__item li a {
     color: #fff;
+    font-size: 20px;
   }
 
   .second__nav__item {
@@ -133,8 +145,18 @@
     color: #fff;
   }
 
-  .second__nav__item li a {
-    color: #fff;
+  .fav__list__item > button,
+  .cart__list__item > button {
+    display: flex;
+    gap: 5px;
+  }
+  .cart__list__item > button {
+    /* align-items: flex-end; */
+  }
+
+  .fav__list__item strong,
+  .cart__list__item strong {
+    font-size: 20px;
   }
 }
 
@@ -166,7 +188,7 @@
   font-weight: 700;
   display: block;
   text-align: center;
-  mix-blend-mode: difference;
+  /* mix-blend-mode: difference; */
 }
 
 .nav__icon {
@@ -176,4 +198,20 @@
 .add__active__page__border {
   border-bottom: 3px solid var(--solidFadedBlue);
   padding-bottom: 3px;
+}
+
+@media screen and (max-width: 912px) {
+  .second__nav__item li a {
+    color: #fff;
+  }
+
+  .nav__profile a {
+    display: flex;
+    gap: 5px;
+    align-items: flex-start;
+  }
+
+  .nav__profile > a > p {
+    font-size: 20px;
+  }
 }
