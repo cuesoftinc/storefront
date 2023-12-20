@@ -38,6 +38,16 @@
   display: flex;
 }
 
+.cart__color {
+  fill: var(--solidFadedBlue);
+}
+
+.product__cart__icon:hover {
+  .cart__color {
+    fill: #fff;
+  }
+}
+
 @media screen and (max-width: 540px) {
   .short__desc {
     font-size: 14px;
