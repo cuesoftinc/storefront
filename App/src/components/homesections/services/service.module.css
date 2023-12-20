@@ -1,131 +1,72 @@
-.servicecontainer{
-        display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 40px ;
-    margin-top: 50px;
-    max-width: 1312px !important;
-    @media  (max-width:912px) {
-        width: 100svw;
-     
-      }}
-.serviceheadercontainer{
-    display: flex;
-align-items: flex-start;
-/* gap: 66px; */
-width: 100% !important;
-@media  (max-width:912px) {
-    width: 95%;
- 
-  }
- 
+.servicecontainer {
+  /* border: 2px solid red; */
+  margin: 4rem auto 0;
+  max-width: 1312px;
 }
-.serviceheader{
-    color: var(--black);
-font-feature-settings: 'cv04' on, 'cv03' on, 'cv01' on;
-  font-family: "Montserrat", sans-serif;
-font-size: 28px;
-font-style: normal;
-font-weight: 600;
-line-height: 36px; /* 128.571% */
-letter-spacing: -0.56px;
-width: 341px;
-display: flex;
-flex-wrap: wrap;
-@media (min-width:700px) and (max-width:912px) {
+.serviceheader {
+  color: var(--black);
+  font-feature-settings: "cv04" on, "cv03" on, "cv01" on;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: -0.56px;
+  max-width: 300px;
+  display: flex;
+  flex-wrap: wrap;
+  @media screen and (max-width: 768px) {
+    /* border: 2px solid red; */
     font-size: 20px;
-    padding: 10px;
-    
   }
-  @media (min-width:300px) and (max-width:699px) {
-    font-size: 20px;
-    padding: 10px;
- 
-    
-  }
-  @media  (max-width:299px) {
-    font-size: 17px;
-    padding: 10px;
- 
-    
-  }
-}
-.servicesprovidedcontainer{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-width: 100%;
-gap: 74px;
-place-items: flex-start;
-@media (min-width: 300px) and (max-width: 534px) {
-    width: 100% ;
-    place-items: center;
-    grid-template-columns: 1fr;
-    gap: 30px;
-  }
-  @media (min-width: 535px) and (max-width:912px) {
-    width: 100% ;
-    grid-template-columns: 1fr 1fr;
-    padding-inline: 10px;
-    gap: 20px;
-    place-items: center;
-
-  
-  }
-  @media (max-width:299px) {
-    width: 100% ;
-    padding-inline: 10px;
-    place-items: center;
-    grid-template-columns: 1fr ;
-    gap: 30px;
-
-  }
-}
-.content{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
+  @media screen and (max-width: 500px) {
     text-align: center;
-    align-items: center;
-    padding: 15px 0;
-    gap: 20px;
-
+    margin-inline: auto;
+  }
 }
-.serviceicon{
-    width: 24px;
-height: 24px;
-color: #2F8AC7;
-border-radius: 10px;
-
-}
-.iconcontainer{
-    border-radius: 30px;
-background: var(--foundation-primary-color-primary-color-50, #EBF5FB);
-    display: flex;
-padding: 10px 12px;
-align-items: flex-start;
-gap: 10px;
-}
-.servicetitle{
-    color: var(--grey-900, #101928);
-font-feature-settings: 'cv01' on, 'cv04' on, 'cv03' on;
-  font-family: "Montserrat", sans-serif;
-font-size: 18px;
-font-style: normal;
-font-weight: 600;
-line-height: 145%; /* 26.1px */
-
-}
-.servicetext{
-    width: 248px;
-
-    color: var(--grey-600, #475367);
-font-feature-settings: 'cv04' on, 'cv03' on;
-  font-family: "Montserrat", sans-serif;
-font-size: 14px;
-font-style: normal;
-font-weight: 400;
-line-height: 145%; /* 20.3px */
+.servicesprovidedcontainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 
+.content {
+  text-align: center;
+  padding: 15px 0;
+  width: 250px;
+  align-self: center;
+}
+.serviceicon {
+  width: 24px;
+  height: 24px;
+  color: #2f8ac7;
+  border-radius: 10px;
+}
+.iconcontainer {
+  background: var(--foundation-primary-color-primary-color-50, #ebf5fb);
+  width: 40px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-inline: auto;
+}
+.servicetitle {
+  color: var(--grey-900, #101928);
+  font-feature-settings: "cv01" on, "cv04" on, "cv03" on;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 145%; /* 26.1px */
+}
+.servicetext {
+  width: 248px;
 
-
+  color: var(--grey-600, #475367);
+  font-feature-settings: "cv04" on, "cv03" on;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 145%; /* 20.3px */
+}

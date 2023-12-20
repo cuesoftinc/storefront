@@ -7,7 +7,7 @@
   backdrop-filter: blur(20px);
   z-index: 999;
   height: 60px;
-  max-width: 1285px;
+  max-width: 1312px;
   width: 100%;
   /* margin: var(--small) auto; */
   padding-inline: var(--small);
@@ -166,6 +166,7 @@
   font-weight: 700;
   display: block;
   text-align: center;
+  mix-blend-mode: difference;
 }
 
 .nav__icon {
