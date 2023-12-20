@@ -3,6 +3,7 @@ import styles from "./footer.module.css";
 import Logo from "@/components/general/logo/logo";
 import Link from "next/link";
 import { FaTwitter, FaFacebook, FaInstagram } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 
 const Footer = () => {
   return (
@@ -82,7 +83,7 @@ const Footer = () => {
             <p>All rights reserved</p>
           </div>
           <div>
-            <FaTwitter className={styles.icon} />
+            <FaXTwitter className={styles.icon} />
             <FaFacebook className={styles.icon} />
             <FaInstagram className={styles.icon} />
           </div>
