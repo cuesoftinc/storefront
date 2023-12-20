@@ -115,7 +115,7 @@ func (ctrl *favoriteController) RemoveFromFavorite(ctx *gin.Context) {
 	}
 
 	// Pass user id and product id to delete from favorite
-	favorite, err := ctrl.favoriteRepo.DeleteFromFavorite(userId, productId)
+	favorite, err := ctrl.favoriteRepo.DeleteFromFavorites(userId, productId)
 
 	if err != nil {
 		ctx.JSON(http.StatusBadRequest, FavoriteResponse{

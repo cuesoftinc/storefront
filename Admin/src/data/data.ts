@@ -1,41 +1,41 @@
 import {
-  addItemIcon,
-  createNewIcon,
-  dashboardIcon,
-  helpIcon,
-  productIcon,
-  settingIcon,
-} from "@/assets/iconsrafce";
+  IoHomeOutline,
+  IoBagOutline,
+  IoAddCircleOutline,
+  IoSettingsOutline,
+} from "react-icons/io5";
+import { MdOutlineCategory, MdOutlineBorderColor } from "react-icons/md";
+import { IoIosHelpCircleOutline } from "react-icons/io";
 
 export const adminSideBar = {
   top: [
     {
       id: 1,
-      icon: dashboardIcon,
+      icon: IoHomeOutline,
       navItem: "Dashboard",
       path: "/",
     },
     {
       id: 2,
-      icon: productIcon,
+      icon: IoBagOutline,
       navItem: "Product",
       path: "/product",
     },
     {
       id: 3,
-      icon: addItemIcon,
+      icon: IoAddCircleOutline,
       navItem: "Add New Item",
       path: "/dashboard/add-items",
     },
     {
       id: 4,
-      icon: createNewIcon,
+      icon: MdOutlineCategory,
       navItem: "Create New Category",
       path: "/create-category",
     },
     {
       id: 5,
-      icon: createNewIcon,
+      icon: MdOutlineBorderColor,
       navItem: "Orders",
       path: "/orders",
     },
@@ -44,13 +44,13 @@ export const adminSideBar = {
   bottom: [
     {
       id: 1,
-      icon: settingIcon,
+      icon: IoSettingsOutline,
       navItem: "Settings",
       path: "/settings",
     },
     {
       id: 2,
-      icon: helpIcon,
+      icon: IoIosHelpCircleOutline,
       navItem: "Help and Support",
       path: "/help-and-support",
     },

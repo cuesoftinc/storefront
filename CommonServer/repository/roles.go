@@ -9,6 +9,7 @@ import (
 type RoleRepository interface {
 	GetDefaultRoleID() (string, error)
 	GetAdminRoleID() string
+	GetRoleByID(id string) (models.Role, error)
 }
 
 type roleRepository struct {
@@ -35,4 +36,10 @@ func (db *roleRepository) GetAdminRoleID() string {
 		return ""
 	}
 	return role.ID
+}
+
+func (db *roleRepository) GetRoleByID(id string) (models.Role, error) {
+	var role models.Role
+	result := db.connection.First(&role, "id = ?", id)
+	return role, result.Error
 }

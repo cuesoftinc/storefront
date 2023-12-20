@@ -6,6 +6,7 @@ import styles from "./input.module.css";
 const InputBox = ({
   type,
   name,
+  id,
   holder,
   icons,
   value,
@@ -17,11 +18,12 @@ const InputBox = ({
       <input
         type={type}
         name={name}
+        id={id}
         placeholder={holder}
         value={value}
         onChange={handleChange}
       />
-      <Image src={icons} alt="profile" width={20} height={20} />
+      <span>{icons}</span>
     </div>
   );
 };

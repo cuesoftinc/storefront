@@ -1,17 +1,32 @@
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import { ChangeEvent, Dispatch, SetStateAction } from "react";
 
+export interface CatObjType {
+  name: string;
+  description: string;
+  price: string;
+  quantity: string;
+  category_id: string;
+  sub_category: string;
+  shipping: string;
+  color: string;
+  size: string;
+}
+
 // Context Types
-export interface AdminContextProps {
-  homeState: number;
-  setHomeState: Dispatch<SetStateAction<number>>;
+export interface AddItemContextProps {
+  addProduct: CatObjType;
+  setAddProduct: Dispatch<SetStateAction<CatObjType>>;
+  image: string;
+  setImage: Dispatch<SetStateAction<string>>;
+  showMsg: boolean;
+  setShowMsg: Dispatch<SetStateAction<boolean>>;
+  imageFullFile: File | undefined;
+  setImageFullFile: Dispatch<SetStateAction<File | undefined>>;
 }
 
 // Other Types
-// export interface UserProps {
-//   id: number;
-//   username: string;
-// }
+
 export interface SigninContextProps {
   signinUser: SigninUserProp;
   setSigninUser: Dispatch<SetStateAction<SigninUserProp>>;
@@ -22,6 +37,7 @@ export interface SigninContextProps {
 }
 export interface InputProps {
   type: string;
+  id?: string;
   name: string;
   holder: string;
   icons?: any;
