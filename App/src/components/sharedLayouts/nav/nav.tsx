@@ -51,6 +51,15 @@ const Nav = () => {
     <>
       <header className={styles.header}>
         <Logo uniqueStyle={styles.nav__logo} />
+        <InputBox
+          type="text"
+          name="search"
+          icons={<FaSearch />}
+          holder="Search"
+          value=""
+          handleChange={handleProductSearch}
+          inputStyle={styles.nav__top__input}
+        />
         <div className={styles.open__nav} onClick={handleOpenNavClick}>
           <OpenNav />
         </div>
@@ -109,7 +118,7 @@ const Nav = () => {
               className={styles.cart__list__item}
             >
               <button onClick={handleCartOpenOverlay}>
-                <Cartsvg />
+                <Cartsvg cartColor={styles.cart__color} />
                 <p>
                   <strong>Cart</strong>
                 </p>
