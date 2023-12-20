@@ -1,5 +1,6 @@
 import React from "react";
 import DashboardComp from "@/components/dashboard/dashboardrafce";
+// import withAuth from "@/HOC/withAuthrafce";
 
 const Dashboard = () => {
   return (
@@ -10,3 +11,4 @@ const Dashboard = () => {
 };
 
 export default Dashboard;
+// export default withAuth(Dashboard);

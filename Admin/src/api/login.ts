@@ -26,7 +26,7 @@ export const fetchSigninUser = async (
       const { success, message, token ,data } = response.data;
 console.log(data)
       if (success  ) {
-        localStorage.setItem('authToken', token);
+       localStorage.setItem('authToken', token);
         console.log("Authentication successful");
         setSigninUser((prevState) => ({
           ...prevState,
