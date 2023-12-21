@@ -30,7 +30,11 @@ function Favouritecard() {
             <p>size: 41 inches</p>
           </div>
           <div className={styles.favourite__details}>
-            <Button btnContent="Add to cart" icon={<Cartsvg />} />
+            <Button
+              btnContent="Add to cart"
+              icon={<Cartsvg cartColor={styles.cart__color} />}
+              btnStyle={styles.fav__cart__btn}
+            />
             <button className={styles.favourite__del__button}>
               <Delete />
             </button>

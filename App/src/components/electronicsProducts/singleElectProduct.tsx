@@ -26,7 +26,11 @@ const SingleElectronicProduct = ({ image, category }: ElectProps) => {
         </h3>
       </div>
 
-      <Button btnContent="Add to Cart" icon={<Cartsvg />} />
+      <Button
+        btnContent="Add to Cart"
+        icon={<Cartsvg cartColor={styles.cart__color} />}
+        btnStyle={styles.product__cart__icon}
+      />
     </section>
   );
 };
