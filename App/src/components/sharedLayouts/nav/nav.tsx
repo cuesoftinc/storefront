@@ -51,6 +51,15 @@ const Nav = () => {
     <>
       <header className={styles.header}>
         <Logo uniqueStyle={styles.nav__logo} />
+        <InputBox
+          type="text"
+          name="search"
+          icons={<FaSearch />}
+          holder="Search"
+          value=""
+          handleChange={handleProductSearch}
+          inputStyle={styles.nav__top__input}
+        />
         <div className={styles.open__nav} onClick={handleOpenNavClick}>
           <OpenNav />
         </div>
@@ -83,7 +92,7 @@ const Nav = () => {
           </ul>
 
           <ul className={styles.second__nav__item}>
-            <li>
+            <li className={styles.nav__input__field}>
               <InputBox
                 type="text"
                 name="search"
@@ -93,7 +102,10 @@ const Nav = () => {
                 handleChange={handleProductSearch}
               />
             </li>
-            <li onClick={handleCloseNavClick}>
+            <li
+              onClick={handleCloseNavClick}
+              className={styles.fav__list__item}
+            >
               <button onClick={handleOpenOverlay}>
                 <FaHeart />
                 <p>
@@ -101,15 +113,18 @@ const Nav = () => {
                 </p>
               </button>
             </li>
-            <li onClick={handleCloseNavClick}>
+            <li
+              onClick={handleCloseNavClick}
+              className={styles.cart__list__item}
+            >
               <button onClick={handleCartOpenOverlay}>
-                <Cartsvg />
+                <Cartsvg cartColor={styles.cart__color} />
                 <p>
                   <strong>Cart</strong>
                 </p>
               </button>
             </li>
-            <li onClick={handleCloseNavClick}>
+            <li onClick={handleCloseNavClick} className={styles.nav__profile}>
               <Link href="">
                 <FaUser />
                 <p>Profile</p>

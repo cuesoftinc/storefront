@@ -118,6 +118,17 @@
     font-size: 12px;
   }
 }
+
+.cart__color {
+  fill: var(--solidFadedBlue);
+}
+
+.fav__cart__btn:hover {
+  .cart__color {
+    fill: #fff;
+  }
+}
+
 .favourite__size__color > p {
   color: var(--grey-600, #475367);
 
