@@ -81,7 +81,7 @@
 }
 
 .icon:first-child {
-  color: #55acee;
+  /* color: #55acee; */
 }
 .icon:nth-child(2) {
   color: #3b5998;

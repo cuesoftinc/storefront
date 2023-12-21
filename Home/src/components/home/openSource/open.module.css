@@ -1,0 +1,53 @@
+.open__source__section {
+  margin-top: 6rem;
+}
+
+.open__source__section > h2 {
+  text-align: center;
+  font-size: 30px;
+}
+
+.open__source__section > h2 > span {
+  color: var(--solidBlue);
+}
+
+.all__open__source {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.open__source__con {
+  width: 250px;
+  border: 1px solid #e2e2e2;
+  padding: 20px 10px;
+  border-radius: 12px;
+}
+
+.open__source__con > h4 {
+  margin-bottom: 8px;
+}
+
+@media screen and (max-width: 640px) {
+  .open__source__section > h2 {
+    font-size: 25px;
+  }
+}
+
+@media screen and (max-width: 570px) {
+  .all__open__source {
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: center;
+  }
+  .open__source__con {
+    width: 350px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .open__source__con {
+    width: 250px;
+  }
+}

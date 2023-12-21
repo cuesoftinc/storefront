@@ -1,0 +1,11 @@
+.home__page {
+  /* border: 2px solid red; */
+  max-width: 1300px;
+  margin: 20px auto;
+  padding-inline: 40px;
+}
+@media screen and (max-width: 1024px) {
+  .home__page {
+    padding-inline: 3vw;
+  }
+}

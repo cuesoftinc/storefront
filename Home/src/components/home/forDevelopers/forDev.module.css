@@ -1,0 +1,45 @@
+.dev__section {
+  margin-top: 6rem;
+}
+
+.dev__section > h2 {
+  margin-bottom: 5px;
+  font-size: 30px;
+}
+
+.dev__section > h2,
+.dev__section > p {
+  text-align: center;
+}
+
+.dev__section > h2 > span {
+  color: var(--solidBlue);
+}
+
+.dev__con {
+  /* border: 2px solid red; */
+  width: 420px;
+  margin: 3rem auto 0px;
+  text-align: center;
+}
+
+.dev__con > p:nth-child(2) {
+  color: var(--solidBlue);
+  margin-top: 10px;
+}
+
+.dev__con > h3 {
+  margin-block: 30px 12px;
+}
+
+@media screen and (max-width: 640px) {
+  .dev__section > h2 {
+    font-size: 25px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .dev__con {
+    width: 90%;
+  }
+}
