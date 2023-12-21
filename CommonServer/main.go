@@ -2,12 +2,12 @@ package main
 
 import (
 	"fmt"
+	"github.com/CuesoftCloud/storefront/middlewares"
 	"log"
 	"os"
 
 	"github.com/CuesoftCloud/storefront/config"
 	"github.com/CuesoftCloud/storefront/routes"
-	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 )
 
@@ -21,13 +21,7 @@ func main() {
 	}
 
 	server := gin.Default()
-	server.Use(cors.New(cors.Config{
-		AllowAllOrigins:  true,
-		AllowMethods:     []string{"GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"},
-		AllowHeaders:     []string{"Origin", "Authorization", "Content-Type"},
-		ExposeHeaders:    []string{"Content-Length"},
-		AllowCredentials: true,
-	}))
+	server.Use(middlewares.Cors())
 	routes.SetupRoutes(server, db)
 	err = server.Run(os.Getenv("PORT"))
 	if err != nil {
