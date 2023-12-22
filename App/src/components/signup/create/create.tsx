@@ -17,6 +17,9 @@ import { fetchSignUpUser } from "../../../api/users";
 import { useAuthContext } from "@/context/userContext";
 import { handleIsLoading } from "@/utils/btnHandler";
 import { handleResponseMsg } from "@/utils/response";
+import { FaUser, FaLock } from "react-icons/fa6";
+import { MdEmail } from "react-icons/md";
+import AuthSocial from "@/components/general/authSocial/authSocial";
 
 const CreateAccount = () => {
   const {
@@ -113,17 +116,14 @@ const CreateAccount = () => {
   return (
     <form className={styles.signup__inputs__side}>
       <h1>Create Account</h1>
-      <div>
-        <Image src={facebook} alt="Facebook" />
-        <Image src={twitter} alt="Twitter" />
-      </div>
+      <AuthSocial />
       <p>or use your email for registration</p>
 
       <InputBox
         type="text"
         name="name"
         holder="Name"
-        icons={profileIcon.src}
+        icons={<FaUser />}
         value={name}
         handleChange={handleChange}
         inputStyle={styles.input__style}
@@ -132,7 +132,7 @@ const CreateAccount = () => {
         type="email"
         name="email"
         holder="Email"
-        icons={mailIcon.src}
+        icons={<MdEmail />}
         value={email}
         handleChange={handleChange}
         inputStyle={styles.input__style}
@@ -141,7 +141,7 @@ const CreateAccount = () => {
         type="password"
         name="password"
         holder="Password"
-        icons={lockIcon.src}
+        icons={<FaLock />}
         value={password}
         handleChange={handleChange}
         inputStyle={styles.input__style}

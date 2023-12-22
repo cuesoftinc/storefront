@@ -3,11 +3,16 @@ import styles from "./intro.module.css";
 import { regImage } from "@/assets/images";
 import Image from "next/image";
 
-const SignIntro = () => {
+interface SignIntroProp {
+  heading: string;
+  intro: string;
+}
+
+const SignIntro = ({ heading, intro }: SignIntroProp) => {
   return (
     <summary className={styles.intro__side}>
-      <h1>Hello, Friend!</h1>
-      <p>Enter your details and start your journey with us.</p>
+      <h1>{heading}</h1>
+      <p>{intro}</p>
       <Image src={regImage} alt="Register Image" />
     </summary>
   );
