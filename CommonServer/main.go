@@ -2,9 +2,10 @@ package main
 
 import (
 	"fmt"
-	"github.com/CuesoftCloud/storefront/middlewares"
 	"log"
 	"os"
+
+	"github.com/CuesoftCloud/storefront/middlewares"
 
 	"github.com/CuesoftCloud/storefront/config"
 	"github.com/CuesoftCloud/storefront/routes"
@@ -20,7 +21,8 @@ func main() {
 		return
 	}
 
-	server := gin.Default()
+	server := gin.New()
+	server.Use(gin.Logger())
 	server.Use(middlewares.Cors())
 	routes.SetupRoutes(server, db)
 	err = server.Run(os.Getenv("PORT"))
