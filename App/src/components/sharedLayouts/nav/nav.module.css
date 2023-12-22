@@ -167,10 +167,6 @@
     /* align-items: flex-end; */
   }
 
-  .cart__color {
-    fill: #fff;
-  }
-
   .fav__list__item strong,
   .cart__list__item strong {
     font-size: 20px;
@@ -230,6 +226,10 @@
     display: flex;
     gap: 5px;
     align-items: flex-start;
+  }
+
+  .cart__color {
+    fill: #fff;
   }
 
   .nav__profile > a > p {
