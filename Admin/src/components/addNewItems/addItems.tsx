@@ -68,7 +68,7 @@ const AddItems = () => {
   const handleAddItem = async () => {
     try {
       console.log("Adding item:", addProduct, images); // Log product and images
-      const result = await addItem({ ...addProduct, image: images }); // Assuming `addItem` takes an object with an `image` property
+      const result = await addItem({ ...addProduct}); // Assuming `addItem` takes an object with an `image` property
       console.log("Success:", result);
 
       if (result.status === 200) {
