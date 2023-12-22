@@ -44,6 +44,10 @@
   margin-top: 10px;
 }
 
+.input__style > input::placeholder {
+  padding-left: 10px;
+}
+
 .hide__sign__response {
   margin-block: 5px;
   color: #fff;

@@ -17,6 +17,8 @@ import { fetchSignUpUser } from "../../../api/users";
 import { useAuthContext } from "@/context/userContext";
 import { handleIsLoading } from "@/utils/btnHandler";
 import { handleResponseMsg } from "@/utils/response";
+import { FaUser, FaLock } from "react-icons/fa6";
+import { MdEmail } from "react-icons/md";
 
 const CreateAccount = () => {
   const {
@@ -123,7 +125,7 @@ const CreateAccount = () => {
         type="text"
         name="name"
         holder="Name"
-        icons={profileIcon.src}
+        icons={<FaUser />}
         value={name}
         handleChange={handleChange}
         inputStyle={styles.input__style}
@@ -132,7 +134,7 @@ const CreateAccount = () => {
         type="email"
         name="email"
         holder="Email"
-        icons={mailIcon.src}
+        icons={<MdEmail />}
         value={email}
         handleChange={handleChange}
         inputStyle={styles.input__style}
@@ -141,7 +143,7 @@ const CreateAccount = () => {
         type="password"
         name="password"
         holder="Password"
-        icons={lockIcon.src}
+        icons={<FaLock />}
         value={password}
         handleChange={handleChange}
         inputStyle={styles.input__style}

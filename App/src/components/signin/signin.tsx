@@ -10,6 +10,8 @@ import { fetchSigninUser } from "../../api/login";
 import { useRouter } from "next/navigation";
 import { useAuthContext } from "@/context/loginContect";
 // import { handleIsLoadingsignin } from "@/utils/btnHandler";/
+import { FaLock } from "react-icons/fa6";
+import { MdEmail } from "react-icons/md";
 
 import { handleResponsesigninMsg } from "@/utils/response";
 
@@ -119,7 +121,10 @@ export default function Signinadmin() {
               className={styles.signinformcontainer}
             >
               <div className={styles.inputdiv}>
-                <img src="/mail.png" className={styles.inputicon} alt="" />
+                {/* <img src="/mail.png" className={styles.inputicon} alt="" /> */}
+                <span>
+                  <MdEmail />
+                </span>
                 <input
                   autoComplete="off"
                   id="logemail"
@@ -133,7 +138,10 @@ export default function Signinadmin() {
               </div>
 
               <div className={styles.inputdiv}>
-                <img src="/lock.png" className={styles.inputicon} alt="" />
+                {/* <img src="/lock.png" className={styles.inputicon} alt="" /> */}
+                <span>
+                  <FaLock />
+                </span>
 
                 <input
                   name="password"
