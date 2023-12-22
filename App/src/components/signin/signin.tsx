@@ -14,6 +14,7 @@ import { FaLock } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
 
 import { handleResponsesigninMsg } from "@/utils/response";
+import SignIntro from "../signup/intro/intro";
 
 export default function Signinadmin() {
   const {
@@ -82,13 +83,17 @@ export default function Signinadmin() {
   return (
     <section className={styles.signinsection}>
       <div className={styles.formContainer}>
-        <div className={styles.leftWelcomediv}>
+        {/* <div className={styles.leftWelcomediv}>
           <h1 className={styles.signinHeaders}>Welcome Back !</h1>
           <p className={styles.welcometext}>
             Enter your details to continue your journey with us
           </p>
           <img className={styles.leftsvg} src="/welcomesvg.svg" alt="" />
-        </div>
+        </div> */}
+        <SignIntro
+          heading="Welcome Back!"
+          intro="Enter your details to continue your journey with us"
+        />
         <div className={styles.rightWelcomediv}>
           <div className={styles.signindiv}>
             <h1 className={styles.signinHeaders}>Sign in to Storefront</h1>
@@ -100,18 +105,6 @@ export default function Signinadmin() {
                 <Twittersvg />
               </a>
             </div>
-            {/* <div className={styles.rightWelcomediv}>
-                <div className={styles.signindiv}>
-                    <h1 className={styles.signinHeaders}>Sign in to Storefront</h1>
-                    <div className={styles.signinsocials}>
-                   <a href="" className={styles.svg}>
-                    <Facebooksvg/>
-                   </a>
-                    <a href="" className={styles.svg}>
-                     <Twittersvg/>
-                     </a>
-                   </div>
-                </div> */}
 
             <div>
               <p className={styles.signintext}>Or use your email</p>
@@ -191,38 +184,6 @@ export default function Signinadmin() {
               </Link>
             </p>
           </div>
-
-          {/* <div className={styles.inputdiv}>
-              <img src="/lock.png" className={styles.inputicon} alt="" />
-
-              <input
-                autoComplete="off"
-                id="logpass"
-                placeholder="Password"
-                className={styles.inputfield}
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                type="password"
-              />
-            </div> */}
-
-          {/* <p className={styles.signintext}>Forgot your password ?</p>
-            <div className={styles.btndiv}>
-              <button
-                type="submit"
-                onClick={handleSubmit}
-                className={styles.button}
-              >
-                Sign in
-              </button>
-            </div>
-          </form> */}
-          {/* <p className={styles.signintext}>
-            Don't have an account ?{" "}
-            <Link href="/signup" className={styles.signuplink}>
-              Sign up
-            </Link>
-          </p> */}
         </div>
       </div>
     </section>

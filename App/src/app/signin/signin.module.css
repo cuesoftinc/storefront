@@ -1,6 +1,17 @@
-.main{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.login__logo {
+  /* border: 2px solid red; */
+  width: 100%;
+  position: fixed;
+  top: 0px;
+  left: 20px;
+  padding-top: 20px;
+  background-color: var(--white);
+  z-index: 20;
 }
