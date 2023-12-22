@@ -19,6 +19,7 @@ import { handleIsLoading } from "@/utils/btnHandler";
 import { handleResponseMsg } from "@/utils/response";
 import { FaUser, FaLock } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
+import AuthSocial from "@/components/general/authSocial/authSocial";
 
 const CreateAccount = () => {
   const {
@@ -115,10 +116,7 @@ const CreateAccount = () => {
   return (
     <form className={styles.signup__inputs__side}>
       <h1>Create Account</h1>
-      <div>
-        <Image src={facebook} alt="Facebook" />
-        <Image src={twitter} alt="Twitter" />
-      </div>
+      <AuthSocial />
       <p>or use your email for registration</p>
 
       <InputBox

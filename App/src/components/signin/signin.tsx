@@ -15,6 +15,8 @@ import { MdEmail } from "react-icons/md";
 
 import { handleResponsesigninMsg } from "@/utils/response";
 import SignIntro from "../signup/intro/intro";
+import InputBox from "../general/input/input";
+import AuthSocial from "../general/authSocial/authSocial";
 
 export default function Signinadmin() {
   const {
@@ -83,107 +85,77 @@ export default function Signinadmin() {
   return (
     <section className={styles.signinsection}>
       <div className={styles.formContainer}>
-        {/* <div className={styles.leftWelcomediv}>
-          <h1 className={styles.signinHeaders}>Welcome Back !</h1>
-          <p className={styles.welcometext}>
-            Enter your details to continue your journey with us
-          </p>
-          <img className={styles.leftsvg} src="/welcomesvg.svg" alt="" />
-        </div> */}
         <SignIntro
           heading="Welcome Back!"
           intro="Enter your details to continue your journey with us"
         />
-        <div className={styles.rightWelcomediv}>
-          <div className={styles.signindiv}>
-            <h1 className={styles.signinHeaders}>Sign in to Storefront</h1>
-            <div className={styles.signinsocials}>
-              <a href="" className={styles.svg}>
-                <Facebooksvg />
-              </a>
-              <a href="" className={styles.svg}>
-                <Twittersvg />
-              </a>
-            </div>
+        <div className={styles.signindiv}>
+          <h1 className={styles.signinHeaders}>Sign in to Storefront</h1>
+          <AuthSocial />
 
-            <div>
-              <p className={styles.signintext}>Or use your email</p>
-            </div>
-            <form
-              onSubmit={handleSubmit}
-              className={styles.signinformcontainer}
-            >
-              <div className={styles.inputdiv}>
-                {/* <img src="/mail.png" className={styles.inputicon} alt="" /> */}
-                <span>
-                  <MdEmail />
-                </span>
-                <input
-                  autoComplete="off"
-                  id="logemail"
-                  placeholder="Email"
-                  name="email"
-                  className={styles.inputfield}
-                  value={formData.email}
-                  onChange={handleInputChange}
-                  type="email"
-                />
-              </div>
-
-              <div className={styles.inputdiv}>
-                {/* <img src="/lock.png" className={styles.inputicon} alt="" /> */}
-                <span>
-                  <FaLock />
-                </span>
-
-                <input
-                  name="password"
-                  autoComplete="off"
-                  id="logpass"
-                  placeholder="Password"
-                  className={styles.inputfield}
-                  value={formData.password}
-                  onChange={handleInputChange}
-                  type="password"
-                />
-              </div>
-
-              <p className={styles.signintext}>Forgot your password ?</p>
-              <div className={styles.btndiv}>
-                <button
-                  type="submit"
-                  onClick={handleSubmit}
-                  className={styles.button}
-                >
-                  Sign in
-                </button>
-              </div>
-              <div
-                style={{
-                  width: "100%",
-                  padding: "5px",
-                  display: "flex",
-                  justifyContent: "center",
-                }}
-              >
-                <p
-                  className={` ${
-                    error || isSuccess
-                      ? styles.show__sign__response
-                      : styles.hide__sign__response
-                  }`}
-                >
-                  {error}
-                </p>
-              </div>
-            </form>
-            <p className={styles.signintext}>
-              Don't have an account ?{" "}
-              <Link href="/signup" className={styles.signuplink}>
-                Sign up
-              </Link>
-            </p>
+          <div>
+            <p className={styles.signintext}>Or use your email</p>
           </div>
+          <form onSubmit={handleSubmit} className={styles.signinformcontainer}>
+            <InputBox
+              autoComplete="off"
+              id="logemail"
+              holder="Email"
+              name="email"
+              inputStyle={styles.inputfield}
+              value={formData.email}
+              handleChange={handleInputChange}
+              type="email"
+              icons={<MdEmail />}
+            />
+            <InputBox
+              autoComplete="off"
+              id="logpass"
+              holder="Password"
+              name="password"
+              inputStyle={styles.inputfield}
+              value={formData.password}
+              handleChange={handleInputChange}
+              type="password"
+              icons={<FaLock />}
+            />
+
+            <p className={styles.forgot__password}>Forgot your password ?</p>
+
+            <div className={styles.btndiv}>
+              <button
+                type="submit"
+                onClick={handleSubmit}
+                className={styles.button}
+              >
+                Sign in
+              </button>
+            </div>
+            <div
+              style={{
+                width: "100%",
+                padding: "5px",
+                display: "flex",
+                justifyContent: "center",
+              }}
+            >
+              <p
+                className={` ${
+                  error || isSuccess
+                    ? styles.show__sign__response
+                    : styles.hide__sign__response
+                }`}
+              >
+                {error}
+              </p>
+            </div>
+          </form>
+          <p className={styles.signintext}>
+            Don't have an account ?{" "}
+            <Link href="/signup" className={styles.signuplink}>
+              Sign up
+            </Link>
+          </p>
         </div>
       </div>
     </section>
