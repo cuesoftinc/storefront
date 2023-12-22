@@ -119,24 +119,7 @@
   -webkit-line-clamp: 1;
   align-self: stretch;
 }
-.btncontainer {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 8px 12px;
-  border-radius: 16px;
-  gap: 10px;
-  cursor: pointer;
-  border: 1.5px solid var(--grey-300, #d0d5dd);
-  background: var(--shade-white, #fff);
-}
-.btn {
-  display: flex;
-  align-self: center;
-  justify-content: center;
-  cursor: pointer;
-}
+
 .svgimgcart {
   width: 15px;
   height: 15px;
@@ -158,4 +141,14 @@
 }
 .favourite__icon:hover {
   transform: scale(1.2);
+}
+
+.cart__btn:hover {
+  .cart__color {
+    fill: #fff;
+  }
+}
+
+.cart__color {
+  fill: var(--solidFadedBlue);
 }
