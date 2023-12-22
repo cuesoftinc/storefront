@@ -80,9 +80,9 @@
 
   .nav__top__input {
     display: block;
-    position: absolute;
+    position: fixed;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-35%);
   }
   .nav__top__input input {
     height: 40px !important;

@@ -2,3 +2,14 @@
   /* border: 2px solid green; */
   width: fit-content;
 }
+
+@media screen and (max-width: 500px) {
+  .div {
+    width: 25vw;
+  }
+
+  .div img {
+    width: 100%;
+    height: auto;
+  }
+}
