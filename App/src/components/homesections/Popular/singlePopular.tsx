@@ -5,6 +5,7 @@ import { Cartsvg, Ratesvg } from "@/assets/icons";
 import { FaHeart } from "react-icons/fa";
 import styles from "./popular.module.css";
 import Image from "next/image";
+import Button from "@/components/general/button/button";
 
 const SinglePopular = () => {
   return (
@@ -28,13 +29,18 @@ const SinglePopular = () => {
           </div>
           <p className={styles.ratenumber}>(91)</p>
         </div>
-        <button className={styles.btncontainer}>
+        {/* <button className={styles.btncontainer}>
           <span>
-            <Cartsvg />
+            <Cartsvg cartColor={styles.cart__color} />
           </span>
 
           <p className={styles.btn}> add to cart</p>
-        </button>
+        </button> */}
+        <Button
+          btnContent="Add to cart"
+          icon={<Cartsvg cartColor={styles.cart__color} />}
+          btnStyle={styles.cart__btn}
+        />
       </div>
       <FaHeart title="Add to favourite" className={styles.favourite__icon} />
     </div>
