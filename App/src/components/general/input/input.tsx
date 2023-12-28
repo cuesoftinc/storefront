@@ -9,6 +9,8 @@ interface InputProps {
   value: string;
   handleChange: (e: ChangeEvent<HTMLInputElement>) => void;
   inputStyle?: string;
+  id?: string;
+  autoComplete?: string;
 }
 
 const InputBox = ({
@@ -19,6 +21,8 @@ const InputBox = ({
   value,
   handleChange,
   inputStyle,
+  id,
+  autoComplete,
 }: InputProps) => {
   return (
     <div className={`${styles.input__box} ${inputStyle}`}>
@@ -28,6 +32,8 @@ const InputBox = ({
         placeholder={holder}
         value={value}
         onChange={handleChange}
+        id={id}
+        autoComplete={autoComplete}
       />
       <span>{icons}</span>
     </div>

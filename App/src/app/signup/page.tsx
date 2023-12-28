@@ -14,7 +14,10 @@ const Signup = () => {
     <main className={styles.registration}>
       <Logo uniqueStyle={styles.reg__logo} />
       <section className={styles.reg__section}>
-        <SignIntro />
+        <SignIntro
+          heading="Hello, Friend!"
+          intro="Enter your details and start your journey with us"
+        />
         <CreateAccount />
       </section>
     </main>
