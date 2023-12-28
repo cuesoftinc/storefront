@@ -1,102 +1,73 @@
-// import axios from 'axios';
+// // import axios from 'axios';
 
-// const BASE_URL = 'http://localhost:5005';
-// const token = localStorage.getItem('authToken');
+// // const BASE_URL = '';
+// // const token = localStorage.getItem('authToken');
 
-// console.log(token)
-// const api = axios.create({
-//   baseURL: BASE_URL,
-//   headers: {
-//     Authorization:  token, 
-//   },
-// });
+// // console.log(token)
+// // const api = axios.create({
+// //   baseURL: BASE_URL,
+// //   headers: {
+// //     Authorization:  token, 
+// //   },
+// // });
 
 
-// export const addItem = async (addProduct: any) => {
-//   try {
-//     // if()
-//     const response = await api.post(`${BASE_URL}/api/admin/create`, addProduct);
+// // export const addItem = async (addProduct: any) => {
+// //   try {
+// //     // if()
+// //     const response = await api.post(`${BASE_URL}/api/admin/create`, addProduct);
     
     
 
 
-//     return response.data;
-//   } catch (error) {
-//     console.log(error)
-//     // throw error.response?.data || error.message || 'An error occurred';
-//   }
-// };
+// //     return response.data;
+// //   } catch (error) {
+// //     console.log(error)
+// //     // throw error.response?.data || error.message || 'An error occurred';
+// //   }
+// // };
+
+
+import { NextApiRequest, NextApiResponse } from 'next';
 import axios, { AxiosError } from 'axios';
 
-const BASE_URL = 'http://localhost:5005/';
-const token = localStorage.getItem('authToken');
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+  if (req.method === 'POST') {
+    // Get the token from localStorage or wherever you store it
+    const token = localStorage.getItem('authToken');
 
-console.log(token);
-
-const api = axios.create({
-  baseURL: BASE_URL,
-  headers: {
-    Authorization: `Bearer ${token}`,
-  },
-  withCredentials: true,
-});
-
-
-export const addItem = async (addProduct: any) => {
-  try {
-    // Optional additional checks or validations
-
-    const response = await api.post('/api/admin/create', addProduct);
-
-    // Process successful response
-
-    return response.data;
-  } catch (error:any) {
-    console.error(error); // Log detailed error info for debugging
-
-    if (error.response && error.response.status === 403) {
-      // Handle CORS error specifically
-      alert('Unauthorized access. Please check your credentials.');
-    } else {
-      // Generic error handling
-      alert('An error occurred. Please try again later.');
+    // Check if the token exists
+    if (!token) {
+      return res.status(401).json({ error: 'Unauthorized' });
     }
+
+    try {
+      const apiResponse = await axios.post('http://localhost:5005', req.body, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+          'Content-Type': 'application/json',
+        },
+      });
+
+      // If successful, send the response from your API
+      return res.status(apiResponse.status).json(apiResponse.data);
+    } catch (error: any) {
+      // If there's an error, handle it
+      console.error('Error:', error);
+
+      if (error.response) {
+        // The request was made and the server responded with a status code
+        // that falls out of the range of 2xx
+        return res.status(error.response.status).json(error.response.data);
+      } else if (error.request) {
+        // The request was made but no response was received
+        return res.status(500).json({ error: 'No response received' });
+      } else {
+        // Something happened in setting up the request that triggered an Error
+        return res.status(500).json({ error: 'Error setting up the request' });
+      }
+    }
+  } else {
+    res.status(405).json({ error: 'Method Not Allowed' });
   }
-};
-// const BASE_URL = 'http://localhost:5005';
-// const token = localStorage.getItem('authToken');
-
-// console.log(token);
-
-// export const addItem = async (addProduct: any): Promise<any> => {
-//   try {
-//     // Optional additional checks or validations
-//     console.log(JSON.stringify(addProduct));
-//     const response = await fetch(`${BASE_URL}/api/admin/create`, {
-//       method: 'POST',
-//       headers: {
-//         'Content-Type': 'application/json',
-//         Authorization: `Bearer ${token}`,
-//       },
-//       body: JSON.stringify(addProduct),
-//     });
-// console.log(response)
-//     if (!response.ok) {
-//       throw new Error(`HTTP error! Status: ${response.status}`);
-//     }
-
-//     // Process successful response
-//     const responseData = await response.json();
-//     return responseData;
-//   } catch (error) {
-//     console.error(error); // Log detailed error info for debugging
-
-//     if (error instanceof TypeError && error.message.includes('NetworkError')) {
-//       // Handle network error
-//       alert('Network error. Please check your internet connection.');
-//     } else {
-//       // Generic error handling
-//       alert('An error occurred. Please try again later.');
-//     }
-//   }
-// };
+}
