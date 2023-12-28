@@ -1,0 +1,10 @@
+.auth__social__icon {
+  /* border: 2px solid red; */
+  margin-block: 2rem;
+}
+.auth__social__icon > img {
+  margin-inline: 5px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
