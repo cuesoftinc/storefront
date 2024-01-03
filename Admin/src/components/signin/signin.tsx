@@ -137,7 +137,7 @@ export default function Signinpage() {
                   Sign in
                 </button>
               </div>
-              <div
+              {/* <div
                 style={{
                   width: "100%",
                   padding: "5px",
@@ -154,7 +154,7 @@ export default function Signinpage() {
                 >
                   {error}
                 </p>
-              </div>
+              </div> */}
             </form>
           </div>
         </div>
