@@ -4,24 +4,46 @@ import { ChangeEvent, useState } from "react";
 import React from "react";
 import styles from "./addItems.module.css";
 import InputBox from "../general/input/input";
-import Button from "../general/button/button";
+// import Button from "../general/button/button";
 import ImageUpload from "../general/imageUpload/imageUpload";
 import SubCategory from "./subCat";
-import { useAddItemContext } from "@/contextrafce";
+import { addItem } from "@/api/addItemrafce";
+import { Button } from "../general/button/button";
+import { ImageType } from "react-images-uploading";
+import axios from "axios";
+
+const catObj = {
+  name: "",
+  description: "",
+  price: "",
+  quantity: "",
+  category_id: "",
+  sub_category: "",
+  shipping: "",
+  color: "",
+  size: "",
+  image: "",
+};
 
 const AddItems = () => {
-  const { addProduct, setAddProduct } = useAddItemContext();
+  const [images, setImages] = useState<ImageType[]>([]);
+  const handleImagesChange = (newImages: ImageType[]) => {
+    setImages(newImages);
+  };
+  const [addProduct, setAddProduct] = useState(catObj);
+  const [message, setMessage] = useState("");
 
   const {
     name,
     description,
     price,
     quantity,
-    category_id,
+    category_id, 
     sub_category,
     shipping,
     color,
     size,
+    image,
   } = addProduct;
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -31,8 +53,6 @@ const AddItems = () => {
       ...addProduct,
       [name]: value,
     });
-
-    // console.log(addProduct);
   };
 
   const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -42,9 +62,48 @@ const AddItems = () => {
       ...addProduct,
       [name]: value,
     });
-
-    // console.log(addProduct);
   };
+  // const [item, setItem] = useState<any>({});
+
+  const handleAddItem = async () => {
+    try {
+      console.log("Adding item:", addProduct, images); // Log product and images
+      const result = await addItem({ ...addProduct}); // Assuming `addItem` takes an object with an `image` property
+      console.log("Success:", result);
+
+      if (result.status === 200) {
+        setMessage("Product created successfully!");
+        // You can perform additional actions for a successful response
+      } else {
+        // Handle other status codes
+        console.error("Unexpected status code:", result.status);
+        setMessage(`Unexpected status code: ${result.status}`);
+      }
+    } catch (error: any) {
+      console.error("Error:", error);
+
+      if (axios.isAxiosError(error)) {
+        // Check if it's an AxiosError to access the response
+        if (error.response) {
+          // Handle AxiosError with response
+          console.error("Error response data:", error.response.data);
+          console.error("Error response status:", error.response.status);
+          setMessage(
+            `Error: ${error.response.data.message || "An error occurred"}`
+          );
+        } else {
+          // Handle AxiosError without response
+          console.error("No response received");
+          setMessage("No response received");
+        }
+      } else {
+        // Handle other types of errors
+        console.error("Non-Axios error message:", error.message);
+        setMessage(`Error while trying.............`);
+      }
+    }
+  };
+  console.log(addProduct);
 
   return (
     <section className={styles.add__new__items}>
@@ -172,12 +231,37 @@ const AddItems = () => {
           handleSelectChange={handleSelectChange}
         />
 
-        <ImageUpload />
+        {/* <ImageUpload onImagesChange={handleImagesChange}  /> */}
+        <section>
+          <label>Avatar</label>
+          <InputBox
+            type="text"
+            name="image"
+            holder="first and last"
+            value={image}
+            handleChange={handleChange}
+            inputStyle={styles.items__input}
+            icons="" // Just added to avoid error message
+          />
+        </section>
       </div>
+      {message ? (
+        <div style={{ backgroundColor: "blue", padding: "10px" }}>
+          <span>{message}</span>
+        </div>
+      ) : (
+        <div>
+          <span></span>
+        </div>
+      )}
 
       <div className={styles.btns}>
-        <Button btnContent="Cancel" btnStyles={styles.cancel__btn} />
-        <Button btnStyles={styles.confirm__btn} btnContent="Confirm" />
+        {/* <Button btnContent="Cancel" btnStyles={styles.cancel__btn}  /> */}
+        <Button
+          onSubmit={handleAddItem}
+          btnStyles={styles.confirm__btn}
+          btnContent="Confirm"
+        />
       </div>
     </section>
   );
