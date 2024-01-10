@@ -1,16 +1,16 @@
 import axios from "axios";
 import { Dispatch, SetStateAction } from "react";
 import { SigninUserProp } from "../types/index";
-import styles from '../components/signin/signin.module.css';
+import styles from "../components/signin/signin.module.css";
 
 export const fetchSigninUser = async (
   formData: object,
   router: any,
   setSigninUser: Dispatch<SetStateAction<SigninUserProp>>,
   setIsSuccess: Dispatch<SetStateAction<boolean>>,
-  setIsSuccessBg: Dispatch<SetStateAction<string>>,
+  setIsSuccessBg: Dispatch<SetStateAction<string>>
 ) => {
-  console.log('button');
+  console.log("button");
 
   try {
     console.log(formData);
@@ -22,11 +22,11 @@ export const fetchSigninUser = async (
 
     console.log(response);
 
-    if (response.status === 200 ) {
-      const { success, message, token ,data } = response.data;
-console.log(data)
-      if (success  ) {
-       localStorage.setItem('authToken', token);
+    if (response.status === 200) {
+      const { success, message, token, data } = response.data;
+      console.log(data);
+      if (success) {
+        localStorage.setItem("authToken", token);
         console.log("Authentication successful");
         setSigninUser((prevState) => ({
           ...prevState,
@@ -34,7 +34,7 @@ console.log(data)
         }));
 
         // Route to dashboard
-        router.push('/dashboard');
+        router.push("/dashboard");
       } else {
         console.log("Authentication failed");
         setSigninUser((prevState) => ({
@@ -50,7 +50,7 @@ console.log(data)
       }));
     }
   } catch (error: any) {
-    console.error('Error in fetchSigninUser:', error);
+    console.error("Error in fetchSigninUser:", error);
     setSigninUser((prevState) => ({
       ...prevState,
       error: "An error occurred while signing in", // Set a generic error message
