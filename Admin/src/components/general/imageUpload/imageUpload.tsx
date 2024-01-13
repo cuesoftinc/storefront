@@ -1,38 +1,63 @@
-import React, { ChangeEvent } from "react";
+import React, { useState, useEffect } from "react";
+import ImageUploading, { ImageListType, ImageType } from "react-images-uploading";
 import Image from "next/image";
 import { dropIcon } from "@/assets/iconsrafce";
 import styles from "./imgUpload.module.css";
 import InputBox from "../input/input";
 import { useAddItemContext } from "@/contextrafce";
 
-const ImageUpload = () => {
-  const { image, setImage, setImageFullFile } = useAddItemContext();
+interface ImageUploadProps {
+  onImagesChange: (newImages: ImageType[]) => void;
+}
 
-  const handleImageChange = (e: ChangeEvent<HTMLInputElement>) => {
-    e.preventDefault();
-    if (e.target.files) {
-      const imageUrl = e.target.files[0];
-      setImage(imageUrl.name);
-      setImageFullFile(imageUrl);
-    }
+const ImageUpload: React.FC<ImageUploadProps> = ({ onImagesChange }) => {
+  const [images, setImages] = useState<ImageType[]>([]);
+  const maxNumber = Infinity;
+  const [showMsg, setShowMsg] = useState<boolean>(false);
+
+  const handleImageChange = (
+    imageList: ImageListType,
+    addUpdateIndex: number[] | undefined
+  ) => {
+    setShowMsg(false);
+    setImages(imageList as never[]);
+    onImagesChange(imageList as ImageType[]);
   };
 
+  useEffect(() => {
+    console.log("Updated Images:", images);
+    console.log("Image Count:", images.length);
+
+    if (images.length > 0) {
+      setShowMsg(true);
+      console.log("Image added");
+    }
+  }, [images]);
+
   return (
-    <div className={styles.drop__images}>
-      <InputBox
-        type="file"
-        id="imageInput"
-        name="uploadImage"
-        holder=""
-        value=""
-        inputStyle={styles.image__style}
-        handleChange={handleImageChange}
-      />
-      <label htmlFor="imageInput" className={styles.attach__img}>
-        <Image src={dropIcon} alt="Drop" width={20} height={20} />
-        <span>{image}</span>
-      </label>
-    </div>
+    <ImageUploading
+      multiple
+      value={images}
+      onChange={handleImageChange}
+      maxNumber={maxNumber}
+    >
+      {({ onImageUpload, isDragging, dragProps }) => (
+        <div className={styles.drop__images}>
+          <Image
+            src={dropIcon}
+            alt="Drop"
+            width={20}
+            height={20}
+            onClick={onImageUpload}
+            {...dragProps}
+          />
+          <p>Add Image</p>
+          <p className={`${showMsg ? styles.show__image__uploaded__msg : "wait"}`}>
+            Image Added
+          </p>
+        </div>
+      )}
+    </ImageUploading>
   );
 };
 

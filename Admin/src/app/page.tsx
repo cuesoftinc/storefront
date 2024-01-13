@@ -1,12 +1,13 @@
 import React from "react";
 import DashboardComp from "@/components/dashboard/dashboardrafce";
+import Signin from "./signin/page";
 
-const Dashboard = () => {
+const SigninAdmin = () => {
   return (
     <main>
-      <DashboardComp />
+      <Signin/>
     </main>
   );
 };
 
-export default Dashboard;
+export default SigninAdmin;

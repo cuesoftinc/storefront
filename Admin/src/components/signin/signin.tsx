@@ -87,8 +87,9 @@ export default function Signinpage() {
         </div>
         <div className={styles.rightWelcomediv}>
           <div className={styles.signindiv}>
-            <h1 className={styles.signinHeaders}>Sign in to Storefront Admin</h1>
-           
+            <h1 className={styles.signinHeaders}>
+              Sign in to Storefront Admin
+            </h1>
 
             <div>
               <p className={styles.signintext}>Or use your email</p>
@@ -136,7 +137,7 @@ export default function Signinpage() {
                   Sign in
                 </button>
               </div>
-              <div
+              {/* <div
                 style={{
                   width: "100%",
                   padding: "5px",
@@ -153,17 +154,9 @@ export default function Signinpage() {
                 >
                   {error}
                 </p>
-              </div>
+              </div> */}
             </form>
-            <p className={styles.signintext}>
-              Don't have an account ?{" "}
-              <Link href="/signup" className={styles.signuplink}>
-                Sign up
-              </Link>
-            </p>
           </div>
-
-        
         </div>
       </div>
     </section>
