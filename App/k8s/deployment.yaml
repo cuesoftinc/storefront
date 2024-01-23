@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: storefront-app-deployment
+spec:
+  replicas: 2 # Number of replicas
+  selector:
+    matchLabels:
+      app: storefront # Shared label
+  template:
+    metadata:
+      labels:
+        app: storefront # Shared label
+    spec:
+      containers:
+        - name: storefront-fe
+          image: cuesoft/storefront-fe:latest # Update with your image
+          ports:
+            - containerPort: 3000 # Next.js default port
+              protocol: TCP
