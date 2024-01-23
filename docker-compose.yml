@@ -11,8 +11,8 @@ services:
       - commonserver_db-data:/var/lib/postgresql/data
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
 
-  app:
-    build: .
+  backend:
+    build: ./CommonServer
     ports:
       - "5005:5005"
     depends_on:
@@ -21,6 +21,17 @@ services:
       DATABASE_URL: postgres://postgres:mypassword@db:5432/storefront
     env_file:
       - .env # Specify the path to the .env file for the app service
+
+  app-frontend:
+    build:
+      context: ./App
+      target: development
+    ports:
+      - 3000:3000
+    volumes:
+      - ./App:/app
+    depends_on:
+      - backend
 
 volumes:
   commonserver_db-data:

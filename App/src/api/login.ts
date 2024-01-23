@@ -19,8 +19,6 @@ export const fetchSigninUser = async (
   // styles.error__sign__response:string
   ) => {
     console.log ('button')
-//     const cssModule: SigninModule = styles;
-// const errorClassName = cssModule.error__sign__response;
   try {
     console.log(formData);
     const response = await axios.post(
@@ -53,8 +51,7 @@ router.push('/');
         error: "Invalid email or password", // Set the error message
         // error: resResult, // Set the error message
       }));
-      // setIsSuccess(true); // Update isSuccess when an error occurs
-      // setIsSuccessBg(styles.error__sign__response);
+      
 
         
         }

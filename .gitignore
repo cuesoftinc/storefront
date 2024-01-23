@@ -1,4 +1,9 @@
 .env
 node_modules
 .idea
-.next-env.d.ts
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+/.next/
