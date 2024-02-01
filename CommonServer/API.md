@@ -237,8 +237,8 @@ The endpoints here helps a user with an admin role to be able to do the followin
 {
   "name": "Surgical box",
   "description": "A box containing surgical equipments",
-  "category_id": 2,
-  "sub_category": 3,
+  "category_id": "h36b266f-ec02-4d6c-ac2e-9e213c81fb94",
+  "sub_category": "n36b266f-ec02-4d6c-ac2e-9e213c81fb94",
   "price": 50000,
   "shipping_info": "No shipping fee discount",
   "color": "Black",
@@ -261,8 +261,8 @@ The endpoints here helps a user with an admin role to be able to do the followin
     "DeletedAt": null,
     "name": "Surgical box",
     "description": "A box containing surgical equipments",
-    "category_id": 2,
-    "sub_category": 3,
+    "category_id": "h36b266f-ec02-4d6c-ac2e-9e213c81fb94",
+    "sub_category": "n36b266f-ec02-4d6c-ac2e-9e213c81fb94",
     "price": 50000,
     "shipping_info": "No shipping fee discount",
     "color": "Black",
@@ -314,7 +314,7 @@ The endpoints here helps a user to be able to do the following:
             "DeletedAt": null,
             "name": "Men",
             "description": "A Sub-category of mens fashion wears",
-            "CategoryID": 1
+            "CategoryID": "h36b266f-ec02-4d6c-ac2e-9e213c81fb94"
           }
         ]
       },
@@ -333,21 +333,21 @@ The endpoints here helps a user to be able to do the following:
             "DeletedAt": null,
             "name": "Medical equipments",
             "description": "A Sub-category of Medicals",
-            "CategoryID": 2
+            "CategoryID": "e36b266f-ec02-4d6c-ac2e-9e213c81fb94"
           }
         ]
       }
     ],
     "products": [
       {
-        "": "w36b266f-ec02-4d6c-ac2e-9e213c81fb94",
+        "id": "w36b266f-ec02-4d6c-ac2e-9e213c81fb94",
         "created_at": "2023-11-01T17:02:21.420582+01:00",
         "updated_at": "2023-11-01T17:02:21.420582+01:00",
         "DeletedAt": null,
         "name": "Nike Jordan 2",
         "description": "The new Nike Jordan 2",
-        "category_id": 1,
-        "sub_category": 2,
+        "category_id": "j36b266f-ec02-4d6c-ac2e-9e213c81fb94",
+        "sub_category": "q36b266f-ec02-4d6c-ac2e-9e213c81fb94",
         "price": 50000,
         "shipping_info": "No shipping fee discount",
         "color": "Blue",
@@ -362,8 +362,8 @@ The endpoints here helps a user to be able to do the following:
         "DeletedAt": null,
         "name": "Surgical box",
         "description": "A box containing surgical equipments",
-        "category_id": 2,
-        "sub_category": 3,
+        "category_id": "h36b266f-ec02-4d6c-ac2e-9e213c81fb94",
+        "sub_category": "n36b266f-ec02-4d6c-ac2e-9e213c81fb94",
         "price": 50000,
         "shipping_info": "No shipping fee discount",
         "color": "Black",
@@ -378,8 +378,8 @@ The endpoints here helps a user to be able to do the following:
         "DeletedAt": null,
         "name": "Specialized Surgical box",
         "description": "A box containing Specialized surgical equipments",
-        "category_id": 2,
-        "sub_category": 3,
+        "category_id": "e36b266f-ec02-4d6c-ac2e-9e213c81fb94",
+        "sub_category": "n36b266f-ec02-4d6c-ac2e-9e213c81fb94",
         "price": 50000,
         "shipping_info": "No shipping fee discount",
         "color": "Black",
@@ -394,8 +394,8 @@ The endpoints here helps a user to be able to do the following:
         "DeletedAt": null,
         "name": "Specialized Surgical box 2",
         "description": "A box containing Specialized surgical equipments 2",
-        "category_id": 2,
-        "sub_category": 3,
+        "category_id": "e36b266f-ec02-4d6c-ac2e-9e213c81fb94",
+        "sub_category": "n36b266f-ec02-4d6c-ac2e-9e213c81fb94",
         "price": 50000,
         "shipping_info": "No shipping fee discount",
         "color": "Black",
@@ -410,8 +410,8 @@ The endpoints here helps a user to be able to do the following:
         "DeletedAt": null,
         "name": "Specialized Surgical box 3",
         "description": "A box containing Specialized surgical equipments 3",
-        "category_id": 2,
-        "sub_category": 3,
+        "category_id": "e36b266f-ec02-4d6c-ac2e-9e213c81fb94",
+        "sub_category": "n36b266f-ec02-4d6c-ac2e-9e213c81fb94",
         "price": 50000,
         "shipping_info": "No shipping fee discount",
         "color": "Black",
@@ -428,7 +428,7 @@ The endpoints here helps a user to be able to do the following:
         "DeletedAt": null,
         "name": "Men",
         "description": "A Sub-category of mens fashion wears",
-        "CategoryID": 1
+        "CategoryID": "j36b266f-ec02-4d6c-ac2e-9e213c81fb94"
       },
       {
         "id": "e36b266f-ec02-4d6c-ac2e-9e213c81fb94",
@@ -437,7 +437,7 @@ The endpoints here helps a user to be able to do the following:
         "DeletedAt": null,
         "name": "Medical equipments",
         "description": "A Sub-category of Medicals",
-        "CategoryID": 2
+        "CategoryID": "e36b266f-ec02-4d6c-ac2e-9e213c81fb94"
       }
     ]
   }
