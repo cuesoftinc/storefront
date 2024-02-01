@@ -1,0 +1,49 @@
+// api/addsubcategoryrafce.ts
+import axios from "axios";
+
+export async function addSubCategoryApi<T>(category_id: string, addCategory: T) {
+  const token = localStorage.getItem("authToken");
+
+  if (!token) {
+    return { error: "Unauthorized" };
+  }
+
+  try {
+    const apiResponse = await axios.post(
+      `http://localhost:5005/api/admin/category/${category_id}/subCategory/create`, 
+      addCategory,
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
+        },
+      }
+    );
+
+    console.log(apiResponse);
+
+    return {
+      status: apiResponse.status,
+      data: apiResponse.data,
+    };
+  } catch (error: any) {
+    console.error("Error:", error);
+
+    if (error.response) {
+      return {
+        status: error.response.status,
+        data: error.response.data,
+      };
+    } else if (error.request) {
+      return {
+        status: 500,
+        data: { error: "No response received" },
+      };
+    } else {
+      return {
+        status: 500,
+        data: { error: "Error setting up the request" },
+      };
+    }
+  }
+}

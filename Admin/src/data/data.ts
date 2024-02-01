@@ -31,7 +31,7 @@ export const adminSideBar = {
       id: 4,
       icon: MdOutlineCategory,
       navItem: "Create New Category",
-      path: "/create-category",
+      path: "/dashboard/create-category",
     },
     {
       id: 5,
