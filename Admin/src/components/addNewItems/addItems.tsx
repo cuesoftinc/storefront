@@ -4,7 +4,6 @@ import { ChangeEvent, useState } from "react";
 import React from "react";
 import styles from "./addItems.module.css";
 import InputBox from "../general/input/input";
-// import Button from "../general/button/button";
 import ImageUpload from "../general/imageUpload/imageUpload";
 import SubCategory from "./subCat";
 import { addItem } from "@/api/addItemrafce";
