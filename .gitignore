@@ -7,3 +7,12 @@ node_modules
 next-env.d.ts
 
 /.next/
+
+
+charts/*/values.yaml
+
+charts/*/*/secrets.yaml
+k8s/
+
+# Temporary files
+*.log
