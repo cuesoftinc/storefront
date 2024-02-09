@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: storefront-backend
+  labels:
+    app: storefront-backend
+  annotations:
+    "helm.sh/hook": test
+spec:
+  containers:
+    - name: wget
+      image: busybox
+      command: ["wget"]
+      args: ["storefront-frontend:{{ .Values.containerPort }}"]
+  restartPolicy: Never
