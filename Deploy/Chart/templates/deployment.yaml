@@ -7,7 +7,7 @@ metadata:
     app: {{ .Release.Name }}
 spec:
   # this gets the value of replicas from the values.yaml file
-  replicas: {{ .Values.frontend.replicaCount }}
+  replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
       app: {{ .Release.Name }}
@@ -19,10 +19,10 @@ spec:
       containers:
         - name: {{ .Release.Name }}
           # gets the image repository value from the values.yaml file
-          image: {{ .Values.frontend.image.repository }}
-          imagePullPolicy: {{ .Values.frontend.image.pullPolicy }}
+          image: {{ .Values.image.repository }}
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - name: http
               # containerPort: 80
-              containerPort: {{ .Values.frontend.containerPort }}
+              containerPort: {{ .Values.containerPort }}
               protocol: TCP
