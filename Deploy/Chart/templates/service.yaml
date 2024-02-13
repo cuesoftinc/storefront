@@ -3,7 +3,7 @@ kind: Service
 metadata:
   labels:
     app: {{ .Release.Name }}
-  name: {{ .Release.Name }}-app-service
+  name: {{ .Release.Name }}
 spec:
   type: {{ .Values.frontend.service.type }}
   selector:
